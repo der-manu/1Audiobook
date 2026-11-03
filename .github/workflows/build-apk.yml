@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: JDK 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
@@ -27,6 +27,11 @@ jobs:
       # Die Datei muss existieren, darf aber leer sein.
       - name: local.properties anlegen
         run: touch local.properties
+
+      # gradlew ist im Original-Repo ohne Ausfuehrungsrecht eingecheckt (Modus 644),
+      # sonst endet der Build mit Exit-Code 126.
+      - name: gradlew ausfuehrbar machen
+        run: chmod +x gradlew
 
       # Variante: github (Signing) + libre (ohne proprietaere Google-Teile).
       # Fuer schnelles Testen: Debug. Fuer den Alltag spaeter:
