@@ -65,8 +65,6 @@ class App : Application() {
 
     if (!isPro()) themePref.value = THEME_LIGHT
 
-    RuStoreModule.install(this, themePref.value)
-
     if (DARK_THEME_SETTABLE) {
       MainScope().launch {
         themePref.flow

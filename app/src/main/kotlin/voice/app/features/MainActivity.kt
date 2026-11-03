@@ -24,14 +24,10 @@ import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import ru.rustore.sdk.billingclient.RuStoreBillingClient
-import ru.rustore.sdk.billingclient.model.product.Product
-import ru.rustore.sdk.core.feature.model.FeatureAvailabilityResult
 import voice.app.AppController
 import voice.app.BuildConfig
 import voice.app.R
 import voice.app.features.bookOverview.EditCoverDialogController
-import voice.app.injection.RuStoreModule
 import voice.app.injection.appComponent
 import voice.app.misc.conductor.asVerticalChangeHandlerTransaction
 import voice.app.uitools.SettingsContentObserver
@@ -128,10 +124,6 @@ class MainActivity : AppCompatActivity() {
   private lateinit var router: Router
 
   private val purchaseHelper = PurchaseHelper(this)
-  private val ruStoreHelper = RuStoreHelper(this)
-  private val billingRuStoreClient: RuStoreBillingClient = RuStoreModule.provideRuStoreBillingClient()
-  private var ruStoreIsConnected = false
-  private val productsRuStore: MutableList<Product> = mutableListOf()
   private val productList: ArrayList<String> = arrayListOf(
     BuildConfig.PRODUCT_ID_X1,
     BuildConfig.PRODUCT_ID_X2,
@@ -147,12 +139,6 @@ class MainActivity : AppCompatActivity() {
     appComponent.inject(this)
     setTheme(R.style.AppTheme)
     super.onCreate(savedInstanceState)
-
-    if (isRuStoreInstalled()) {
-      if (savedInstanceState == null) {
-        billingRuStoreClient.onNewIntent(intent)
-      }
-    }
 
     enableEdgeToEdge()
 
@@ -228,12 +214,11 @@ class MainActivity : AppCompatActivity() {
                   if (destination.tip < 3) purchaseHelper.getDonation(productList[destination.tip])
                   else purchaseHelper.getSubscription(productList[destination.tip])
                 } else {
-                  val product = productsRuStore.firstOrNull {  it.productId == productList[destination.tip]  }
-                  if (product != null) ruStoreHelper.purchaseProduct(product)
+                  // RuStore-Zahlung wurde in diesem Fork entfernt
                 }
               }
               is Destination.RefreshPurchase -> {
-                if (destination.usePlayStore) initPlayStore() else initRuStore()
+                if (destination.usePlayStore) initPlayStore() else Unit
               }
             }
           }
@@ -263,15 +248,13 @@ class MainActivity : AppCompatActivity() {
 
     val isProApp = resources.getBoolean(CommonR.bool.is_pro_app)
     val isPlayStoreInstalled = isPlayStoreInstalled()
-    val isRuStoreInstalled = isRuStoreInstalled()
     isPlayStoreInstalledPref.value = isPlayStoreInstalled
-    isRuStoreInstalledPref.value = isRuStoreInstalled
+    isRuStoreInstalledPref.value = false
     if (!isPlayStoreInstalled) useGooglePlay.value = false
 
     //Billing
     if (isProApp) isProPref.value = true
     if (isPlayStoreInstalled) initPlayStore()
-    if (isRuStoreInstalled) initRuStore()
   }
 
   override fun onDestroy() {
@@ -281,9 +264,6 @@ class MainActivity : AppCompatActivity() {
 
   override fun onNewIntent(intent: Intent) {
     super.onNewIntent(intent)
-    if (isRuStoreInstalled()) {
-      billingRuStoreClient.onNewIntent(intent)
-    }
     setupFromIntent(intent)
   }
 
@@ -326,10 +306,6 @@ class MainActivity : AppCompatActivity() {
   private fun isPlayStoreInstalled(): Boolean {
     return isPackageInstalled("com.android.vending")
       || isPackageInstalled("com.google.market")
-  }
-
-  private fun isRuStoreInstalled(): Boolean {
-    return isPackageInstalled("ru.vk.store")
   }
 
   private fun isPackageInstalled(packageName: String?): Boolean {
@@ -430,114 +406,6 @@ class MainActivity : AppCompatActivity() {
       purchasedSubsList.value = purchased
     }
   }
-
-  private fun initRuStore() {
-    ruStoreHelper.checkPurchasesAvailability(this)
-
-    lifecycleScope.launch {
-      ruStoreHelper.eventStart
-        .flowWithLifecycle(lifecycle)
-        .collect { event ->
-          handleEventStart(event)
-        }
-    }
-
-    lifecycleScope.launch {
-      ruStoreHelper.stateBilling
-        .flowWithLifecycle(lifecycle)
-        .collect { state ->
-          if (!state.isLoading) {
-            productsRuStore.clear()
-            productsRuStore.addAll(state.products)
-            //price update
-            var prices = ""
-            productList.forEach { item ->
-              val product = state.products.firstOrNull {  it.productId == item  }
-              val price = product?.priceLabel ?: "???"
-              val resultPrice = price.replace(".00","",true)
-              prices += if (item == productList.last()) resultPrice else "$resultPrice;"
-            }
-            pricesRustorePref.value = prices
-          }
-        }
-    }
-//      lifecycleScope.launch {
-//        ruStoreHelper.eventBilling
-//          .flowWithLifecycle(lifecycle)
-//          .collect { event ->
-//            handleEventBilling(event)
-//          }
-//      }
-
-    updateCheckedPurchasesRuStore()
-  }
-
-  private fun updateCheckedPurchasesRuStore() {
-    lifecycleScope.launch {
-      ruStoreHelper.statePurchased
-        .flowWithLifecycle(lifecycle)
-        .collect { state ->
-          if (!state.isLoading && ruStoreIsConnected) {
-            //update pro version
-            val isProRu = state.purchases.isNotEmpty()
-            isProRuPref.value = isProRu
-
-            //update of purchased
-            var purchased = ""
-            productList.forEach { item ->
-              val result = if (state.purchases.firstOrNull { it.productId == item } != null) "1" else "0"
-              purchased += if (item == productList.last()) result else "$result;"
-            }
-            purchasedListRustore.value = purchased
-          }
-        }
-    }
-  }
-
-  private fun updateProducts() {
-    pricesRustorePref.value = "???;???;???;???;???;???;???;???;???"
-    purchasedListRustore.value = "0;0;0;0;0;0;0;0;0"
-    ruStoreHelper.getProducts(productList)
-  }
-
-  private fun handleEventStart(event: StartPurchasesEvent) {
-    when (event) {
-      is StartPurchasesEvent.PurchasesAvailability -> {
-        when (event.availability) {
-          is FeatureAvailabilityResult.Available -> {
-            //Process purchases available
-            updateProducts()
-            ruStoreIsConnected = true
-          }
-
-          is FeatureAvailabilityResult.Unavailable -> {
-            //toast(event.availability.cause.message ?: "Process purchases unavailable", Toast.LENGTH_LONG)
-          }
-
-          else -> {}
-        }
-      }
-
-      is StartPurchasesEvent.Error -> {
-        //toast(event.throwable.message ?: "Process unknown error", Toast.LENGTH_LONG)
-      }
-    }
-  }
-
-//  private fun handleEventBilling(event: BillingEvent) {
-//    when (event) {
-//      is BillingEvent.ShowDialog -> {
-//        Logger.v("RuStore Billing No Error: ${event.dialogInfo.titleRes}")
-//      }
-//
-//      is BillingEvent.ShowError -> {
-//        if (event.error is RuStoreException) {
-//          event.error.resolveForBilling(this)
-//        }
-//        Logger.v("RuStore Billing Error: ${event.error.message.orEmpty()}")
-//      }
-//    }
-//  }
 
   companion object {
 

@@ -115,7 +115,6 @@ ktlint-compose = "io.nlopez.compose.rules:ktlint:0.4.22"
 
 #PlayBook
 billing-client = "com.android.billingclient:billing:6.2.0"
-rustore-client = "ru.rustore.sdk:billingclient:5.1.1"
 
 [bundles]
 compose = [

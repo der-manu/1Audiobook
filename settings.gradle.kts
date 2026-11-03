@@ -16,7 +16,6 @@ pluginManagement {
 dependencyResolutionManagement {
   repositories {
     google()
-    maven { setUrl("https://artifactory-external.vkpartner.ru/artifactory/maven") }
 
     exclusiveContent {
       forRepository {

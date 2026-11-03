@@ -242,5 +242,4 @@ dependencies {
 
   //PlayBook
   implementation(libs.billing.client)
-  implementation(libs.rustore.client)
 }
