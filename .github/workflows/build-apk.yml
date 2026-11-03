@@ -1,0 +1,42 @@
+name: Build APK
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Gradle (mit Cache)
+        uses: gradle/actions/setup-gradle@v4
+
+      # app/build.gradle.kts liest local.properties (Play-Billing-IDs).
+      # Die Datei muss existieren, darf aber leer sein.
+      - name: local.properties anlegen
+        run: touch local.properties
+
+      # Variante: github (Signing) + libre (ohne proprietaere Google-Teile).
+      # Fuer schnelles Testen: Debug. Fuer den Alltag spaeter:
+      #   ./gradlew assembleGithubLibreRelease
+      - name: APK bauen
+        run: ./gradlew assembleGithubLibreDebug --no-daemon --stacktrace
+
+      - name: APK hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: PlayBookAdvance-debug-apk
+          path: app/build/outputs/apk/**/*.apk
+          retention-days: 30
