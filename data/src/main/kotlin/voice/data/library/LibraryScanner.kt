@@ -1,5 +1,6 @@
 package voice.data.library
 
+import voice.data.isJunkName
 import voice.data.supportedAudioFormats
 import voice.documentfile.CachedDocumentFile
 import voice.documentfile.nameWithoutExtension
@@ -7,7 +8,7 @@ import javax.inject.Inject
 
 /**
  * Liest einen Ordnerbaum einmal komplett und baut daraus das schlanke [LibraryDir]-Modell.
- * Versteckte Dateien (Name beginnt mit ".") werden uebersprungen, .part-Dateien nur gezaehlt.
+ * Versteckte Dateien und macOS-Beifang (siehe [isJunkName]) werden uebersprungen, .part-Dateien nur gezaehlt.
  */
 class LibraryScanner
 @Inject constructor() {
@@ -23,7 +24,7 @@ class LibraryScanner
     var partial = 0
     for (child in root.children) {
       val name = child.name ?: continue
-      if (name.startsWith(".")) continue
+      if (isJunkName(name)) continue
       if (child.isDirectory) {
         dirs += scan(child, onFile)
       } else if (child.isFile) {

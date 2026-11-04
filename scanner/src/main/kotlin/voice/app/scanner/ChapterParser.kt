@@ -3,6 +3,7 @@ package voice.app.scanner
 import voice.data.Chapter
 import voice.data.ChapterId
 import voice.data.isAudioFile
+import voice.data.isJunk
 import voice.data.repo.ChapterRepo
 import voice.documentfile.CachedDocumentFile
 import voice.data.supportedAudioFormats
@@ -36,7 +37,9 @@ class ChapterParser
           result.add(chapter)
         }
       } else if (file.isDirectory) {
+        // Versteckte Ordner (z. B. "__MACOSX", ".Trash") und deren Inhalt zaehlen nicht zum Buch.
         file.children
+          .filterNot { it.isJunk() }
           .forEach {
             parseChapters(it)
           }
