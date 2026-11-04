@@ -16,14 +16,15 @@ the right order.
   group by folder (folder 1 = 1…N, then folder 2 = 1…N) or sort all files together, by file name, tag title or
   date, optionally reversed. The preview updates immediately; the choice is remembered per book and survives
   rescans.
+- **Library import with preview** (*Add folder → Library: detect books automatically*): reads a whole folder tree,
+  recognises books (single folders, multi-CD books such as `CD1`/`CD2`, series and author folders), cleans up release-style
+  folder names, and shows everything in an editable list before anything is added. Existing `.m3u` playlists decide the
+  order when they are usable; the preview shows how well they match and lets you replace them by sorting.
 - **All features are free.** There is no paywall, no donation screen and no in-app purchase.
 - **Quick light/dark switch** at the top of *Settings → Appearance* (the *Theme* dialog still offers *Follow system*).
 - **New app icon**: an open book with a play symbol.
 - **No Google Play Billing, no RuStore SDK.** Both were removed.
 - Uses the maintained FFmpegKit fork, because the original FFmpegKit binaries were removed from Maven Central.
-
-Planned: automatic recognition of a large library (authors, series, multi-CD books) with an editable preview
-before anything is added.
 
 ## Install
 

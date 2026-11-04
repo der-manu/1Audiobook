@@ -18,6 +18,7 @@ import voice.common.navigation.Navigator
 import voice.cover.SelectCoverFromInternet
 import voice.folderPicker.addcontent.AddContent
 import voice.folderPicker.folderPicker.FolderOverview
+import voice.folderPicker.libraryImport.LibraryImport
 import voice.folderPicker.selectType.SelectFolderType
 import voice.migration.views.Migration
 import voice.onboarding.OnboardingExplanation
@@ -68,6 +69,12 @@ class AppController : ComposeController() {
         }
         is Destination.SelectFolderType -> {
           SelectFolderType(
+            uri = destination.uri,
+            mode = destination.mode,
+          )
+        }
+        is Destination.LibraryImport -> {
+          LibraryImport(
             uri = destination.uri,
             mode = destination.mode,
           )

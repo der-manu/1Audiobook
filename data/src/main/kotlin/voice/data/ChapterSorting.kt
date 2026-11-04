@@ -3,7 +3,7 @@ package voice.data
 /**
  * Verbindet die reine Sortierlogik [ChapterSorter] mit den echten [Chapter]-Objekten.
  */
-fun Chapter.toSortItem(): ChapterSortItem<Chapter> {
+fun Chapter.toSortItem(rank: Int? = null): ChapterSortItem<Chapter> {
   val segments = id.toUri().pathSegments.flatMap { it.split("/") }
   return ChapterSortItem(
     item = this,
@@ -11,6 +11,7 @@ fun Chapter.toSortItem(): ChapterSortItem<Chapter> {
     fileName = segments.lastOrNull().orEmpty(),
     title = name,
     lastModifiedMs = fileLastModified.toEpochMilli(),
+    rank = rank,
   )
 }
 
@@ -20,9 +21,11 @@ fun Chapter.toSortItem(): ChapterSortItem<Chapter> {
 fun sortChapters(
   chapters: List<Chapter>,
   settings: ChapterSortSettings?,
+  /** Playlist-Rang je Kapitel-ID (nur fuer [ChapterSortKey.PLAYLIST]). */
+  ranks: Map<String, Int> = emptyMap(),
 ): List<Chapter> {
   if (settings == null) return chapters.sorted()
-  return ChapterSorter.sort(chapters.map { it.toSortItem() }, settings).map { it.item }
+  return ChapterSorter.sort(chapters.map { it.toSortItem(ranks[it.id.value]) }, settings).map { it.item }
 }
 
 /**

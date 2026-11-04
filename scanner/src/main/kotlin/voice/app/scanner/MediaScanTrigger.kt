@@ -45,11 +45,17 @@ class MediaScanTrigger
       oldJob?.cancelAndJoin()
 
       measureTime {
+        val libraryBooks = audiobookFolders.libraryBooks()
         val folders: Map<FolderType, List<CachedDocumentFile>> = audiobookFolders.all()
           .first()
-          .mapValues { (_, documentFilesWithUri) ->
-            documentFilesWithUri.map {
-              documentFileFactory.create(it.documentFile.uri)
+          .mapValues { (folderType, documentFilesWithUri) ->
+            if (folderType == FolderType.Library) {
+              // Fuer Bibliotheken zaehlen die bestaetigten Buchordner, nicht die Wurzelordner.
+              if (documentFilesWithUri.isEmpty()) emptyList<CachedDocumentFile>() else libraryBooks.map(documentFileFactory::create)
+            } else {
+              documentFilesWithUri.map {
+                documentFileFactory.create(it.documentFile.uri)
+              }
             }
           }
         scanner.scan(folders)

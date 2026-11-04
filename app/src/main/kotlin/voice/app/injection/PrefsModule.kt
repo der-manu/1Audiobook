@@ -24,6 +24,8 @@ import voice.common.pref.AuthorAudiobookFolders
 import voice.common.pref.CurrentBook
 import voice.common.pref.OnboardingCompleted
 import voice.common.pref.PrefKeys
+import voice.common.pref.LibraryAudiobookFolders
+import voice.common.pref.LibraryBookFolders
 import voice.common.pref.RootAudiobookFolders
 import voice.common.pref.SingleFileAudiobookFolders
 import voice.common.pref.SingleFolderAudiobookFolders
@@ -151,6 +153,20 @@ object PrefsModule {
   @AuthorAudiobookFolders
   fun authorAudiobookFolders(factory: VoiceDataStoreFactory): DataStore<List<Uri>> {
     return factory.createUriList("AuthorAudiobookFolders")
+  }
+
+  @Provides
+  @Singleton
+  @LibraryAudiobookFolders
+  fun libraryAudiobookFolders(factory: VoiceDataStoreFactory): DataStore<List<Uri>> {
+    return factory.createUriList("LibraryAudiobookFolders")
+  }
+
+  @Provides
+  @Singleton
+  @LibraryBookFolders
+  fun libraryBookFolders(factory: VoiceDataStoreFactory): DataStore<List<Uri>> {
+    return factory.createUriList("LibraryBookFolders")
   }
 
   @Provides

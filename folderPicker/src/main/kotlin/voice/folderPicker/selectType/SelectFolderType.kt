@@ -37,6 +37,7 @@ import com.squareup.anvil.annotations.ContributesTo
 import voice.common.AppScope
 import voice.common.compose.rememberScoped
 import voice.common.navigation.Destination
+import voice.common.R as CommonR
 import voice.common.rootComponentAs
 import voice.strings.R as StringsR
 
@@ -134,7 +135,17 @@ private fun Content(
         )
       }
     }
-    if (viewState.loading) {
+    if (viewState.selectedFolderMode == FolderMode.Library) {
+      item(
+        key = "libraryHint",
+        span = { GridItemSpan(maxLineSpan) },
+      ) {
+        Text(
+          modifier = Modifier.padding(24.dp),
+          text = stringResource(id = CommonR.string.library_import_hint),
+        )
+      }
+    } else if (viewState.loading) {
       item(
         key = "loading",
         span = { GridItemSpan(maxLineSpan) },

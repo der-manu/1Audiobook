@@ -59,4 +59,10 @@ annotation class SingleFileAudiobookFolders
 annotation class AuthorAudiobookFolders
 
 @Qualifier
+annotation class LibraryAudiobookFolders
+
+@Qualifier
+annotation class LibraryBookFolders
+
+@Qualifier
 annotation class CurrentBook

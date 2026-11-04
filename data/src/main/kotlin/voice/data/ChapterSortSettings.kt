@@ -22,6 +22,12 @@ enum class ChapterSortKey {
 
   /** Aenderungsdatum der Datei, aelteste zuerst. */
   DATE,
+
+  /**
+   * Reihenfolge einer m3u-Playlist. Der Rang jeder Datei kommt von aussen (siehe [ChapterSortItem.rank]),
+   * Dateien ohne Rang folgen am Ende nach Dateiname.
+   */
+  PLAYLIST,
 }
 
 data class ChapterSortSettings(

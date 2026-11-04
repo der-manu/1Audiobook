@@ -13,6 +13,8 @@ data class ChapterSortItem<T>(
   val fileName: String,
   val title: String?,
   val lastModifiedMs: Long,
+  /** Position in einer Playlist, falls bekannt. Nur fuer [ChapterSortKey.PLAYLIST] relevant. */
+  val rank: Int? = null,
 )
 
 data class ChapterPreviewEntry<T>(
@@ -61,6 +63,9 @@ object ChapterSorter {
       }
       ChapterSortKey.DATE -> Comparator { a, b ->
         a.lastModifiedMs.compareTo(b.lastModifiedMs)
+      }
+      ChapterSortKey.PLAYLIST -> Comparator { a, b ->
+        (a.rank ?: Int.MAX_VALUE).compareTo(b.rank ?: Int.MAX_VALUE)
       }
     }
 

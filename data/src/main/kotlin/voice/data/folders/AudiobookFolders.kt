@@ -12,6 +12,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import voice.common.pref.AuthorAudiobookFolders
+import voice.common.pref.LibraryAudiobookFolders
+import voice.common.pref.LibraryBookFolders
 import voice.common.pref.RootAudiobookFolders
 import voice.common.pref.SingleFileAudiobookFolders
 import voice.common.pref.SingleFolderAudiobookFolders
@@ -30,6 +32,10 @@ class AudiobookFolders
   private val singleFileAudiobookFolders: DataStore<List<@JvmSuppressWildcards Uri>>,
   @AuthorAudiobookFolders
   private val authorAudiobookFolders: DataStore<List<@JvmSuppressWildcards Uri>>,
+  @LibraryAudiobookFolders
+  private val libraryAudiobookFolders: DataStore<List<@JvmSuppressWildcards Uri>>,
+  @LibraryBookFolders
+  private val libraryBookFolders: DataStore<List<@JvmSuppressWildcards Uri>>,
   private val context: Context,
   private val cachedDocumentFileFactory: CachedDocumentFileFactory,
 ) {
@@ -55,6 +61,7 @@ class AudiobookFolders
       FolderType.SingleFolder,
       FolderType.Root,
       FolderType.Author,
+      FolderType.Library,
       -> {
         DocumentsContract.buildDocumentUriUsingTree(
           this,
@@ -96,6 +103,39 @@ class AudiobookFolders
       dataStore(folderType).updateData { folders ->
         folders - uri
       }
+      if (folderType == FolderType.Library) {
+        libraryBookFolders.updateData { books -> books.filterNot { it.isInside(uri) } }
+      }
+    }
+  }
+
+  /** Die in der Vorschau bestaetigten Buchordner aller Bibliotheken (Dokument-Adressen). */
+  suspend fun libraryBooks(): List<Uri> = libraryBookFolders.data.first()
+
+  /**
+   * Speichert eine Bibliothek. Der Wurzelordner behaelt dauerhaften Zugriff; die uebergebenen Buecher ersetzen
+   * alle bisher fuer diese Wurzel gespeicherten. So kann der Import wiederholt werden.
+   */
+  suspend fun setLibrary(
+    root: Uri,
+    books: List<Uri>,
+  ) {
+    context.contentResolver.takePersistableUriPermission(
+      root,
+      Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION,
+    )
+    libraryAudiobookFolders.updateData { (it + root).distinct() }
+    libraryBookFolders.updateData { existing ->
+      (existing.filterNot { it.isInside(root) } + books).distinct()
+    }
+  }
+
+  /** Gehoert diese Dokument-Adresse zum selben Baum wie [root]? */
+  private fun Uri.isInside(root: Uri): Boolean {
+    return try {
+      DocumentsContract.getTreeDocumentId(this) == DocumentsContract.getTreeDocumentId(root)
+    } catch (e: IllegalArgumentException) {
+      false
     }
   }
 
@@ -105,6 +145,7 @@ class AudiobookFolders
       FolderType.SingleFolder -> singleFolderAudiobookFolders
       FolderType.Root -> rootAudioBookFolders
       FolderType.Author -> authorAudiobookFolders
+      FolderType.Library -> libraryAudiobookFolders
     }
   }
 

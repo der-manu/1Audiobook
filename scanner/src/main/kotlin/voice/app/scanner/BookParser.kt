@@ -9,6 +9,7 @@ import voice.data.Chapter
 import voice.data.ChapterId
 import voice.data.legacy.LegacyBookSettings
 import voice.data.repo.BookContentRepo
+import voice.data.repo.BookNameStore
 import voice.data.repo.internals.dao.LegacyBookDao
 import voice.data.toUri
 import voice.documentfile.CachedDocumentFile
@@ -26,6 +27,7 @@ class BookParser
   private val application: Application,
   private val bookmarkMigrator: BookmarkMigrator,
   private val fileFactory: CachedDocumentFileFactory,
+  private val bookNameStore: BookNameStore,
 ) {
 
   suspend fun parseAndStore(
@@ -59,7 +61,8 @@ class BookParser
         author = analyzed?.artist,
         lastPlayedAt = migrationSettings?.lastPlayedAtMillis?.let(Instant::ofEpochMilli)
           ?: Instant.EPOCH,
-        name = migrationMetaData?.name
+        name = bookNameStore.get(id)
+          ?: migrationMetaData?.name
           ?: analyzed?.album
           ?: analyzed?.title
           ?: file.bookName(),

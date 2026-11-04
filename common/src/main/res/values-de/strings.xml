@@ -114,4 +114,35 @@
   <string name="about_credits_based_on">Basiert auf</string>
   <string name="about_credits_inspiration">Inspiration</string>
   <string name="about_credits_libraries">Bibliotheken und Dienste</string>
+  <!--Library import-->
+  <string name="folder_mode_library">Bibliothek: Bücher automatisch erkennen</string>
+  <string name="library_import_hint">Im nächsten Schritt werden alle Bücher in diesem Ordner automatisch erkannt. Du kannst alles prüfen und ändern, bevor etwas hinzugefügt wird.</string>
+  <string name="library_import_title">Bibliothek importieren</string>
+  <string name="library_import_scanning">Ordner werden gelesen… bisher %1$d Dateien</string>
+  <string name="library_import_summary">%1$d Bücher gefunden, %2$d zu prüfen</string>
+  <string name="library_import_loose">%1$d Audiodateien direkt im Hauptordner sind nicht enthalten.</string>
+  <string name="library_import_empty">In diesem Ordner wurden keine Hörbücher gefunden.</string>
+  <string name="library_import_only_review">Nur zu prüfende Bücher zeigen</string>
+  <string name="library_import_select_all">Alle wählen</string>
+  <string name="library_import_select_none">Keine wählen</string>
+  <string name="library_import_add">%1$d Bücher hinzufügen</string>
+  <string name="library_import_saving">Bücher werden hinzugefügt…</string>
+  <string name="library_import_files">%1$d Dateien</string>
+  <string name="library_import_kind_single">Ordner</string>
+  <string name="library_import_kind_multi">Mehrere CDs</string>
+  <string name="library_import_kind_mixed">Gemischt</string>
+  <string name="library_import_order">Reihenfolge</string>
+  <string name="library_order_playlist">Playlist (m3u)</string>
+  <string name="library_order_folders">Ordner, dann Dateien</string>
+  <string name="library_order_flat">Alle Dateien gemeinsam</string>
+  <string name="library_flag_few">Nur wenige Dateien</string>
+  <string name="library_flag_many">Sehr viele Dateien, vielleicht mehrere Titel</string>
+  <string name="library_flag_mixed">Dateien und Unterordner sind gemischt</string>
+  <string name="library_flag_part">Sieht aus wie eine CD eines Buchs</string>
+  <string name="library_flag_playlist_defective">Playlist ist defekt, stattdessen wird sortiert</string>
+  <string name="library_rename_title">Buchtitel</string>
+  <string name="library_order_title">Reihenfolge und Vorschau</string>
+  <string name="library_use_playlist">Playlist (m3u) verwenden</string>
+  <string name="library_playlist_info">%1$s · %2$d von %3$d Einträgen zugeordnet · %4$d Dateien nicht in der Liste</string>
+  <string name="library_not_in_playlist">nicht in der Playlist</string>
 </resources>

@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import voice.common.compose.VoiceTheme
 import voice.data.folders.FolderType
 import voice.folderPicker.FolderTypeIcon
+import voice.common.R as CommonR
 import voice.strings.R as StringsR
 
 @Composable
@@ -74,6 +75,7 @@ private fun FolderModeColumn(
         FolderMode.Audiobooks -> FolderType.Root
         FolderMode.SingleBook -> FolderType.SingleFolder
         FolderMode.Authors -> FolderType.Author
+        FolderMode.Library -> FolderType.Library
       },
     )
   }
@@ -85,6 +87,7 @@ private fun FolderMode.title(): Int {
     FolderMode.Audiobooks -> StringsR.string.folder_mode_root
     FolderMode.SingleBook -> StringsR.string.folder_mode_single
     FolderMode.Authors -> StringsR.string.folder_mode_author
+    FolderMode.Library -> CommonR.string.folder_mode_library
   }
 }
 

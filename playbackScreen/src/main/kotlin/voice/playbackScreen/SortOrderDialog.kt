@@ -47,7 +47,9 @@ internal fun SortOrderDialog(
   var groupByFolder by remember {
     mutableStateOf((current?.grouping ?: ChapterGrouping.BY_FOLDER) == ChapterGrouping.BY_FOLDER)
   }
-  var key by remember { mutableStateOf(current?.key ?: ChapterSortKey.FILENAME) }
+  var key by remember {
+    mutableStateOf(current?.key?.takeIf { it != ChapterSortKey.PLAYLIST } ?: ChapterSortKey.FILENAME)
+  }
   var reversed by remember { mutableStateOf(current?.reversed ?: false) }
 
   // null bedeutet: Standard-Reihenfolge wie bisher

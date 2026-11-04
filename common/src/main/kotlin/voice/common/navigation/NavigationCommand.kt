@@ -60,6 +60,12 @@ sealed interface Destination {
   }
 
   @Parcelize
+  data class LibraryImport(
+    val uri: Uri,
+    val mode: SelectFolderType.Mode,
+  ) : Compose
+
+  @Parcelize
   object OnboardingWelcome : Compose
 
   @Parcelize

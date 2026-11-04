@@ -72,12 +72,21 @@ class SelectFolderTypeViewModel
   }
 
   internal fun add() {
+    if (selectedFolderMode.value == FolderMode.Library) {
+      // Die Buecher werden erst im naechsten Bildschirm erkannt und dort nach dem Bearbeiten hinzugefuegt.
+      navigator.goTo(
+        destination = Destination.LibraryImport(uri = uri, mode = mode),
+        replace = true,
+      )
+      return
+    }
     audiobookFolders.add(
       uri = uri,
       type = when (selectedFolderMode.value) {
         FolderMode.Audiobooks -> FolderType.Root
         FolderMode.SingleBook -> FolderType.SingleFolder
         FolderMode.Authors -> FolderType.Author
+        FolderMode.Library -> error("Library is handled above")
         null -> error("Add should not be clickable at this point")
       },
     )
@@ -131,6 +140,7 @@ class SelectFolderTypeViewModel
               ),
             )
           }
+          FolderMode.Library -> emptyList()
           FolderMode.Authors -> {
             documentFile.children.flatMap { author ->
               val authorName = author.nameWithoutExtension()
@@ -159,8 +169,8 @@ class SelectFolderTypeViewModel
       books = books,
       selectedFolderMode = selectedFolderMode,
       loading = loading,
-      noBooksDetected = !loading && books.isEmpty(),
-      addButtonVisible = books.isNotEmpty(),
+      noBooksDetected = !loading && books.isEmpty() && selectedFolderMode != FolderMode.Library,
+      addButtonVisible = books.isNotEmpty() || selectedFolderMode == FolderMode.Library,
       paddings = paddingPref.value
     )
   }

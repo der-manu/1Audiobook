@@ -21,6 +21,9 @@ import voice.data.folders.FolderType
 import voice.data.repo.BookContentRepo
 import voice.data.repo.BookRepository
 import voice.data.repo.ChapterRepo
+import voice.data.library.LibraryScanner
+import voice.data.library.PlaylistReader
+import voice.data.repo.BookNameStore
 import voice.data.repo.ChapterSortStore
 import voice.data.repo.internals.AppDb
 import voice.data.toUri
@@ -222,9 +225,14 @@ class MediaScannerTest {
           bookmarkDao = db.bookmarkDao(),
         ),
         fileFactory = FileBasedDocumentFactory,
+        bookNameStore = BookNameStore(ApplicationProvider.getApplicationContext()),
       ),
       deviceHasPermissionBug = mockk(),
       chapterSortStore = ChapterSortStore(ApplicationProvider.getApplicationContext()),
+      playlistChapterOrder = PlaylistChapterOrder(
+        libraryScanner = LibraryScanner(),
+        playlistReader = PlaylistReader(ApplicationProvider.getApplicationContext()),
+      ),
     )
 
     val bookRepo = BookRepository(chapterRepo, bookContentRepo)

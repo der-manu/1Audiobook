@@ -27,6 +27,7 @@ private fun FolderType.icon(): ImageVector = when (this) {
   FolderType.SingleFolder -> ImageVector.vectorResource(R.drawable.ic_book)
   FolderType.Root -> ImageVector.vectorResource(R.drawable.ic_folder_tree_book)
   FolderType.Author -> ImageVector.vectorResource(R.drawable.ic_folder_tree_autor)
+  FolderType.Library -> ImageVector.vectorResource(R.drawable.ic_folder_tree_book)
 }
 
 @Composable
@@ -37,6 +38,7 @@ private fun FolderType.contentDescription(): String {
     -> StringsR.string.folder_mode_single
     FolderType.Root -> StringsR.string.folder_mode_root
     FolderType.Author -> StringsR.string.folder_mode_author
+    FolderType.Library -> voice.common.R.string.folder_mode_library
   }
   return stringResource(res)
 }
