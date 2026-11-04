@@ -27,8 +27,6 @@ import javax.inject.Named
 
 class SettingsViewModel
 @Inject constructor(
-  @Named(PrefKeys.DARK_THEME)
-  private val useDarkTheme: Pref<Boolean>,
   @Named(PrefKeys.AUTO_REWIND_AMOUNT)
   private val autoRewindAmountPref: Pref<Int>,
   @Named(PrefKeys.SEEK_TIME)
@@ -66,14 +64,6 @@ class SettingsViewModel
   private val colorThemePreference: Pref<Int>,
   @Named(PrefKeys.THEME_WIDGET)
   private val themeWidgetPref: Pref<Int>,
-  @Named(PrefKeys.PRO)
-  private val isProPref: Pref<Boolean>,
-  @Named(PrefKeys.PRO_SUBS)
-  private val isProSubsPref: Pref<Boolean>,
-  @Named(PrefKeys.PRO_RUSTORE)
-  private val isProRuPref: Pref<Boolean>,
-  @Named(PrefKeys.PRO_NO_GP)
-  private val isProNoGpPref: Pref<Boolean>,
   @Named(PrefKeys.USE_GESTURES)
   private val useGestures: Pref<Boolean>,
   @Named(PrefKeys.USE_HAPTIC_FEEDBACK)
@@ -99,7 +89,6 @@ class SettingsViewModel
 
   @Composable
   fun viewState(): SettingsViewState {
-    val useDarkTheme by remember { useDarkTheme.flow }.collectAsState(initial = false)
     val autoRewindAmount by remember { autoRewindAmountPref.flow }.collectAsState(initial = 0)
     val seekTime by remember { seekTimePref.flow }.collectAsState(initial = 0)
     val seekTimeRewind by remember { seekTimeRewindPref.flow }.collectAsState(initial = 0)
@@ -117,10 +106,6 @@ class SettingsViewModel
     val themePref by remember { themePref.flow }.collectAsState(initial = THEME_LIGHT)
     val colorThemePref by remember { colorThemePreference.flow }.collectAsState(initial = -0x1)
     val themeWidgetPref by remember { themeWidgetPref.flow }.collectAsState(initial = THEME_LIGHT)
-    val isProPref by remember { isProPref.flow }.collectAsState(initial = false)
-    val isProSubsPref by remember { isProSubsPref.flow }.collectAsState(initial = false)
-    val isProRuPref by remember { isProRuPref.flow }.collectAsState(initial = false)
-    val isProNoGpPref by remember { isProNoGpPref.flow }.collectAsState(initial = false)
     val useGestures by remember { useGestures.flow }.collectAsState(initial = true)
     val useHapticFeedback by remember { useHapticFeedback.flow }.collectAsState(initial = true)
     val sizeCoversDirectory by remember { coverSaver.sizeCoversDirectory }.collectAsState(initial = "0")
@@ -128,8 +113,6 @@ class SettingsViewModel
     val useMenuIconsPref by remember { useMenuIconsPref.flow }.collectAsState(initial = false)
     val useAnimatedMarquee by remember { useAnimatedMarqueePref.flow }.collectAsState(initial = true)
     return SettingsViewState(
-      useDarkTheme = useDarkTheme,
-      showDarkThemePref = DARK_THEME_SETTABLE,
       seekTimeInSeconds = seekTime,
       seekTimeRewindInSeconds = seekTimeRewind,
       autoRewindInSeconds = autoRewindAmount,
@@ -158,7 +141,6 @@ class SettingsViewModel
       theme = themePref,
       colorTheme = colorThemePref,
       themeWidget = themeWidgetPref,
-      isPro = isProPref || isProSubsPref || isProRuPref || isProNoGpPref,
       useGestures = useGestures,
       useHapticFeedback = useHapticFeedback,
       sizeCoversDirectory = sizeCoversDirectory,
@@ -170,10 +152,6 @@ class SettingsViewModel
 
   override fun close() {
     navigator.goBack()
-  }
-
-  override fun toggleDarkTheme() {
-    useDarkTheme.value = !useDarkTheme.value
   }
 
   override fun toggleTransparentNavigation() {

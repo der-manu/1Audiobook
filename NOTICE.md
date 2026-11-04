@@ -12,11 +12,12 @@ PlayBookAdvance is free software: you can redistribute it and/or modify it under
 
 PlayBookAdvance is a **modified version** of PlayBook 4.1.1. The changes are recorded in the git history of this
 repository. The most important ones: removal of the RuStore SDK, Google Play Billing, and all donation / purchase
-screens; all features unlocked; new playlist order dialog with live preview; replacement of the retired FFmpegKit
-dependency; new application id and name. Original copyright notices in the source files are unchanged.
+screens and the Pro lock (all features unlocked); new playlist order dialog with live preview; quick light/dark
+switch; new app icon; replacement of the retired FFmpegKit dependency; new application id and name. Original copyright notices in the source files are unchanged.
 
-App icon and artwork originate from PlayBook; see the upstream repository for their licensing. They should be
-replaced with original artwork before any wider distribution.
+The app icon (open book with a play symbol), splash image, in-app logo and notification icon are original artwork
+created for PlayBookAdvance and are licensed under GPL-3.0 together with the code. The artwork inherited from
+PlayBook has been replaced.
 
 ## Inspiration (no code used)
 

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Nustatymai-->
   <string name="pref_about_title">Apie</string>
   <string name="pref_follow_system">Sekite sistemą</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Žiūrėti tinklelį</string>
   <string name="pref_layout_list">Sąrašo išdėstymas</string>
   <string name="pref_layout_grid">Tinklelio išdėstymas</string>
-  <string name="pref_mini_player_floating_button">Mygtukas</string>
   <string name="pref_mini_player_mini_player_floating">Plaukiojantis grotuvas</string>
   <string name="pref_player_background_title">Leistuvės fonas</string>
   <string name="pref_player_background_theme">Programos fonas</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Kvadratas</string>
   <string name="pref_show_mini_player_title">Mini grotuvo stilius</string>
   <string name="pref_show_slider_volume_title">Garsumo valdymas</string>
-  <string name="pref_use_transparent_navigation">Naudokite skaidrią naršymo juostą</string>
   <string name="pref_use_chapter_cover">Naudokite skyriaus viršelį</string>
 
   <!-- Temos -->
@@ -43,13 +40,10 @@
   <string name="pref_default_theme">Nustatyti numatytuosius</string>
 
   <!--BookPlay-->
-  <string name="custom">Tinkintas</string>
   <string name="end_of_current_chapter">Dabartinio skyriaus pabaiga</string>
   <string name="left">liko %s</string>
-  <string name="left_in_audiobook">garsinėje knygoje liko %s</string>
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Rodyti skyrių numerius</string>
   <string name="sleep_timer_note">Jei norite paleisti iš naujo, baigę pakratykite įrenginį per 30 sekundžių</string>
   <string name="repeat">Pakartokite</string>
@@ -65,41 +59,9 @@
   <string name="copied_to_clipboard_show">Nukopijuota į mainų sritį:\n%s</string>
 
   <!--Apie-->
-  <string name="pref_about_message"><![CDATA[
-Atvirojo kodo <b>PlayBook</b> garso knygų grotuvas. „PlayBook“ yra pagrįsta atvirojo kodo balso programa.
-<br/><br/>
-
-Būčiau labai dėkingas, jei paliktumėte atsiliepimą ar įvertinimą apie programą „Google Play“, tai labai padės plėtoti projektą.<br/>
-]]></string>
-  <string name="pref_rate_title">Įvertinkite programą</string>
-  <string name="pref_other_app_title">Kitos programos</string>
   <string name="pref_privacy_title">Privatumo politika</string>
-  <string name="pref_share_title">Bendrinti</string>
-
-  <!--Pirkimas-->
-  <string name="tipping_jar_title">Patarimų stiklainis</string>
-  <string name="tip_kind">Malonus patarimas</string>
-  <string name="tip_excellent">Puikus patarimas</string>
-  <string name="tip_incredible">Neįtikėtinas patarimas</string>
-  <string name="action_support_project">Palaikykite projektą</string>
-  <string name="action_support_project_summary">Gaukite mokamą programą, kad palaikytumėte būsimus pokyčius ir gautumėte papildomų funkcijų</string>
-  <string name="learn_more">Sužinokite daugiau</string>
-  <string name="theme_summary">Tamsioji tema naudoja mažiau AMOLED ekranų energijos</string>
-  <string name="color_title">Spalvos</string>
-  <string name="color_summary">Atidžiai parinktos spalvų schemos, kurios atitiktų jūsų mėgstamiausias knygas</string>
-  <string name="plus_title">Palaikykite mus</string>
-  <string name="plus_summary">Visose mūsų programose nėra skelbimų, atvirojo kodo, ir tai visada išliks. Su jūsų pagalba galime įdiegti daugiau funkcijų ir padaryti jas dar geresnes</string>
-  <string name="lifebuoy_title">Mes jus palaikysime</string>
-  <string name="lifebuoy_summary">Jei dėl kokios nors priežasties negalite sau leisti mūsų programos, bet tikrai norite naudotis visomis funkcijomis, tiesiog atsiųskite mums el. laišką</string>
-  <string name="participants_title">Dalyviai</string>
-  <string name="special_thanks_to">Ypatinga padėka</string>
 
   <!--Atsiskaitymas-->
-  <string name="tipping_jar_dialog_success_title">Ačiū!</string>
-  <string name="tipping_jar_dialog_success_message">Labai ačiū, kad palaikote PlayBook kūrimą. Jūs esate puikus ir kūrėjas niekada jūsų nepamirš!</string>
-  <string name="tipping_jar_dialog_success_button_title">Kviečiame jus</string>
-  <string name="tipping_jar_dialog_error_title">Patarimo pateikti nepavyko</string>
-  <string name="tipping_jar_dialog_error_message">Deja, atliekant arbatpinigių operaciją įvyko kažkas blogo. Neliūdėkite, tiesiog bandykite dar kartą kitą kartą ir mėgaukitės PlayBook</string>
     <string name="pref_use_haptic_feedback">Naudokite haptinį grįžtamąjį ryšį</string>
   <string name="pref_widget">Valdikliui</string>
   <string name="pref_scan_chapter_covers">Nuskaitykite skyrių viršelius</string>
@@ -119,14 +81,10 @@ Būčiau labai dėkingas, jei paliktumėte atsiliepimą ar įvertinimą apie pro
   <string name="onboarding_show_player">Rodyti žaidėją</string>
   <string name="onboarding_show_list_chapters">Rodyti skyrių sąrašą</string>
   <string name="onboarding_double_tap">Dukart bakstelėkite, kad paleistumėte arba pristabdytumėte</string>
-  <string name="per_month">%s per mėnesį</string>
-  <string name="per_year">%s per metus</string>
-  <string name="restore_purchase">Atkurti pirkimą</string>
     <string name="pref_animated_marquee">Animuotos knygos pavadinimas, skyrius ir autoriaus efektas</string>
   <string name="length">Trukmė</string>
   <string name="last_played_at">Paskutinis klausymas</string>
   <string name="remaining_time">Likęs laikas</string>
-  <string name="any_support_unlock_all">Pasirinkite jums prieinamo projekto palaikymo lygį (vienkartinį, mėnesinį ar metinį). Bet koks palaikymas atrakina visas programos funkcijas. Galite bet kada atšaukti prenumeratą.</string>
   <string name="auto_sleep_timer_end">Pabaigos laikas</string>
   <string name="onboarding_welcome_title_g">Sveiki atvykę į \"PlayBookAdvance\"!</string>
   <string name="auto_sleep_timer">Paleiskite snaudimo laikmatį pagal tvarkaraštį</string>

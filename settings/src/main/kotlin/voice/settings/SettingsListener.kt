@@ -2,7 +2,6 @@ package voice.settings
 
 interface SettingsListener {
   fun close()
-  fun toggleDarkTheme()
   fun toggleGrid()
   fun seekAmountChanged(seconds: Int)
   fun seekRewindAmountChanged(seconds: Int)

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Indstillinger-->
   <string name="pref_about_title">Om</string>
   <string name="pref_follow_system">Følg systemet</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Se gitter</string>
   <string name="pref_layout_list">Listelayout</string>
   <string name="pref_layout_grid">Gitterlayout</string>
-  <string name="pref_mini_player_floating_button">Knap</string>
   <string name="pref_mini_player_mini_player_floating">Flydende spiller</string>
   <string name="pref_player_background_title">Afspillerens baggrund</string>
   <string name="pref_player_background_theme">App-baggrund</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Kvadrat</string>
   <string name="pref_show_mini_player_title">Minispillerstil</string>
   <string name="pref_show_slider_volume_title">Lydstyrkekontrol</string>
-  <string name="pref_use_transparent_navigation">Brug gennemsigtig navigationslinje</string>
   <string name="pref_use_chapter_cover">Brug kapitelomslag</string>
 
   <!-- Temaer -->
@@ -43,13 +40,10 @@
   <string name="pref_default_theme">Indstil standard</string>
 
   <!--BookPlay-->
-  <string name="custom">Tilpasset</string>
   <string name="end_of_current_chapter">Afslutning på nuværende kapitel</string>
   <string name="left">%s tilbage</string>
-  <string name="left_in_audiobook">%s tilbage i lydbogen</string>
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Vis kapitelnumre</string>
   <string name="sleep_timer_note">For at genstarte skal du ryste enheden inden for 30 sekunder efter afslutning</string>
   <string name="repeat">Gentag</string>
@@ -65,41 +59,9 @@
   <string name="copied_to_clipboard_show">Kopieret til udklipsholder:\n%s</string>
 
   <!--Om-->
-  <string name="pref_about_message">><![CDATA[
-En åben kildekode <b>PlayBook</b> lydbogsafspiller. PlayBooks er baseret på open source Voice-applikationen.
-<br/><br/>
-
-Jeg ville være meget taknemmelig, hvis du giver en anmeldelse eller vurdering af applikationen på Google Play, det vil i høj grad hjælpe udviklingen af projektet.<br/>
-]]></string>
-  <string name="pref_rate_title">Vurder app</string>
-  <string name="pref_other_app_title">Andre apps</string>
   <string name="pref_privacy_title">Privatlivspolitik</string>
-  <string name="pref_share_title">Del</string>
-
-  <!--Køb-->
-  <string name="tipping_jar_title">Dipkrukke</string>
-  <string name="tip_kind">Venligt tip af</string>
-  <string name="tip_excellent">Fremragende tip af</string>
-  <string name="tip_incredible">Utrolig tip af</string>
-  <string name="action_support_project">Supportprojekt</string>
-  <string name="action_support_project_summary">Få den betalte app for at understøtte fremtidige udviklinger og få ekstra funktioner</string>
-  <string name="learn_more">Få flere oplysninger</string>
-  <string name="theme_summary">Mørkt tema bruger mindre strøm på AMOLED-skærme</string>
-  <string name="color_title">Farver</string>
-  <string name="color_summary">Omhyggeligt udvalgte farveskemaer, der matcher dine yndlingsbøger</string>
-  <string name="plus_title">Støt os</string>
-  <string name="plus_summary">Alle vores apps er annoncefri, Open Source, og det vil det altid forblive. Med din hjælp er vi i stand til at implementere flere funktioner og gøre dem endnu bedre</string>
-  <string name="lifebuoy_title">Vi vil støtte dig</string>
-  <string name="lifebuoy_summary">Hvis du af en eller anden grund ikke har råd til vores app, men virkelig ønsker at bruge alle funktionerne, så send os en e-mail</string>
-  <string name="participants_title">Deltagere</string>
-  <string name="special_thanks_to">Særlig tak til</string>
 
   <!--Fakturering-->
-  <string name="tipping_jar_dialog_success_title">Mange tak!</string>
-  <string name="tipping_jar_dialog_success_message">Stor tak for at støtte udviklingen af PlayBook. Du er fantastisk, og udvikleren vil aldrig glemme dig!</string>
-  <string name="tipping_jar_dialog_success_button_title">Du er velkommen</string>
-  <string name="tipping_jar_dialog_error_title">Kunne ikke give tip</string>
-  <string name="tipping_jar_dialog_error_message">Desværre skete der noget galt under udførelse af tiptransaktionen. Vær ikke ked af det, prøv bare igen en anden gang og nyd PlayBook</string>
     <string name="pref_use_haptic_feedback">Brug haptisk feedback</string>
   <string name="pref_widget">Widget</string>
   <string name="pref_scan_chapter_covers">Scan kapitlets omslag</string>
@@ -121,14 +83,10 @@ Jeg ville være meget taknemmelig, hvis du giver en anmeldelse eller vurdering a
   <string name="onboarding_show_player">Vis afspiller</string>
   <string name="onboarding_show_list_chapters">Vis liste over kapitler</string>
   <string name="onboarding_double_tap">Tryk to gange for at afspille eller sætte på pause</string>
-  <string name="per_month">%s/måned</string>
-  <string name="per_year">%s/år</string>
-  <string name="restore_purchase">Gendan køb</string>
     <string name="pref_animated_marquee">Animeret bogtitel, kapitel og forfattereffekt</string>
   <string name="length">Varighed</string>
   <string name="last_played_at">Sidste audition</string>
   <string name="remaining_time">Resterende tid</string>
-  <string name="any_support_unlock_all">Vælg det niveau af projektstøtte, der er tilgængeligt for dig (engangs, månedligt eller årligt). Enhver support låser op for alle funktioner i applikationen. Du kan til enhver tid opsige dit abonnement.</string>
   <string name="auto_sleep_timer">Start snooze-timeren efter planen</string>
   <string name="auto_sleep_timer_start">Starttidspunkt</string>
 </resources>

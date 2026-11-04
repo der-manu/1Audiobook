@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Settings-->
   <string name="pref_about_title">Über</string>
   <string name="pref_follow_system">System folgen</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Gitter ansehen</string>
   <string name="pref_layout_list">Listenlayout</string>
   <string name="pref_layout_grid">Gitterstruktur</string>
-  <string name="pref_mini_player_floating_button">Taste</string>
   <string name="pref_mini_player_mini_player_floating">Schwebender Spieler</string>
   <string name="pref_player_background_title">Hintergrund des Spielers</string>
   <string name="pref_player_background_theme">App-Hintergrund</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Quadrat</string>
   <string name="pref_show_mini_player_title">Mini-Player-Stil</string>
   <string name="pref_show_slider_volume_title">Lautstärkeregelung</string>
-  <string name="pref_use_transparent_navigation">Verwenden Sie eine transparente Navigationsleiste</string>
   <string name="pref_use_chapter_cover">Kapitelabdeckung verwenden</string>
 
   <!-- Themes -->
@@ -43,13 +40,10 @@
   <string name="pref_default_theme">Standard einstellen</string>
 
   <!--BookPlay-->
-  <string name="custom">Eigene Zeit</string>
   <string name="end_of_current_chapter">Ende des Kapitels</string>
   <string name="left">%s übrig</string>
-  <string name="left_in_audiobook">%s übrig im Hörbuch</string>
   <string name="hours_letter">std</string>
   <string name="minutes_letter">p</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Kapitelnummern anzeigen</string>
   <string name="sleep_timer_note">Um das Gerät neu zu starten, schütteln Sie es innerhalb von 30 Sekunden nach Beendigung</string>
   <string name="repeat">Wiederholen Sie</string>
@@ -65,41 +59,9 @@
   <string name="copied_to_clipboard_show">In die Zwischenablage kopiert:\n%s</string>
 
   <!--About-->
-  <string name="pref_about_message"><![CDATA[
-        Ein quelloffener <b>PlayBook</b> -Hörbuch-Player. PlayBooks basiert auf der quelloffenen Anwendung Voice.
-        <br/><br/>
-
-        Ich wäre Ihnen sehr dankbar, wenn Sie eine Rezension oder eine Bewertung über die Anwendung auf Google Play hinterlassen würden, da dies der Entwicklung des Projekts sehr helfen wird.<br/>
-    ]]></string>
-  <string name="pref_rate_title">App bewerten</string>
-  <string name="pref_other_app_title">Andere Apps</string>
   <string name="pref_privacy_title">Datenschutzbestimmungen</string>
-  <string name="pref_share_title">Teilen Sie</string>
-
-  <!--Purchase-->
-  <string name="tipping_jar_title">Tipp-Glas</string>
-  <string name="tip_kind">Kleine Spende</string>
-  <string name="tip_excellent">Große Spende</string>
-  <string name="tip_incredible">Unglaubliche Spende</string>
-  <string name="action_support_project">Projekt unterstützen</string>
-  <string name="action_support_project_summary">Kaufen Sie die kostenpflichtige App, um zukünftige Entwicklungen zu unterstützen und zusätzliche Funktionen zu erhalten.</string>
-  <string name="learn_more">Mehr erfahren</string>
-  <string name="theme_summary">Dunkles Thema verbraucht weniger Strom auf AMOLED-Displays</string>
-  <string name="color_title">Farben</string>
-  <string name="color_summary">Sorgfältig ausgewählte Farbschemata, die zu Ihren Lieblingsbüchern passen</string>
-  <string name="plus_title">Unterstützen Sie uns</string>
-  <string name="plus_summary">Alle unsere Apps sind werbefrei, Open Source und das wird auch immer so bleiben. Mit Ihrer Hilfe können wir weitere Funktionen implementieren und sie noch besser machen</string>
-  <string name="lifebuoy_title">Wir werden Sie unterstützen</string>
-  <string name="lifebuoy_summary">Wenn Sie sich unsere App aus irgendeinem Grund nicht leisten können, aber wirklich alle Funktionen nutzen wollen, schicken Sie uns einfach eine E-Mail</string>
-  <string name="participants_title">Teilnehmer</string>
-  <string name="special_thanks_to">Besonderen Dank an</string>
 
   <!--Billing-->
-  <string name="tipping_jar_dialog_success_title">Vielen Dank!</string>
-  <string name="tipping_jar_dialog_success_message">Vielen Dank für die Unterstützung der Entwicklung des PlayBook. Sie sind großartig und der Entwickler wird Sie nie vergessen!</string>
-  <string name="tipping_jar_dialog_success_button_title">Sie sind herzlich willkommen</string>
-  <string name="tipping_jar_dialog_error_title">Gescheitert</string>
-  <string name="tipping_jar_dialog_error_message">Leider ist bei der Durchführung des Tippvorgangs etwas Schlimmes passiert. Seien Sie nicht traurig, versuchen Sie es einfach ein anderes Mal und genießen Sie das PlayBook</string>
     <string name="pref_use_haptic_feedback">Verwenden Sie haptisches Feedback</string>
   <string name="pref_widget">Widget</string>
   <string name="pref_scan_chapter_covers">Scannen Sie die Kapitelumschläge</string>
@@ -120,17 +82,6 @@
   <string name="onboarding_show_player">Player anzeigen</string>
   <string name="onboarding_show_list_chapters">Liste der Kapitel anzeigen</string>
   <string name="onboarding_double_tap">Doppeltippen zum Abspielen oder Anhalten</string>
-  <string name="per_month">%s/Monat</string>
-  <string name="per_year">%s/Jahr</string>
-  <string name="restore_purchase">Kauf wiederherstellen</string>
-  <string name="donate_text_no_gp">
-        <![CDATA[
-            Aufgrund von Problemen ist es uns vorübergehend nicht möglich, Zahlungen über Google Play vorzunehmen,
-            Daher bieten wir allen Nutzern für diesen Zeitraum die Möglichkeit, alle Funktionen der App manuell freizuschalten. <br>
-            Wenn Ihnen unsere Apps gefallen, die offline, nicht aufdringlich und werbefrei sind, ziehen Sie bitte in Erwägung, uns auf irgendeine Weise zu unterstützen. Wir wären Ihnen sehr dankbar.<br><br>
-            Ich danke Ihnen!
-        ]]>
-    </string>
 
   <string name="auto_sleep_timer">Starte Schlummerfunktion automatisch</string>
   <string name="auto_sleep_timer_start">Startzeit</string>
@@ -139,7 +90,6 @@
   <string name="length">Dauer</string>
   <string name="last_played_at">Letztes Vorsprechen</string>
   <string name="remaining_time">Verbleibende Zeit</string>
-  <string name="any_support_unlock_all">Wählen Sie den Umfang der Projektunterstützung, die Ihnen zur Verfügung steht (einmalig, monatlich oder jährlich). Jede Unterstützung schaltet alle Funktionen der Anwendung frei. Sie können Ihr Abonnement jederzeit kündigen.</string>
   <!--Playlist order-->
   <string name="sort_order_menu_item">Reihenfolge der Dateien…</string>
   <string name="sort_order_title">Reihenfolge der Dateien</string>

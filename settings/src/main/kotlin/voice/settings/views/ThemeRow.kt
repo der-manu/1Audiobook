@@ -14,7 +14,7 @@ import voice.common.constants.THEME_LIGHT
 import voice.common.R as CommonR
 
 @Composable
-internal fun ThemeRow(currentTheme: Int, enabled: Boolean, isWidget: Boolean = false, openThemeDialog: () -> Unit) {
+internal fun ThemeRow(currentTheme: Int, isWidget: Boolean = false, openThemeDialog: () -> Unit) {
   SettingsRow(
     title = if (isWidget) stringResource(CommonR.string.pref_widget) else stringResource(CommonR.string.theme),
     value = when (currentTheme) {
@@ -22,8 +22,7 @@ internal fun ThemeRow(currentTheme: Int, enabled: Boolean, isWidget: Boolean = f
       THEME_DARK -> stringResource(CommonR.string.dark_theme)
       else -> stringResource(CommonR.string.pref_follow_system)
     },
-    enabled = enabled,
-    paddingTop = if (isWidget) 6.dp else 8.dp,
+    paddingTop = 6.dp,
     paddingBottom = if (isWidget) 8.dp else 6.dp,
     click = openThemeDialog
   )

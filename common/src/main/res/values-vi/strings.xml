@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Cài đặt-->
   <string name="pref_about_title">Giới thiệu</string>
   <string name="pref_follow_system">Theo dõi hệ thống</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Xem lưới</string>
   <string name="pref_layout_list">Bố cục danh sách</string>
   <string name="pref_layout_grid">Bố cục lưới</string>
-  <string name="pref_mini_player_floating_button">Nút</string>
   <string name="pref_mini_player_mini_player_floating">Trình phát nổi</string>
   <string name="pref_player_background_title">Nền của trình phát</string>
   <string name="pref_player_background_theme">Nền ứng dụng</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Hình vuông</string>
   <string name="pref_show_mini_player_title">Kiểu trình phát mini</string>
   <string name="pref_show_slider_volume_title">Điều khiển âm lượng</string>
-  <string name="pref_use_transparent_navigation">Sử dụng thanh điều hướng trong suốt</string>
   <string name="pref_use_chapter_cover">Sử dụng bìa chương</string>
 
   <!-- Chủ đề -->
@@ -43,13 +40,10 @@
   <string name="pref_default_theme">Đặt mặc định</string>
 
   <!--BookPlay-->
-  <string name="custom">Tùy chỉnh</string>
   <string name="end_of_current_chapter">Kết thúc chương hiện tại</string>
   <string name="left">Còn %s</string>
-  <string name="left_in_audiobook">Còn %s trong sách nói</string>
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Hiển thị số chương</string>
   <string name="sleep_timer_note">Để khởi động lại, hãy lắc thiết bị trong vòng 30 giây sau khi kết thúc</string>
   <string name="repeat">Lặp lại</string>
@@ -65,41 +59,9 @@
   <string name="copied_to_clipboard_show">Đã sao chép vào khay nhớ tạm:\n%s</string>
 
   <!--Giới thiệu-->
-  <string name="pref_about_message"><![CDATA[
-Trình phát sách nói <b>PlayBook</b> mã nguồn mở. PlayBook dựa trên ứng dụng Voice mã nguồn mở.
-<br/><br/>
-
-Tôi sẽ rất biết ơn nếu bạn để lại đánh giá hoặc xếp hạng về ứng dụng trên Google Play, nó sẽ giúp ích rất nhiều cho sự phát triển của dự án.<br/>
-]]></string>
-  <string name="pref_rate_title">Đánh giá ứng dụng</string>
-  <string name="pref_other_app_title">Ứng dụng khác</string>
   <string name="pref_privacy_title">Chính sách bảo mật</string>
-  <string name="pref_share_title">Chia sẻ</string>
-
-  <!--Mua hàng-->
-  <string name="tipping_jar_title">Bình tip</string>
-  <string name="tip_kind">Mẹo nhỏ</string>
-  <string name="tip_excellent">Mẹo hay</string>
-  <string name="tip_incredible">Mẹo đáng kinh ngạc</string>
-  <string name="action_support_project">Dự án hỗ trợ</string>
-  <string name="action_support_project_summary">Tải ứng dụng trả phí để hỗ trợ các bước phát triển trong tương lai và nhận các tính năng bổ sung</string>
-  <string name="learn_more">Tìm hiểu thêm</string>
-  <string name="theme_summary">Chủ đề tối sử dụng ít năng lượng hơn trên màn hình AMOLED</string>
-  <string name="color_title">Màu sắc</string>
-  <string name="color_summary">Phối màu được lựa chọn cẩn thận để phù hợp với những cuốn sách yêu thích của bạn</string>
-  <string name="plus_title">Hỗ trợ chúng tôi</string>
-  <string name="plus_summary">Tất cả các ứng dụng của chúng tôi đều không có quảng cáo, Nguồn mở và nó sẽ luôn như vậy. Với sự giúp đỡ của bạn, chúng tôi có thể triển khai nhiều tính năng hơn và làm cho chúng thậm chí còn tốt hơn</string>
-  <string name="lifebuoy_title">Chúng tôi sẽ hỗ trợ bạn</string>
-  <string name="lifebuoy_summary">Nếu vì lý do nào đó bạn không đủ tiền mua ứng dụng của chúng tôi nhưng thực sự muốn sử dụng tất cả các tính năng, chỉ cần gửi email cho chúng tôi</string>
-  <string name="participants_title">Người tham gia</string>
-  <string name="special_thanks_to">Cảm ơn đặc biệt</string>
 
   <!--Thanh toán-->
-  <string name="tipping_jar_dialog_success_title">Cảm ơn rất nhiều!</string>
-  <string name="tipping_jar_dialog_success_message">Xin chân thành cảm ơn bạn đã hỗ trợ phát triển PlayBook. Bạn thật tuyệt và nhà phát triển sẽ không bao giờ quên bạn!</string>
-  <string name="tipping_jar_dialog_success_button_title">Không có chi</string>
-  <string name="tipping_jar_dialog_error_title">Không boa được</string>
-  <string name="tipping_jar_dialog_error_message">Thật không may, đã xảy ra sự cố khi thực hiện giao dịch tiền boa. Đừng buồn, hãy thử lại vào lần khác và thưởng thức PlayBook</string>
     <string name="pref_use_haptic_feedback">Sử dụng phản hồi xúc giác</string>
   <string name="pref_widget">Widget</string>
   <string name="pref_scan_chapter_covers">Quét bìa chương</string>
@@ -119,14 +81,10 @@ Tôi sẽ rất biết ơn nếu bạn để lại đánh giá hoặc xếp hạ
   <string name="onboarding_show_player">Hiển thị trình phát</string>
   <string name="onboarding_show_list_chapters">Hiển thị danh sách các chương</string>
   <string name="onboarding_double_tap">Nhấn đúp để phát hoặc tạm dừng</string>
-  <string name="per_month">%s/tháng</string>
-  <string name="per_year">%s/năm</string>
-  <string name="restore_purchase">Khôi phục giao dịch mua</string>
     <string name="pref_animated_marquee">Tiêu đề sách hoạt hình, chương và hiệu ứng tác giả</string>
   <string name="length">Trường độ</string>
   <string name="last_played_at">Buổi thử giọng cuối cùng</string>
   <string name="remaining_time">Thời gian còn lại</string>
-  <string name="any_support_unlock_all">Chọn mức hỗ trợ dự án có sẵn cho bạn (một lần, hàng tháng hoặc hàng năm). Mọi hỗ trợ đều mở khóa tất cả các tính năng của ứng dụng. Bạn có thể hủy đăng ký của mình bất cứ lúc nào.</string>
   <string name="auto_sleep_timer_end">Thời gian kết thúc</string>
   <string name="onboarding_welcome_title_g">Chào mừng bạn đến với PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Bắt đầu hẹn giờ báo lại đúng lịch trình</string>

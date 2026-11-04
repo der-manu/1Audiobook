@@ -70,6 +70,7 @@ import voice.common.AppScope
 import voice.common.COLOR_SCHEME_SETTABLE
 import voice.common.compose.TimePickerDialog
 import voice.common.compose.VoiceTheme
+import voice.common.compose.isDarkTheme
 import voice.common.compose.rememberScoped
 import voice.common.constants.*
 import voice.common.rootComponentAs
@@ -84,8 +85,6 @@ import voice.common.R as CommonR
 @Preview
 private fun SettingsPreview() {
   val viewState = SettingsViewState(
-    useDarkTheme = false,
-    showDarkThemePref = true,
     seekTimeInSeconds = 30,
     seekTimeRewindInSeconds = 20,
     autoRewindInSeconds = 12,
@@ -106,7 +105,6 @@ private fun SettingsPreview() {
     theme = THEME_LIGHT,
     colorTheme = -0x1,
     themeWidget = THEME_LIGHT,
-    isPro = false,
     useGestures = true,
     useHapticFeedback = true,
     sizeCoversDirectory = "0MB",
@@ -119,7 +117,6 @@ private fun SettingsPreview() {
       viewState,
       object : SettingsListener {
         override fun close() {}
-        override fun toggleDarkTheme() {}
         override fun seekAmountChanged(seconds: Int) {}
         override fun seekRewindAmountChanged(seconds: Int) {}
         override fun onSeekAmountRowClick() {}
@@ -218,22 +215,26 @@ private fun Settings(
           colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.inverseOnSurface)
         ) {
           Column {
-            ThemeRow(viewState.theme, viewState.isPro) {
+            // Schneller Hell/Dunkel-Schalter. Zeigt den tatsaechlichen Zustand (auch bei "System folgen")
+            // und setzt beim Umschalten explizit hell oder dunkel. "System folgen" bleibt im Dialog darunter.
+            val darkTheme = isDarkTheme()
+            DarkThemeRow(isDark = darkTheme) {
+              listener.themeChanged(if (darkTheme) THEME_LIGHT else THEME_DARK)
+            }
+            DividerRow()
+            ThemeRow(viewState.theme) {
               listener.onThemeDialogRowClick(false)
             }
             if (viewState.theme != THEME_AUTO || !COLOR_SCHEME_SETTABLE) {
               DividerRow()
-              ColorThemeRow(viewState.isPro) {
+              ColorThemeRow {
                 listener.onColorThemeDialogRowClick()
               }
             }
             DividerRow()
-            ThemeRow(viewState.themeWidget, viewState.isPro, isWidget = true) {
+            ThemeRow(viewState.themeWidget, isWidget = true) {
               listener.onThemeDialogRowClick(true)
             }
-//            if (viewState.showDarkThemePref) {
-//              DarkThemeRow(viewState.useDarkTheme, listener::toggleDarkTheme)
-//            }
 //            TransparentNavigationRow(viewState.useTransparentNavigation, listener::toggleTransparentNavigation)
           }
         }
@@ -606,28 +607,3 @@ private fun Dialog(
     }
   }
 }
-
-@Composable
-fun Modifier.shake(enabled: Boolean, onAnimationFinish: () -> Unit): Modifier = then(
-  composed(
-    factory = {
-      val distance by animateFloatAsState(
-        targetValue = if (enabled) 12f else 0f,
-        animationSpec = repeatable(
-          iterations = 3,
-          animation = tween(durationMillis = 70, easing = LinearEasing),
-          repeatMode = RepeatMode.Reverse
-        ),
-        finishedListener = { onAnimationFinish.invoke() }, label = ""
-      )
-
-      Modifier.graphicsLayer {
-        translationX = if (enabled) distance else 0f
-      }
-    },
-    inspectorInfo = debugInspectorInfo {
-      name = "shake"
-      properties["enabled"] = enabled
-    }
-  )
-)

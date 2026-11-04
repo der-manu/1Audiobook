@@ -48,18 +48,6 @@ fun VoiceTheme(
   }
 }
 
-//@Composable
-//fun isDarkTheme(): Boolean {
-//  return if (DARK_THEME_SETTABLE) {
-//    val darkThemeFlow = remember {
-//      rootComponentAs<SharedComponent>().useDarkTheme.flow
-//    }
-//    darkThemeFlow.collectAsState(initial = false, context = Dispatchers.Unconfined).value
-//  } else {
-//    isSystemInDarkTheme()
-//  }
-//}
-
 @Composable
 fun isDarkTheme(preview: Boolean = false): Boolean {
   return if (preview) isSystemInDarkTheme()

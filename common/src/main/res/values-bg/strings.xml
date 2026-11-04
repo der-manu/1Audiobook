@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Настройки-->
   <string name="pref_about_title">Относно</string>
   <string name="pref_follow_system">Следвайте системата</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Преглед на мрежата</string>
   <string name="pref_layout_list">Оформление на списък</string>
   <string name="pref_layout_grid">Оформление на мрежата</string>
-  <string name="pref_mini_player_floating_button">Бутон</string>
   <string name="pref_mini_player_mini_player_floating">Плаващ плейър</string>
   <string name="pref_player_background_title">Фон на играча</string>
   <string name="pref_player_background_theme">Фон на приложението</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Квадрат</string>
   <string name="pref_show_mini_player_title">Стил на мини плейър</string>
   <string name="pref_show_slider_volume_title">Контрол на силата на звука</string>
-  <string name="pref_use_transparent_navigation">Използване на прозрачна лента за навигация</string>
   <string name="pref_use_chapter_cover">Използване на корицата на глава</string>
 
   <!-- Теми -->
@@ -43,13 +40,10 @@
   <string name="pref_default_theme">Задаване по подразбиране</string>
 
   <!--BookPlay-->
-  <string name="custom">Персонализиран</string>
   <string name="end_of_current_chapter">Край на текущата глава</string>
   <string name="left">Остава %s</string>
-  <string name="left_in_audiobook">Остават %s в аудиокнига</string>
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Показване на номерата на главите</string>
   <string name="sleep_timer_note">За да рестартирате, разклатете устройството в рамките на 30 секунди след приключване</string>
   <string name="repeat">Повтаряне</string>
@@ -65,41 +59,9 @@
   <string name="copied_to_clipboard_show">Копирано в клипборда:\n%s</string>
 
   <!--Относно-->
-  <string name="pref_about_message"><![CDATA[
-Плейър за аудиокниги <b>PlayBook</b> с отворен код. PlayBooks е базиран на приложението Voice с отворен код.
-<br/><br/>
-
-Ще бъда много благодарен, ако оставите отзив или оценка за приложението в Google Play, това значително ще помогне за развитието на проекта.<br/>
-]]></string>
-  <string name="pref_rate_title">Оценете приложението</string>
-  <string name="pref_other_app_title">Други приложения</string>
   <string name="pref_privacy_title">Политика за поверителност</string>
-  <string name="pref_share_title">Споделяне</string>
-
-  <!--Покупка-->
-  <string name="tipping_jar_title">Буркан със съвети</string>
-  <string name="tip_kind">Любезен съвет на</string>
-  <string name="tip_excellent">Отличен съвет на</string>
-  <string name="tip_incredible">Невероятен съвет на</string>
-  <string name="action_support_project">Проект за поддръжка</string>
-  <string name="action_support_project_summary">Вземете платеното приложение, за да поддържате бъдещи разработки и да получите допълнителни функции</string>
-  <string name="learn_more">Научете повече</string>
-  <string name="theme_summary">Тъмната тема използва по-малко енергия на AMOLED дисплеи</string>
-  <string name="color_title">Цветове</string>
-  <string name="color_summary">Внимателно подбрани цветови схеми, които да съответстват на любимите ви книги</string>
-  <string name="plus_title">Подкрепете ни</string>
-  <string name="plus_summary">Всички наши приложения са без реклами, с отворен код и винаги ще остане така. С ваша помощ можем да приложим повече функции и да ги направим още по-добри</string>
-  <string name="lifebuoy_title">Ние ще ви подкрепим</string>
-  <string name="lifebuoy_summary">Ако по някаква причина не можете да си позволите нашето приложение, но наистина искате да използвате всички функции, просто ни изпратете имейл</string>
-  <string name="participants_title">Участници</string>
-  <string name="special_thanks_to">Специални благодарности на</string>
 
   <!--Таксуване-->
-  <string name="tipping_jar_dialog_success_title">Много благодаря!</string>
-  <string name="tipping_jar_dialog_success_message">Голями благодарности за подкрепата за разработването на PlayBook. Вие сте страхотни и разработчикът никога няма да ви забрави!</string>
-  <string name="tipping_jar_dialog_success_button_title">Заповядайте</string>
-  <string name="tipping_jar_dialog_error_title">Неуспешен съвет</string>
-  <string name="tipping_jar_dialog_error_message">За съжаление нещо лошо се случи при извършване на транзакцията за бакшиш. Не тъгувайте, просто опитайте отново друг път и се насладете на PlayBook</string>
     <string name="pref_use_haptic_feedback">Използване на хаптична обратна връзка</string>
   <string name="pref_widget">Джаджа</string>
   <string name="pref_scan_chapter_covers">Сканиране на обхванатите глави</string>
@@ -119,23 +81,10 @@
   <string name="onboarding_show_player">Показване на плейъра</string>
   <string name="onboarding_show_list_chapters">Показване на списък на главите</string>
   <string name="onboarding_double_tap">Докоснете двукратно за възпроизвеждане или пауза</string>
-  <string name="per_month">%s/месец</string>
-  <string name="per_year">%s/година</string>
-  <string name="restore_purchase">Възстановяване на покупка</string>
-  <string name="donate_text_no_gp">
-        <![CDATA[
-            Поради възникнали проблеми временно не можем да обработваме плащания през Google Play.
- Затова през този период предоставяме на всички потребители възможност ръчно да отключат всички функции на приложението. <br>
- Ако харесвате нашите приложения, които работят офлайн, не са натрапчиви и не съдържат реклами, моля
- моля, помислете дали да ни подкрепите по някакъв начин. Ще бъдем много благодарни.<br><br>
- Благодаря ви!
-        ]]>
-    </string>
     <string name="pref_animated_marquee">Анимационна книга, заглавие, глава и ефект на автора</string>
   <string name="length">Времетраене</string>
   <string name="last_played_at">Последно прослушване</string>
   <string name="remaining_time">Оставащо време</string>
-  <string name="any_support_unlock_all">Изберете нивото на поддръжка на проекта (еднократно, месечно или годишно). Всяка поддръжка отключва всички функции на приложението. Можете да отмените абонамента си по всяко време.</string>
   <string name="auto_sleep_timer_end">Краен час</string>
   <string name="onboarding_welcome_title_g">Добре дошли в PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Стартирайте таймера за отлагане по график</string>

@@ -16,7 +16,7 @@ import voice.strings.R as StringsR
 
 @Composable
 internal fun DarkThemeRow(
-  useDarkTheme: Boolean,
+  isDark: Boolean,
   toggle: () -> Unit
 ) {
   ListItem(
@@ -32,7 +32,7 @@ internal fun DarkThemeRow(
     },
     trailingContent = {
       Switch(
-        checked = useDarkTheme,
+        checked = isDark,
         onCheckedChange = {
           toggle()
         },

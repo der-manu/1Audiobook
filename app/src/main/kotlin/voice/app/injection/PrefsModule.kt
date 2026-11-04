@@ -57,13 +57,6 @@ object PrefsModule {
 
   @Provides
   @Singleton
-  @Named(PrefKeys.DARK_THEME)
-  fun darkThemePref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.DARK_THEME, false)
-  }
-
-  @Provides
-  @Singleton
   @Named(PrefKeys.AUTO_REWIND_AMOUNT)
   fun provideAutoRewindAmountPreference(prefs: AndroidPreferences): Pref<Int> {
     return prefs.int(PrefKeys.AUTO_REWIND_AMOUNT, 2)
@@ -282,97 +275,6 @@ object PrefsModule {
   @Named(PrefKeys.REPEAT_MODE)
   fun repeatModePreference(prefs: AndroidPreferences): Pref<Int> {
     return prefs.int(PrefKeys.REPEAT_MODE, REPEAT_OFF)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRO)
-  fun isProPref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.PRO, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRO_SUBS)
-  fun isProSubsPref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.PRO_SUBS, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRO_RUSTORE)
-  fun isProRuPref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.PRO_RUSTORE, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRO_NO_GP)
-  fun isProNoGpPref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.PRO_NO_GP, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRICES)
-  fun pricesPref(prefs: AndroidPreferences): Pref<String> {
-    return prefs.string(PrefKeys.PRICES, "0;0;0")
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRICES_SUBS)
-  fun pricesSubsPref(prefs: AndroidPreferences): Pref<String> {
-    return prefs.string(PrefKeys.PRICES_SUBS, "0;0;0;0;0;0")
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PURCHASED_LIST)
-  fun purchasedList(prefs: AndroidPreferences): Pref<String> {
-    return prefs.string(PrefKeys.PURCHASED_LIST, "0;0;0")
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PURCHASED_SUBS_LIST)
-  fun purchasedSubsList(prefs: AndroidPreferences): Pref<String> {
-    return prefs.string(PrefKeys.PURCHASED_SUBS_LIST, "0;0;0;0;0;0")
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.USE_GOOGLE_PLAY)
-  fun useGooglePlay(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.USE_GOOGLE_PLAY, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.IS_PLAY_STORE_INSTALLED)
-  fun isPlayStoreInstalledPref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.IS_PLAY_STORE_INSTALLED, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.IS_RU_STORE_INSTALLED)
-  fun isRuStoreInstalledPref(prefs: AndroidPreferences): Pref<Boolean> {
-    return prefs.boolean(PrefKeys.IS_RU_STORE_INSTALLED, false)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PRICES_RUSTORE)
-  fun pricesRustorePref(prefs: AndroidPreferences): Pref<String> {
-    return prefs.string(PrefKeys.PRICES_RUSTORE, "0;0;0;0;0;0;0;0;0")
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.PURCHASED_LIST_RUSTORE)
-  fun purchasedListRustore(prefs: AndroidPreferences): Pref<String> {
-    return prefs.string(PrefKeys.PURCHASED_LIST_RUSTORE, "0;0;0;0;0;0;0;0;0")
   }
 
   @Provides

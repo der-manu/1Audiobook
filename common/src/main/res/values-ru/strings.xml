@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Settings-->
   <string name="pref_about_title">О приложении</string>
   <string name="pref_follow_system">Как в системе</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Вид</string>
   <string name="pref_layout_list">Список</string>
   <string name="pref_layout_grid">Сетка</string>
-  <string name="pref_mini_player_floating_button">Кнопка</string>
   <string name="pref_mini_player_mini_player_floating">Плавающий плеер</string>
   <string name="pref_player_background_title">Задний фон плеера</string>
   <string name="pref_player_background_theme">Фон приложения</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Квадратный</string>
   <string name="pref_show_mini_player_title">Стиль мини плеера</string>
   <string name="pref_show_slider_volume_title">Панель громкости</string>
-  <string name="pref_use_transparent_navigation">Прозрачная системная панель навигации</string>
   <string name="pref_use_chapter_cover">Использовать обложку главы</string>
   <string name="pref_use_haptic_feedback">Использовать виброотклик</string>
   <string name="pref_widget">Виджет</string>
@@ -53,13 +50,10 @@
   <string name="pref_default_theme">По умолчанию</string>
 
   <!--BookPlay-->
-  <string name="custom">Индивидуально</string>
   <string name="end_of_current_chapter">До конца главы</string>
   <string name="left">Остается %s</string>
-  <string name="left_in_audiobook">В аудиокниге осталось %s</string>
   <string name="hours_letter">ч</string>
   <string name="minutes_letter">м</string>
-  <string name="seconds_letter">с</string>
   <string name="show_chapter_numbers">Показать номера глав</string>
   <string name="sleep_timer_note">Для перезапуска встряхните устройство в течение 30 секунд после окончания таймера</string>
   <string name="repeat">Повтор</string>
@@ -99,45 +93,7 @@
   <string name="cleared">Очищено</string>
 
   <!--About-->
-  <string name="pref_about_message"><![CDATA[
-        <b>PlayBook</b> - это плеер для аудио книг с открытым исходным кодом. Разработано на базе приложения Voice.
-        <br/><br/>
-
-        Буду очень признателен, если вы оставите отзыв или оценку о приложении в Google Play, это очень поможет развитию проекта.<br/>
-    ]]></string>
-  <string name="pref_rate_title">Оценить приложение</string>
-  <string name="pref_other_app_title">Другие приложения</string>
   <string name="pref_privacy_title">Политика конфиденциальности</string>
-  <string name="pref_share_title">Поделиться</string>
-
-  <!--Purchase-->
-  <string name="tipping_jar_title">Поддержать</string>
-  <string name="tip_kind">Хорошая поддержка</string>
-  <string name="tip_excellent">Отличная поддержка</string>
-  <string name="tip_incredible">Потрясающая поддержка</string>
-  <string name="action_support_project">Поддержка проекта</string>
-  <string name="action_support_project_summary">Приобретите приложение для поддержки будущих разработок и получения дополнительных функций</string>
-  <string name="learn_more">Подробнее</string>
-  <string name="theme_summary">Темная тема потребляет меньше энергии на AMOLED дисплеях</string>
-  <string name="color_title">Цвета</string>
-  <string name="color_summary">Тщательно подобранные цветовые схемы, что бы соответствовать вашим любимым книгам</string>
-  <string name="plus_title">Поддержите нас</string>
-  <string name="plus_summary">Все наши приложения без рекламы, с открытым исходным кодом, и так будет всегда. С Вашей помощью мы сможем реализовать больше функций и сделать их еще лучше</string>
-  <string name="any_support_unlock_all">Выберите доступный Вам уровень поддержки проекта (единовременный, ежемесячный или ежегодный). Любая поддержка разблокирует все функции приложения</string>
-  <string name="one_time_purchase">Разовая поддержка</string>
-  <string name="monthly">Ежемесячная поддержка</string>
-  <string name="yearly">Ежегодная поддержка</string>
-  <string name="lifebuoy_title">Мы поддержим Вас</string>
-  <string name="lifebuoy_summary">Если по какой то причине Вы не можете позволить себе наше приложение, но очень хотите использовать все функции, просто напишите нам</string>
-  <string name="participants_title">Участники</string>
-  <string name="special_thanks_to">Особая благодарность</string>
-
-  <!--Billing-->
-  <string name="tipping_jar_dialog_success_title">Огромное спасибо!</string>
-  <string name="tipping_jar_dialog_success_message">Большое спасибо за поддержку развития PlayBook. Ты молодец и разработчик никогда тебя не забудет!</string>
-  <string name="tipping_jar_dialog_success_button_title">Пожалуйста</string>
-  <string name="tipping_jar_dialog_error_title">Не удалось</string>
-  <string name="tipping_jar_dialog_error_message">К сожалению, что-то нехорошее произошло во время транзакции чаевых. Не грусти, просто попробуй в другой раз и наслаждайся PlayBook</string>
 
   <!--Onboarding-->
   <string name="onboarding_welcome_title_g">Добро пожаловать в PlayBookAdvance!</string>
@@ -146,33 +102,7 @@
   <string name="onboarding_show_list_chapters">Показать список глав</string>
   <string name="onboarding_double_tap">Двойное нажатие для воспроизведения или паузы</string>
 
-  <!--RuStore-->
-  <string name="billing_purchase_confirm_in_progress">Подтверждаем покупку…</string>
-  <string name="billing_purchase_delete_in_progress">Удаляем покупку…</string>
-  <string name="billing_product_confirmed">Продукт подтвержден</string>
-  <string name="billing_product_deleted">Покупка отменена</string>
-  <string name="billing_subscriptions">Подписки</string>
-  <string name="per_month">%s/месяц</string>
-  <string name="per_year">%s/год</string>
-  <string name="restore_purchase">Восстановить покупки</string>
-
-  <string name="unlock">Разблокировать</string>
-  <string name="donate_text">
-        <![CDATA[
-            Для тех, кто не пользуется Google Play, есть возможность разблокировать все функции приложения. <br>
-            Если вам нравятся наши приложения, которые работают автономно, не навязчивы и не содержат рекламы, пожалуйста, подумайте о том, чтобы поддержать нас каким-либо образом. Мы будем очень благодарны.<br><br>
-            Спасибо!
-        ]]>
-    </string>
-  <string name="donate_text_no_gp">
-        <![CDATA[
-            В связи с возникшими проблемами мы временно не можем проводить платежи через Google Play,
-            поэтому на этот период мы предоставляем всем пользователям возможность вручную разблокировать все функции приложения. <br>
-            Если вам нравятся наши приложения, которые работают автономно, не навязчивы и не содержат рекламы, пожалуйста,
-            подумайте о том, чтобы поддержать нас каким-либо образом. Мы будем очень благодарны.<br><br>
-            Спасибо!
-        ]]>
-    </string>
+  <!--Sleep timer-->
 
   <string name="auto_sleep_timer">Запускать таймер по расписанию</string>
   <string name="auto_sleep_timer_start">Время начала</string>

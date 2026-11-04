@@ -10,11 +10,6 @@ import javax.inject.Named
 interface SharedComponent {
 
   @get:[
-  Named(PrefKeys.DARK_THEME)
-  ]
-  val useDarkTheme: Pref<Boolean>
-
-  @get:[
   Named(PrefKeys.THEME)
   ]
   val themePref: Pref<Int>

@@ -1,8 +1,6 @@
 package voice.settings
 
 data class SettingsViewState(
-  val useDarkTheme: Boolean,
-  val showDarkThemePref: Boolean,
   val seekTimeInSeconds: Int,
   val seekTimeRewindInSeconds: Int,
   val autoRewindInSeconds: Int,
@@ -23,7 +21,6 @@ data class SettingsViewState(
   val theme: Int,
   val colorTheme: Int,
   val themeWidget: Int,
-  val isPro: Boolean,
   val useGestures: Boolean,
   val useHapticFeedback: Boolean,
   val sizeCoversDirectory: String,

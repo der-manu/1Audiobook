@@ -12,7 +12,6 @@ object PrefKeys {
   const val AUTO_SLEEP_TIMER_END = "AUTO_SLEEP_TIMER_END"
   const val SINGLE_BOOK_FOLDERS = "singleBookFolders"
   const val COLLECTION_BOOK_FOLDERS = "folders"
-  const val DARK_THEME = "darkTheme"
   const val GRID_MODE = "gridView"
 
   //PlayBooks
@@ -31,19 +30,6 @@ object PrefKeys {
   const val COVER_RADIUS = "COVER_RADIUS"
   const val COVER_ELEVATION = "COVER_ELEVATION"
   const val REPEAT_MODE = "REPEAT_MODE"
-  const val PRO = "PRO"
-  const val PRO_SUBS = "PRO_SUBS"
-  const val PRO_RUSTORE = "PRO_RUSTORE"
-  const val PRO_NO_GP = "PRO_NO_GP"
-  const val PRICES = "PRICES"
-  const val PRICES_SUBS = "PRICES_SUBS"
-  const val PURCHASED_LIST = "PURCHASED_LIST"
-  const val PURCHASED_SUBS_LIST = "PURCHASED_SUBS_LIST"
-  const val USE_GOOGLE_PLAY = "USE_GOOGLE_PLAY"
-  const val IS_PLAY_STORE_INSTALLED = "IS_PLAY_STORE_INSTALLED"
-  const val IS_RU_STORE_INSTALLED = "IS_RU_STORE_INSTALLED"
-  const val PRICES_RUSTORE = "PRICES_RUSTORE"
-  const val PURCHASED_LIST_RUSTORE = "PURCHASED_LIST_RUSTORE"
   const val SORTING_CURRENT = "SORTING_CURRENT"
   const val SORTING_NOT_STARTED = "SORTING_NOT_STARTED"
   const val SORTING_FINISHED = "SORTING_FINISHED"
@@ -55,14 +41,6 @@ object PrefKeys {
   const val USE_ANIMATED_MARQUEE = "USE_ANIMATED_MARQUEE"
 
   //old
-  const val SHAKE_TO_RESET = "SHAKE_TO_RESET"
-  const val SHOW_RATING = "showRatingPref"
-  const val DEV_MODE = "devModePref"
-  const val SCREEN_ORIENTATION = "screenOrientationPref"
-  const val GRID_AUTO = "gridViewAutoPref"
-  const val SHOW_PROGRESS_BAR = "showProgressBarPref"
-  const val SHOW_DIVIDER = "showDividerPref"
-  const val USE_ENGLISH = "useEnglishPref"
 }
 
 @Qualifier

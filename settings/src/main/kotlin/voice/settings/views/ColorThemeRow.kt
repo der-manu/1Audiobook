@@ -25,12 +25,10 @@ import androidx.compose.ui.unit.dp
 import voice.common.R as CommonR
 
 @Composable
-internal fun ColorThemeRow(enabled: Boolean, openColorThemeDialog: () -> Unit) {
-  val alpha = if (enabled) 1f else 0.6f
+internal fun ColorThemeRow(openColorThemeDialog: () -> Unit) {
   Box(
     modifier = Modifier
       .height(42.dp)
-      .alpha(alpha)
       .clickable {
         openColorThemeDialog()
       }

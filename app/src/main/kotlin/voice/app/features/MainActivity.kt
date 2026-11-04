@@ -66,9 +66,6 @@ class MainActivity : AppCompatActivity() {
   @field:[Inject Named(PrefKeys.PADDING)]
   lateinit var paddingPref: Pref<String>
 
-  @field:[Inject Named(PrefKeys.PRO)]
-  lateinit var isProPref: Pref<Boolean>
-
   @Inject
   lateinit var bookSearchParser: BookSearchParser
 
@@ -187,9 +184,6 @@ class MainActivity : AppCompatActivity() {
   override fun onResume() {
     super.onResume()
     currentVolumePref.value = mSettingsContentObserver.previousVolume
-
-    // PlayBookAdvance: Alle Funktionen sind frei (bool is_pro_app = true).
-    if (resources.getBoolean(CommonR.bool.is_pro_app)) isProPref.value = true
   }
 
   override fun onDestroy() {

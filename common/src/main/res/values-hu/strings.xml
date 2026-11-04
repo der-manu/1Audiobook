@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation" tools:locale="en">
-  <!--PlayBook strings-->
   <!--Beállítások-->
   <string name="pref_about_title">Névjegy</string>
   <string name="pref_follow_system">A rendszer követése</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Rács megtekintése</string>
   <string name="pref_layout_list">Lista elrendezése</string>
   <string name="pref_layout_grid">Rács elrendezése</string>
-  <string name="pref_mini_player_floating_button">Gomb</string>
   <string name="pref_mini_player_mini_player_floating">Lebegő lejátszó</string>
   <string name="pref_player_background_title">Lejátszó háttér</string>
   <string name="pref_player_background_theme">Alkalmazás háttere</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Négyzet</string>
   <string name="pref_show_mini_player_title">Mini lejátszóstílus</string>
   <string name="pref_show_slider_volume_title">Hangerőszabályzó</string>
-  <string name="pref_use_transparent_navigation">Az átlátszó navigációs sáv használata</string>
   <string name="pref_use_chapter_cover">Használja a fejezetborítót</string>
 
   <!-- Témák -->
@@ -43,13 +40,10 @@
   <string name="pref_default_theme">Alapértelmezés beállítása</string>
 
   <!--BookPlay-->
-  <string name="custom">Egyéni</string>
   <string name="end_of_current_chapter">Az aktuális fejezet vége</string>
   <string name="left">%s maradt</string>
-  <string name="left_in_audiobook">%s maradt a hangoskönyvből</string>
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Fejezetszámok megjelenítése</string>
   <string name="sleep_timer_note">Újraindításhoz a befejezést követően 30 másodpercen belül rázza meg az eszközt</string>
   <string name="repeat">Ismétlés</string>
@@ -65,41 +59,9 @@
   <string name="copied_to_clipboard_show">Vágólapra másolva:\n%s</string>
 
   <!--Körülbelül-->
-  <string name="pref_about_message"><![CDATA[
-Nyílt forráskódú <b>PlayBook</b> hangoskönyv-lejátszó. A PlayBook a nyílt forráskódú Voice alkalmazáson alapul.
-<br/><br/>
-
-Nagyon hálás lennék, ha véleményt vagy értékelést írna az alkalmazásról a Google Playen, ez nagyban segíti a projekt fejlesztését.<br/>
-]]></string>
-  <string name="pref_rate_title">Alkalmazás értékelése</string>
-  <string name="pref_other_app_title">Egyéb alkalmazások</string>
   <string name="pref_privacy_title">Adatvédelmi irányelvek</string>
-  <string name="pref_share_title">Megosztás</string>
-
-  <!--Vásárlás-->
-  <string name="tipping_jar_title">Tip Jar</string>
-  <string name="tip_kind">Kedves tipp</string>
-  <string name="tip_excellent">Kiváló tipp</string>
-  <string name="tip_incredible">Hihetetlen tipp</string>
-  <string name="action_support_project">Támogatja a projektet</string>
-  <string name="action_support_project_summary">Szerezze be a fizetős alkalmazást a jövőbeli fejlesztések támogatásához és további funkciókhoz</string>
-  <string name="learn_more">További információ</string>
-  <string name="theme_summary">A sötét téma kevesebb energiát használ az AMOLED kijelzőkön</string>
-  <string name="color_title">Színek</string>
-  <string name="color_summary">Gondosan kiválasztott színsémák kedvenc könyveihez</string>
-  <string name="plus_title">Támogass minket</string>
-  <string name="plus_summary">Minden alkalmazásunk reklámmentes, nyílt forráskódú, és ez mindig így is marad. Segítségével több funkciót tudunk megvalósítani és még jobbá tenni</string>
-  <string name="lifebuoy_title">Támogatni fogjuk Önt</string>
-  <string name="lifebuoy_summary">Ha valamilyen okból nem engedheti meg magának alkalmazásunkat, de valóban használni szeretné az összes funkciót, csak írjon nekünk e-mailt</string>
-  <string name="participants_title">Résztvevők</string>
-  <string name="special_thanks_to">Külön köszönet neki</string>
 
   <!--Számlázás-->
-  <string name="tipping_jar_dialog_success_title">Köszönjük szépen!</string>
-  <string name="tipping_jar_dialog_success_message">Nagyon köszönöm, hogy támogatod a PlayBook fejlesztését. Nagyszerű vagy, és a fejlesztő soha nem felejt el!</string>
-  <string name="tipping_jar_dialog_success_button_title">Üdvözöljük</string>
-  <string name="tipping_jar_dialog_error_title">Nem sikerült a tipp</string>
-  <string name="tipping_jar_dialog_error_message">Sajnos valami rossz történt a borravaló tranzakció végrehajtása közben. Ne légy szomorú, csak próbáld újra máskor, és élvezd a PlayBook</string>
     <string name="pref_use_haptic_feedback">Haptikus visszajelzés használata</string>
   <string name="pref_widget">Widget</string>
   <string name="pref_scan_chapter_covers">Szkennelje be a fejezetborítókat</string>
@@ -119,14 +81,10 @@ Nagyon hálás lennék, ha véleményt vagy értékelést írna az alkalmazásr�
   <string name="onboarding_show_player">Lejátszó megjelenítése</string>
   <string name="onboarding_show_list_chapters">Fejezetek listájának megjelenítése</string>
   <string name="onboarding_double_tap">Koppintson duplán a lejátszáshoz vagy szüneteltetéshez</string>
-  <string name="per_month">%s/hó</string>
-  <string name="per_year">%s/év</string>
-  <string name="restore_purchase">Vásárlás visszaállítása</string>
     <string name="pref_animated_marquee">Animációs könyv címe, fejezete és szerzői effektusa</string>
   <string name="length">Időtartam</string>
   <string name="last_played_at">Utolsó meghallgatás</string>
   <string name="remaining_time">Hátralévő idő</string>
-  <string name="any_support_unlock_all">Válassza ki az Ön számára elérhető projekttámogatás szintjét (egyszeri, havi vagy éves). Bármilyen támogatás feloldja az alkalmazás összes funkcióját. Előfizetését bármikor lemondhatja.</string>
   <string name="auto_sleep_timer_end">Befejezési idő</string>
   <string name="onboarding_welcome_title_g">Üdvözöljük a PlayBookAdvanceban!</string>
   <string name="auto_sleep_timer">Indítsa el a szundi időzítőt az ütemterv szerint</string>

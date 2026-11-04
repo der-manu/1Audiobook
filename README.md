@@ -17,6 +17,8 @@ the right order.
   date, optionally reversed. The preview updates immediately; the choice is remembered per book and survives
   rescans.
 - **All features are free.** There is no paywall, no donation screen and no in-app purchase.
+- **Quick light/dark switch** at the top of *Settings → Appearance* (the *Theme* dialog still offers *Follow system*).
+- **New app icon**: an open book with a play symbol.
 - **No Google Play Billing, no RuStore SDK.** Both were removed.
 - Uses the maintained FFmpegKit fork, because the original FFmpegKit binaries were removed from Maven Central.
 

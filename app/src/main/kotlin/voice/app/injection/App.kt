@@ -29,23 +29,8 @@ class App : Application() {
   @Inject
   lateinit var triggerWidgetOnChange: TriggerWidgetOnChange
 
-  @field:[Inject Named(PrefKeys.DARK_THEME)]
-  lateinit var useDarkTheme: Pref<Boolean>
-
   @field:[Inject Named(PrefKeys.THEME)]
   lateinit var themePref: Pref<Int>
-
-  @field:[Inject Named(PrefKeys.PRO)]
-  lateinit var isProPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.PRO_SUBS)]
-  lateinit var isProSubsPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.PRO_RUSTORE)]
-  lateinit var isProRuPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.PRO_NO_GP)]
-  lateinit var isProNoGpPref: Pref<Boolean>
 
   override fun onCreate() {
     super.onCreate()
@@ -63,8 +48,6 @@ class App : Application() {
     rootComponent = appComponent
     appComponent.inject(this)
 
-    if (!isPro()) themePref.value = THEME_LIGHT
-
     if (DARK_THEME_SETTABLE) {
       MainScope().launch {
         themePref.flow
@@ -79,11 +62,6 @@ class App : Application() {
     mediaScanner.scan()
 
     triggerWidgetOnChange.init()
-  }
-
-  private fun isPro(): Boolean {
-    val isProApp = resources.getBoolean(CommonR.bool.is_pro_app)
-    return isProPref.value || isProSubsPref.value || isProRuPref.value || isProNoGpPref.value || isProApp
   }
 }
 

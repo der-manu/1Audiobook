@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Settings-->
   <string name="pref_about_title">Despre aplicație</string>
   <string name="pref_follow_system">Despre</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Vedeți</string>
   <string name="pref_layout_list">List</string>
   <string name="pref_layout_grid">Grid</string>
-  <string name="pref_mini_player_floating_button">Buton</string>
   <string name="pref_mini_player_mini_player_floating">Floating player</string>
   <string name="pref_player_background_title">Fackground player</string>
   <string name="pref_player_background_theme">Fundalul aplicației</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Square</string>
   <string name="pref_show_mini_player_title">Stilul de player mini</string>
   <string name="pref_show_slider_volume_title">Bara de volum</string>
-  <string name="pref_use_transparent_navigation">Bara de navigare transparentă a sistemului</string>
   <string name="pref_use_chapter_cover">Utilizează coperta capitolului</string>
   <string name="pref_use_haptic_feedback">Utilizează clic vibrator</string>
   <string name="pref_widget">Widget</string>
@@ -45,20 +42,16 @@
   <string name="pref_category_other">Altul</string>
   <string name="pref_category_general">General</string>
 
-
   <!--Setting colors-->
   <string name="pref_basic_color">Culoarea de bază</string>
   <string name="pref_basic_color_summary">Introduceți o culoare cheie din care se va determina automat un set de tonuri complementare</string>
   <string name="pref_default_theme">Implicit</string>
 
   <!--BookPlay-->
-  <string name="custom">Individualizat</string>
   <string name="end_of_current_chapter">La sfârșitul capitolului</string>
   <string name="left">Lasă %s</string>
-  <string name="left_in_audiobook">Au mai rămas %s în audiobook</string>
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
-  <string name="seconds_letter">s</string>
   <string name="show_chapter_numbers">Afișează numerele capitolelor</string>
   <string name="sleep_timer_note">Pentru a reporni, scuturați dispozitivul în termen de 30 de secunde de la expirarea temporizatorului</string>
   <string name="repeat">Repetă</string>
@@ -90,42 +83,7 @@
   <string name="cleared">Eliberat</string>
 
   <!--About-->
-  <string name="pref_about_message"><![CDATA[
-        <b>PlayBook</b> - este un player de cărți audio cu sursă deschisă. Acesta este dezvoltat pe baza aplicației Voice.
-        <br/><br/>
-
-        Aș fi foarte recunoscător dacă ați lăsa o recenzie sau o evaluare a aplicației pe Google Play, aceasta va ajuta foarte mult la dezvoltarea proiectului.<br/>
-    ]]></string>
-  <string name="pref_rate_title">Evaluați aplicația</string>
-  <string name="pref_other_app_title">Alte aplicații</string>
   <string name="pref_privacy_title">Politica de confidențialitate</string>
-  <string name="pref_share_title">Share</string>
-
-  <!--Purchase-->
-  <string name="tipping_jar_title">Sprijin</string>
-  <string name="tip_kind">Sprijin bun</string>
-  <string name="tip_excellent">Sprijin excelent</string>
-  <string name="tip_incredible">Suport extraordinar</string>
-  <string name="action_support_project">Sprijin pentru proiecte</string>
-  <string name="action_support_project_summary">Cumpărați aplicația pentru a susține dezvoltările viitoare și pentru a obține caracteristici suplimentare</string>
-  <string name="learn_more">Învață mai multe</string>
-  <string name="theme_summary">Tema întunecată consumă mai puțină energie pe ecranele AMOLED</string>
-  <string name="color_title">Culoare</string>
-  <string name="color_summary">Scheme de culori atent selectate pentru a se potrivi cu cărțile tale preferate</string>
-  <string name="plus_title">Sprijină-ne</string>
-  <string name="plus_summary">Toate aplicațiile noastre sunt fără reclame, sunt open source și vor fi întotdeauna. Cu ajutorul tău putem implementa mai multe funcții și le putem face și mai bune</string>
-  <string name="lifebuoy_title">Te susținem</string>
-  <string name="lifebuoy_summary">Dacă dintr-un motiv oarecare nu vă puteți permite aplicația noastră, dar doriți cu adevărat să folosiți toate funcțiile, trimiteți-ne un e-mail</string>
-  <string name="participants_title">Participanți</string>
-  <string name="special_thanks_to">Mulțumiri speciale</string>
-
-  <!--Billing-->
-  <string name="tipping_jar_dialog_success_title">Mulțumesc foarte mult!</string>
-  <string name="tipping_jar_dialog_success_message">Mulțumim mult pentru că sprijiniți dezvoltarea PlayBook. V-ați descurcat de minune, iar dezvoltatorul nu vă va uita niciodată!"</string>
-  <string name="tipping_jar_dialog_success_button_title">Cu plăcere</string>
-  <string name="tipping_jar_dialog_error_title">Failed</string>
-  <string name="tipping_jar_dialog_error_message">Din păcate, s-a întâmplat ceva rău în timpul tranzacției de bacșiș. Nu fiți trist, încercați din nou altă dată și bucurați-vă de PlayBook-ul dumneavoastră</string>
-
 
   <!--Onboarding-->
   <string name="auto_sleep_timer_end">Ora de sfârșit</string>
@@ -135,28 +93,11 @@
   <string name="onboarding_show_list_chapters">Afișează lista de capitole</string>
   <string name="onboarding_double_tap">Double tap pentru a reda sau a pune pauză</string>
 
-  <!--RuStore-->
-  <string name="billing_purchase_confirm_in_progress">Confirmă achiziția…</string>
-  <string name="billing_purchase_delete_in_progress">Șterge achiziția…</string>
-  <string name="billing_product_confirmed">Produs confirmat</string>
-  <string name="billing_product_deleted">Cumpărare anulată</string>
-  <string name="billing_subscriptions">Abonamente</string>
-    <string name="per_month">%s/month</string>
-  <string name="per_year">%s/year</string>
-  <string name="restore_purchase">Restabilește achizițiile</string>
-  <string name="unlock">Deblochează</string>
-  <string name="donate_text">
-        <![CDATA[
-            Pentru cei care nu folosesc Google Play, există o opțiune pentru a debloca toate funcțiile aplicației. <br>
-            Dacă vă plac aplicațiile noastre care funcționează offline, nu sunt intruzive și nu conțin reclame, vă rugăm să luați în considerare posibilitatea de a ne sprijini într-un fel sau altul. Vă vom fi foarte recunoscători.<br><br>
-            Vă mulțumim!
-        ]]>
-    </string>
+  <!--Sleep timer-->
     <string name="pref_animated_marquee">Titlul cărții animate, capitolul și efectul autorului</string>
   <string name="length">Durată</string>
   <string name="last_played_at">Ultima audiție</string>
   <string name="remaining_time">Timp rămas</string>
-  <string name="any_support_unlock_all">Alegeți nivelul de sprijin pentru proiect disponibil (unic, lunar sau anual). Orice suport deblochează toate caracteristicile aplicației. Vă puteți anula abonamentul în orice moment.</string>
   <string name="auto_sleep_timer">Porniți cronometrul de amânare conform programului</string>
   <string name="auto_sleep_timer_start">Ora de începere</string>
 </resources>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--PlayBook strings-->
   <!--Settings-->
   <string name="pref_about_title">Про додаток</string>
   <string name="pref_follow_system">Як у системі</string>
@@ -8,7 +7,6 @@
   <string name="pref_grid_view">Вид</string>
   <string name="pref_layout_list">Перелік</string>
   <string name="pref_layout_grid">Сітка</string>
-  <string name="pref_mini_player_floating_button">Кнопка</string>
   <string name="pref_mini_player_mini_player_floating">Плаваючий плеєр</string>
   <string name="pref_player_background_title">Задній фон програвача</string>
   <string name="pref_player_background_theme">Фон програми</string>
@@ -21,7 +19,6 @@
   <string name="pref_rewind_buttons_style_square">Квадратний</string>
   <string name="pref_show_mini_player_title">Стиль міні плеєра</string>
   <string name="pref_show_slider_volume_title">Панель гучності</string>
-  <string name="pref_use_transparent_navigation">Прозора системна панель навігації</string>
   <string name="pref_use_chapter_cover">Використати обкладинку глави</string>
   <string name="pref_use_haptic_feedback">Використовувати вібровідгук</string>
   <string name="pref_widget">Віджет</string>
@@ -51,13 +48,10 @@
   <string name="pref_default_theme">За замовчуванням</string>
 
   <!--BookPlay-->
-  <string name="custom">Індивідуально</string>
   <string name="end_of_current_chapter">До кінця розділу</string>
   <string name="left">Залишається %s</string>
-  <string name="left_in_audiobook">В аудіокнизі залишилося %s</string>
   <string name="hours_letter">г</string>
   <string name="minutes_letter">х</string>
-  <string name="seconds_letter">с</string>
   <string name="show_chapter_numbers">Показати номери глав</string>
   <string name="sleep_timer_note">Для перезапуску струсіть пристрій протягом 30 секунд після закінчення таймера</string>
   <string name="repeat">Повторення</string>
@@ -91,41 +85,7 @@
   <string name="cleared">Очищено</string>
 
   <!--About-->
-  <string name="pref_about_message"><![CDATA[
-        <b>PlayBook</b> - це плеєр для аудіо книг із відкритим вихідним кодом. Розроблено на базі програми Voice.
-        <br/><br/>
-
-        Буду дуже вдячний, якщо ви залишите відгук або оцінку про програму в Google Play, це дуже допоможе розвитку проекту.<br/>
-    ]]></string>
-  <string name="pref_rate_title">Оцінити програму</string>
-  <string name="pref_other_app_title">Інші програми</string>
   <string name="pref_privacy_title">Політика конфіденційності</string>
-  <string name="pref_share_title">Поділитися</string>
-
-  <!--Purchase-->
-  <string name="tipping_jar_title">Підтримати</string>
-  <string name="tip_kind">Хороша підтримка</string>
-  <string name="tip_excellent">Відмінна підтримка</string>
-  <string name="tip_incredible">Чудова підтримка</string>
-  <string name="action_support_project">Підтримка проекту</string>
-  <string name="action_support_project_summary">Придбайте програму для підтримки майбутніх розробок та отримання додаткових функцій</string>
-  <string name="learn_more">Детальніше</string>
-  <string name="theme_summary">Темна тема споживає менше енергії на дисплеях AMOLED</string>
-  <string name="color_title">Кольори</string>
-  <string name="color_summary">Ретельно підібрані колірні схеми, щоб відповідати вашим улюбленим книгам</string>
-  <string name="plus_title">Підтримайте нас</string>
-  <string name="plus_summary">Всі наші програми без реклами, з відкритим кодом, і так буде завжди. З Вашою допомогою ми зможемо реалізувати більше функцій та зробити їх ще кращими</string>
-  <string name="lifebuoy_title">Ми підтримаємо Вас</string>
-  <string name="lifebuoy_summary">Якщо з якоїсь причини Ви не можете дозволити собі нашу програму, але дуже хочете використовувати всі функції, просто напишіть нам</string>
-  <string name="participants_title">Учасники</string>
-  <string name="special_thanks_to">Особлива подяка</string>
-
-  <!--Billing-->
-  <string name="tipping_jar_dialog_success_title">Величезне спасибі!</string>
-  <string name="tipping_jar_dialog_success_message">Дуже дякую за підтримку розвитку PlayBook. Ти молодець і розробник ніколи тебе не забуде!</string>
-  <string name="tipping_jar_dialog_success_button_title">Будь ласка</string>
-  <string name="tipping_jar_dialog_error_title">Не вдалося</string>
-  <string name="tipping_jar_dialog_error_message">На жаль, щось погане сталося під час транзакції чайових. Не сумуй, просто спробуй іншим разом і насолоджуйся PlayBook</string>
 
   <!--Onboarding-->
   <string name="auto_sleep_timer_end">Час закінчення</string>
@@ -135,36 +95,11 @@
   <string name="onboarding_show_list_chapters">Показати список глав</string>
   <string name="onboarding_double_tap">Подвійне натискання для відтворення або паузи</string>
 
-  <!--RuStore-->
-  <string name="billing_purchase_confirm_in_progress">Підтверджуємо покупку…</string>
-  <string name="billing_purchase_delete_in_progress">Видаляємо покупку…</string>
-  <string name="billing_product_confirmed">Продукт підтверджено</string>
-  <string name="billing_product_deleted">Купівлю скасовано</string>
-  <string name="billing_subscriptions">Підписки</string>
-    <string name="per_month">%s/місяць</string>
-  <string name="per_year">%s/рік</string>
-  <string name="restore_purchase">Відновити покупки</string>
-  <string name="unlock">Розблокувати</string>
-  <string name="donate_text">
-        <![CDATA[
-            Для тих, хто не користується Google Play, є можливість розблокувати всі функції програми. <br>
-            Якщо вам подобаються наші додатки, які працюють автономно, не нав\'язливі та не містять реклами, будь ласка, подумайте про те, щоб підтримати нас якимось чином. Ми будемо дуже вдячні.<br><br>
-            Дякую!
-        ]]>
-    </string>
-  <string name="donate_text_no_gp">
-        <![CDATA[
-            У зв\'язку з проблемами, що виникли, ми тимчасово не можемо проводити платежі через Google Play,
-            тому на цей період ми надаємо всім користувачам можливість вручну розблокувати всі функції програми. <br>
-            Якщо вам подобаються наші додатки, які працюють автономно, не нав\'язливі та не містять реклами, будь ласка, подумайте про те, щоб підтримати нас якимось чином. Ми будемо дуже вдячні.<br><br>
-            Спасибі!
-        ]]>
-    </string>
+  <!--Sleep timer-->
     <string name="pref_animated_marquee">Анімаційна назва книги, розділ і ефект автора</string>
   <string name="length">Тривалість</string>
   <string name="last_played_at">Останнє прослуховування</string>
   <string name="remaining_time">Час, що залишився</string>
-  <string name="any_support_unlock_all">Виберіть доступний вам рівень підтримки проекту (разова, щомісячна або щорічна). Будь-яка підтримка відкриває всі можливості програми. Ви можете скасувати підписку в будь-який час.</string>
   <string name="auto_sleep_timer">Запустіть таймер відкладення за розкладом</string>
   <string name="auto_sleep_timer_start">Час початку</string>
 </resources>
