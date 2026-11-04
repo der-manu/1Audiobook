@@ -56,6 +56,7 @@ object ChapterSorter {
     val byRawFileName = Comparator<ChapterSortItem<T>> { a, b ->
       a.fileName.compareTo(b.fileName)
     }
+    val magicKeys = if (settings.key == ChapterSortKey.MAGIC) magicKeysFor(items, settings.grouping) else null
     val byKey: Comparator<ChapterSortItem<T>> = when (settings.key) {
       ChapterSortKey.FILENAME -> byFileName
       ChapterSortKey.TITLE -> Comparator { a, b ->
@@ -67,6 +68,16 @@ object ChapterSorter {
       ChapterSortKey.PLAYLIST -> Comparator { a, b ->
         (a.rank ?: Int.MAX_VALUE).compareTo(b.rank ?: Int.MAX_VALUE)
       }
+      ChapterSortKey.MAGIC -> Comparator { a, b ->
+        val keyA = magicKeys?.get(a)
+        val keyB = magicKeys?.get(b)
+        when {
+          keyA != null && keyB != null -> compareKeys(keyA, keyB)
+          keyA != null -> -1
+          keyB != null -> 1
+          else -> 0
+        }
+      }
     }
 
     val comparator: Comparator<ChapterSortItem<T>> = when (settings.grouping) {
@@ -76,6 +87,31 @@ object ChapterSorter {
 
     val sorted = items.sortedWith(comparator)
     return if (settings.reversed) sorted.asReversed().toList() else sorted
+  }
+
+  /**
+   * Schluessel fuers "Zaubern". Bei Gruppierung nach Ordnern wird jeder Ordner fuer sich analysiert,
+   * weil jeder Ordner sein eigenes Benennungsmuster haben kann.
+   */
+  private fun <T> magicKeysFor(
+    items: List<ChapterSortItem<T>>,
+    grouping: ChapterGrouping,
+  ): Map<ChapterSortItem<T>, List<Long>?> {
+    val result = java.util.IdentityHashMap<ChapterSortItem<T>, List<Long>?>()
+    val groups = if (grouping == ChapterGrouping.BY_FOLDER) items.groupBy { it.folders }.values else listOf(items)
+    for (group in groups) {
+      val keys = MagicOrder.keys(group.map { it.fileName })
+      group.forEachIndexed { index, item -> result[item] = keys[index] }
+    }
+    return result
+  }
+
+  private fun compareKeys(a: List<Long>, b: List<Long>): Int {
+    for (i in 0 until minOf(a.size, b.size)) {
+      val result = a[i].compareTo(b[i])
+      if (result != 0) return result
+    }
+    return a.size - b.size
   }
 
   /**

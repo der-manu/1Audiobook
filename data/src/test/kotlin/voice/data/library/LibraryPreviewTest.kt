@@ -87,4 +87,14 @@ class LibraryPreviewTest {
     val settings = ChapterSortSettings(ChapterGrouping.BY_FOLDER, ChapterSortKey.PLAYLIST, false)
     ChapterSortSettings.decode(settings.encode()) shouldBe settings
   }
+
+  @Test
+  fun suggestsMagicOnlyWhenFileNamesCarryCdNumbersThatNamesSortWrongly() {
+    val files = (1..3).flatMap { disc -> (1..6).map { "%02d - Titel (CD%d).mp3".format(it, disc) } }.toTypedArray()
+    val flat = dir("Buch", *f(*files), key = "Buch")
+    LibraryPreview.suggestedSort(flat).key shouldBe ChapterSortKey.MAGIC
+
+    LibraryPreview.suggestedSort(book).key shouldBe ChapterSortKey.FILENAME
+    LibraryPreview.suggestedSort(dir("Buch", *numbered(12), key = "Buch")).key shouldBe ChapterSortKey.FILENAME
+  }
 }

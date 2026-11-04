@@ -145,4 +145,6 @@
   <string name="library_use_playlist">Playlist (m3u) verwenden</string>
   <string name="library_playlist_info">%1$s · %2$d von %3$d Einträgen zugeordnet · %4$d Dateien nicht in der Liste</string>
   <string name="library_not_in_playlist">nicht in der Playlist</string>
+  <string name="sort_order_key_magic">Zaubern (CD-Nummern in Dateinamen erkennen)</string>
+  <string name="library_order_magic">Zaubern (CD-Nummern)</string>
 </resources>

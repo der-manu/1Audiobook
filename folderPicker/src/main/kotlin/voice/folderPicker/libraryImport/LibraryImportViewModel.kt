@@ -21,8 +21,6 @@ import voice.common.navigation.Destination
 import voice.common.navigation.Destination.SelectFolderType.Mode
 import voice.common.navigation.Navigator
 import voice.common.pref.PrefKeys
-import voice.data.ChapterGrouping
-import voice.data.ChapterSortKey
 import voice.data.ChapterSortSettings
 import voice.data.folders.AudiobookFolders
 import voice.data.library.BookDetector
@@ -96,7 +94,7 @@ class LibraryImportViewModel
               name = NameCleaner.bookName(detected.pathNames),
               selected = true,
               usePlaylist = plan.usable,
-              sort = DEFAULT_SORT,
+              sort = LibraryPreview.suggestedSort(detected.dir),
             )
           }
           .sortedWith(compareBy(NaturalOrderComparator.stringComparator) { it.book.pathNames.joinToString("/") })
@@ -195,13 +193,5 @@ class LibraryImportViewModel
       uri: Uri,
       mode: Mode,
     ): LibraryImportViewModel
-  }
-
-  private companion object {
-    val DEFAULT_SORT = ChapterSortSettings(
-      grouping = ChapterGrouping.BY_FOLDER,
-      key = ChapterSortKey.FILENAME,
-      reversed = false,
-    )
   }
 }

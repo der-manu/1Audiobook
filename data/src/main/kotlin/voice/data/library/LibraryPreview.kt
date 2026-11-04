@@ -30,6 +30,18 @@ object LibraryPreview {
     return if (usePlaylist && plan.usable) sort.copy(key = ChapterSortKey.PLAYLIST, reversed = false) else sort
   }
 
+  /**
+   * Standard: nach Ordnern, dann nach Dateiname. Stehen CD-Nummern in den Dateinamen und ordnet der Namensvergleich
+   * sie deshalb falsch, schlaegt "Zaubern" eine bessere Reihenfolge vor. Sonst bleibt alles wie gewohnt.
+   */
+  fun suggestedSort(dir: LibraryDir): ChapterSortSettings {
+    val byName = ChapterSortSettings(ChapterGrouping.BY_FOLDER, ChapterSortKey.FILENAME, reversed = false)
+    val magic = byName.copy(key = ChapterSortKey.MAGIC)
+    fun order(settings: ChapterSortSettings) =
+      entries(dir, PlaylistPlan.NONE, usePlaylist = false, sort = settings).map { it.item.file.key }
+    return if (order(magic) != order(byName)) magic else byName
+  }
+
   fun entries(
     dir: LibraryDir,
     plan: PlaylistPlan,

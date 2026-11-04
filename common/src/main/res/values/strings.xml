@@ -160,4 +160,6 @@
   <string name="library_use_playlist">Use playlist (m3u)</string>
   <string name="library_playlist_info">%1$s · %2$d of %3$d entries matched · %4$d files not in the list</string>
   <string name="library_not_in_playlist">not in the playlist</string>
+  <string name="sort_order_key_magic">Magic (recognise CD numbers in file names)</string>
+  <string name="library_order_magic">Magic (CD numbers)</string>
 </resources>

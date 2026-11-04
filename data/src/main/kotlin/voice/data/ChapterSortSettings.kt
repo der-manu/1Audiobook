@@ -28,6 +28,12 @@ enum class ChapterSortKey {
    * Dateien ohne Rang folgen am Ende nach Dateiname.
    */
   PLAYLIST,
+
+  /**
+   * "Zaubern": erkennt aus den Zahlen in den Dateinamen des Ordners selbst, welche Zahl die CD und welche der
+   * Track ist (siehe [MagicOrder]). Passt kein Muster, gilt der normale Namensvergleich.
+   */
+  MAGIC,
 }
 
 data class ChapterSortSettings(

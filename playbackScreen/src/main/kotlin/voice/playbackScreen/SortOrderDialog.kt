@@ -1,6 +1,7 @@
 package voice.playbackScreen
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -119,6 +120,12 @@ internal fun SortOrderDialog(
           enabled = !useDefault,
           onClick = { key = ChapterSortKey.DATE },
         )
+        KeyOption(
+          text = stringResource(id = CommonR.string.sort_order_key_magic),
+          selected = key == ChapterSortKey.MAGIC,
+          enabled = !useDefault,
+          onClick = { key = ChapterSortKey.MAGIC },
+        )
         SwitchRow(
           text = stringResource(id = CommonR.string.sort_order_reversed),
           checked = reversed,
@@ -134,8 +141,11 @@ internal fun SortOrderDialog(
           modifier = Modifier.padding(bottom = 4.dp),
         )
         val showTitle = !useDefault && key == ChapterSortKey.TITLE
-        preview.take(MAX_PREVIEW_ROWS).forEachIndexed { index, entry ->
-          PreviewRow(index = index + 1, entry = entry, showTitle = showTitle)
+        // Lange Dateinamen werden nicht abgeschnitten: die Liste laesst sich seitlich wischen.
+        Column(modifier = Modifier.horizontalScroll(rememberScrollState())) {
+          preview.take(MAX_PREVIEW_ROWS).forEachIndexed { index, entry ->
+            PreviewRow(index = index + 1, entry = entry, showTitle = showTitle)
+          }
         }
         if (preview.size > MAX_PREVIEW_ROWS) {
           Text(
@@ -216,11 +226,7 @@ private fun PreviewRow(
   } else {
     entry.fileName
   }
-  Row(
-    modifier = Modifier
-      .fillMaxWidth()
-      .padding(vertical = 2.dp),
-  ) {
+  Row(modifier = Modifier.padding(vertical = 2.dp)) {
     Text(
       text = "$index.",
       style = MaterialTheme.typography.bodySmall,
@@ -231,16 +237,14 @@ private fun PreviewRow(
       Text(
         text = primary,
         style = MaterialTheme.typography.bodyMedium,
-        maxLines = 1,
-        overflow = TextOverflow.Ellipsis,
+        softWrap = false,
       )
       if (entry.relativeFolder.isNotEmpty()) {
         Text(
           text = entry.relativeFolder,
           style = MaterialTheme.typography.bodySmall,
           color = MaterialTheme.colorScheme.onSurfaceVariant,
-          maxLines = 1,
-          overflow = TextOverflow.Ellipsis,
+          softWrap = false,
         )
       }
     }

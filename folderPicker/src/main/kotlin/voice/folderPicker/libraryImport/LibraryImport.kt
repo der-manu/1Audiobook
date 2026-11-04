@@ -2,6 +2,7 @@ package voice.folderPicker.libraryImport
 
 import android.net.Uri
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -285,6 +286,7 @@ private fun BookRow(
   }
   val order = when {
     book.usePlaylist && book.plan.usable -> stringResource(CommonR.string.library_order_playlist)
+    book.sort.key == ChapterSortKey.MAGIC -> stringResource(CommonR.string.library_order_magic)
     book.sort.grouping == ChapterGrouping.BY_FOLDER -> stringResource(CommonR.string.library_order_folders)
     else -> stringResource(CommonR.string.library_order_flat)
   }
@@ -401,7 +403,9 @@ private fun OrderDialog(
   var groupByFolder by remember { mutableStateOf(book.sort.grouping == ChapterGrouping.BY_FOLDER) }
   var key by remember {
     mutableStateOf(
-      book.sort.key.takeIf { it == ChapterSortKey.FILENAME || it == ChapterSortKey.DATE } ?: ChapterSortKey.FILENAME,
+      book.sort.key.takeIf {
+        it == ChapterSortKey.FILENAME || it == ChapterSortKey.DATE || it == ChapterSortKey.MAGIC
+      } ?: ChapterSortKey.FILENAME,
     )
   }
   var reversed by remember { mutableStateOf(book.sort.reversed) }
@@ -483,6 +487,12 @@ private fun OrderDialog(
           enabled = !playlistActive,
           onClick = { key = ChapterSortKey.DATE },
         )
+        KeyLine(
+          text = stringResource(CommonR.string.sort_order_key_magic),
+          selected = key == ChapterSortKey.MAGIC,
+          enabled = !playlistActive,
+          onClick = { key = ChapterSortKey.MAGIC },
+        )
         SwitchLine(
           text = stringResource(CommonR.string.sort_order_reversed),
           checked = reversed,
@@ -496,34 +506,35 @@ private fun OrderDialog(
           text = stringResource(CommonR.string.sort_order_preview, preview.size),
           style = MaterialTheme.typography.labelLarge,
         )
-        preview.take(MAX_PREVIEW_ROWS).forEachIndexed { index, entry ->
-          val missing = playlistActive && !book.plan.rankByKey.containsKey(entry.item.file.key)
-          Row(modifier = Modifier.padding(vertical = 2.dp)) {
-            Text(
-              modifier = Modifier.width(40.dp),
-              text = "${index + 1}.",
-              style = MaterialTheme.typography.bodySmall,
-              color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            Column {
+        // Lange Dateinamen werden nicht abgeschnitten: die Liste laesst sich seitlich wischen.
+        Column(modifier = Modifier.horizontalScroll(rememberScrollState())) {
+          preview.take(MAX_PREVIEW_ROWS).forEachIndexed { index, entry ->
+            val missing = playlistActive && !book.plan.rankByKey.containsKey(entry.item.file.key)
+            Row(modifier = Modifier.padding(vertical = 2.dp)) {
               Text(
-                text = entry.fileName,
-                style = MaterialTheme.typography.bodyMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.width(40.dp),
+                text = "${index + 1}.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
               )
-              val detailLine = listOfNotNull(
-                entry.relativeFolder.takeIf { it.isNotEmpty() },
-                notListed.takeIf { missing },
-              ).joinToString(" · ")
-              if (detailLine.isNotEmpty()) {
+              Column {
                 Text(
-                  text = detailLine,
-                  style = MaterialTheme.typography.bodySmall,
-                  color = if (missing) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
-                  maxLines = 1,
-                  overflow = TextOverflow.Ellipsis,
+                  text = entry.fileName,
+                  style = MaterialTheme.typography.bodyMedium,
+                  softWrap = false,
                 )
+                val detailLine = listOfNotNull(
+                  entry.relativeFolder.takeIf { it.isNotEmpty() },
+                  notListed.takeIf { missing },
+                ).joinToString(" · ")
+                if (detailLine.isNotEmpty()) {
+                  Text(
+                    text = detailLine,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (missing) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+                    softWrap = false,
+                  )
+                }
               }
             }
           }

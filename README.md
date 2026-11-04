@@ -14,7 +14,8 @@ the right order.
 
 - **Playlist order dialog with live preview** (player screen, `⋯` menu → *Playlist order…*):
   group by folder (folder 1 = 1…N, then folder 2 = 1…N) or sort all files together, by file name, tag title or
-  date, optionally reversed. The preview updates immediately; the choice is remembered per book and survives
+  date, optionally reversed. *Magic* recognises CD numbers inside file names (`01 - Title (CD1).mp3`) and puts
+  CD 1 completely before CD 2. Long file names can be read by swiping the list sideways. The preview updates immediately; the choice is remembered per book and survives
   rescans.
 - **Library import with preview** (*Add folder → Library: detect books automatically*): reads a whole folder tree,
   recognises books (single folders, multi-CD books such as `CD1`/`CD2`, series and author folders), cleans up release-style
