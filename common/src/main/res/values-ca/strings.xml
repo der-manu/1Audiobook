@@ -129,7 +129,7 @@
 
   <!--Onboarding-->
   <string name="auto_sleep_timer_end">Hora de finalització</string>
-  <string name="onboarding_welcome_title_g">Benvingut a PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Benvingut a PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Utilitzar gestos</string>
   <string name="onboarding_show_player">Mostra el reproductor</string>
   <string name="onboarding_show_list_chapters">Mostra la llista de capítols</string>

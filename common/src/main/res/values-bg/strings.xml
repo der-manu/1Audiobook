@@ -137,7 +137,7 @@
   <string name="remaining_time">Оставащо време</string>
   <string name="any_support_unlock_all">Изберете нивото на поддръжка на проекта (еднократно, месечно или годишно). Всяка поддръжка отключва всички функции на приложението. Можете да отмените абонамента си по всяко време.</string>
   <string name="auto_sleep_timer_end">Краен час</string>
-  <string name="onboarding_welcome_title_g">Добре дошли в PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Добре дошли в PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Стартирайте таймера за отлагане по график</string>
   <string name="auto_sleep_timer_start">Начален час</string>
 </resources>

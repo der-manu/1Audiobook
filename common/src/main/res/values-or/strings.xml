@@ -125,7 +125,7 @@
   <string name="tipping_jar_dialog_error_message">Unfortunately something bad happened while performing the tipping transaction. Do not be sad, just try again another time and enjoy PlayBook</string>
 
   <!--Onboarding-->
-  <string name="onboarding_welcome_title_g">Welcome to PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Welcome to PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Use gestures</string>
   <string name="onboarding_show_player">Show player</string>
   <string name="onboarding_show_list_chapters">Show list of chapters</string>

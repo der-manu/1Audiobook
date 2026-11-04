@@ -128,7 +128,7 @@ Ek sal baie dankbaar wees as jy \'n resensie of beoordeling oor die toepassing o
   <string name="remaining_time">Oorblywende tyd</string>
   <string name="any_support_unlock_all">Kies die vlak van projekondersteuning wat tot jou beskikking is (eenmalig, maandeliks of jaarliks). Enige ondersteuning ontsluit alle kenmerke van die toepassing. Jy kan jou intekening enige tyd kanselleer.</string>
   <string name="auto_sleep_timer_end">Eindtyd</string>
-  <string name="onboarding_welcome_title_g">Welkom by PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Welkom by PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Begin sluimertimer op skedule</string>
   <string name="auto_sleep_timer_start">Begin tyd</string>
 </resources>

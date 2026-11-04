@@ -37,7 +37,6 @@ interface SettingsListener {
   fun colorThemeChanged(color: Int)
   fun onColorThemeDialogRowClick()
   fun onAboutClick()
-  fun onPurchaseClick()
   fun toggleUseSwipe()
   fun onUseSwipeFaqClick()
   fun toggleUseHapticFeedback()

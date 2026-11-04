@@ -137,7 +137,7 @@ Ficarei muito grato se você deixar um comentário ou avaliação sobre o aplica
   <string name="remaining_time">Tempo restante</string>
   <string name="any_support_unlock_all">Escolha o nível de apoio ao projeto disponível para si (único, mensal ou anual). Qualquer suporte desbloqueia todas as funcionalidades da aplicação. Pode cancelar a sua subscrição em qualquer altura.</string>
   <string name="auto_sleep_timer_end">Hora de fim</string>
-  <string name="onboarding_welcome_title_g">Bem-vindo ao PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Bem-vindo ao PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Iniciar o temporizador da snooze de acordo com a programação</string>
   <string name="auto_sleep_timer_start">Hora de início</string>
 </resources>

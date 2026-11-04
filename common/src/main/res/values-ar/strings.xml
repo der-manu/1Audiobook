@@ -125,7 +125,7 @@
   <string name="remaining_time">الوقت المتبقي</string>
   <string name="any_support_unlock_all">اختر مستوى دعم المشروع المتاح لك (لمرة واحدة أو شهريا أو سنويا). أي دعم يفتح جميع ميزات التطبيق. يمكنك إلغاء اشتراكك في أي وقت.</string>
   <string name="auto_sleep_timer_end">وقت الانتهاء</string>
-  <string name="onboarding_welcome_title_g">مرحبا بكم في PlayBook!</string>
+  <string name="onboarding_welcome_title_g">مرحبا بكم في PlayBookAdvance!</string>
   <string name="auto_sleep_timer">بدء مؤقت الغفوة في الموعد المحدد</string>
   <string name="auto_sleep_timer_start">وقت البدء</string>
 </resources>

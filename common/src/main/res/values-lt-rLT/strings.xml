@@ -128,7 +128,7 @@ Būčiau labai dėkingas, jei paliktumėte atsiliepimą ar įvertinimą apie pro
   <string name="remaining_time">Likęs laikas</string>
   <string name="any_support_unlock_all">Pasirinkite jums prieinamo projekto palaikymo lygį (vienkartinį, mėnesinį ar metinį). Bet koks palaikymas atrakina visas programos funkcijas. Galite bet kada atšaukti prenumeratą.</string>
   <string name="auto_sleep_timer_end">Pabaigos laikas</string>
-  <string name="onboarding_welcome_title_g">Sveiki atvykę į \"PlayBook\"!</string>
+  <string name="onboarding_welcome_title_g">Sveiki atvykę į \"PlayBookAdvance\"!</string>
   <string name="auto_sleep_timer">Paleiskite snaudimo laikmatį pagal tvarkaraštį</string>
   <string name="auto_sleep_timer_start">Pradžios laikas</string>
 </resources>

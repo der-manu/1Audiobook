@@ -6,7 +6,6 @@
     <intent
       android:action="playCurrent"
       android:targetClass="voice.app.features.MainActivity"
-      android:targetPackage="com.goodwy.audiobooklite" />
+      android:targetPackage="io.github.dermanu.playbookadvance" />
   </shortcut>
-  <!--TODO application ID-->
 </shortcuts>

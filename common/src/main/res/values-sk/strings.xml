@@ -137,7 +137,7 @@ Bol by som veľmi vďačný, keby ste na Google Play zanechali recenziu alebo ho
   <string name="remaining_time">Zostávajúci čas</string>
   <string name="any_support_unlock_all">Vyberte si úroveň projektovej podpory, ktorú máte k dispozícii (jednorazovou, mesačnú alebo ročnú). Akákoľvek podpora odomkne všetky funkcie aplikácie. Predplatné môžete kedykoľvek zrušiť.</string>
   <string name="auto_sleep_timer_end">Čas ukončenia</string>
-  <string name="onboarding_welcome_title_g">Vitajte v PlayBooku!</string>
+  <string name="onboarding_welcome_title_g">Vitajte v PlayBookAdvanceu!</string>
   <string name="auto_sleep_timer">Spustenie časovača odloženia podľa plánu</string>
   <string name="auto_sleep_timer_start">Čas začiatku</string>
 </resources>

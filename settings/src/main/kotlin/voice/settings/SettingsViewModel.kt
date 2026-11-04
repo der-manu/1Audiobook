@@ -302,15 +302,15 @@ class SettingsViewModel
   }
 
   override fun getSupport() {
-    navigator.goTo(Destination.Website("https://github.com/Goodwy/PlayBook/discussions/new?category=q-a"))
+    navigator.goTo(Destination.Website("https://github.com/der-manu/PlayBookAdvance/issues/new"))
   }
 
   override fun suggestIdea() {
-    navigator.goTo(Destination.Website("https://github.com/Goodwy/PlayBook/discussions/new?category=ideas"))
+    navigator.goTo(Destination.Website("https://github.com/der-manu/PlayBookAdvance/issues/new"))
   }
 
   override fun openBugReport() {
-    val url = "https://github.com/Goodwy/PlayBooks/issues/new".toUri()
+    val url = "https://github.com/der-manu/PlayBookAdvance/issues/new".toUri()
       .buildUpon()
       .appendQueryParameter("template", "bug.yml")
       .appendQueryParameter("version", appInfoProvider.versionName)
@@ -341,10 +341,6 @@ class SettingsViewModel
 
   override fun onAboutClick() {
     navigator.goTo(Destination.About)
-  }
-
-  override fun onPurchaseClick() {
-    navigator.goTo(Destination.Purchase)
   }
 
   override fun toggleUseSwipe() {

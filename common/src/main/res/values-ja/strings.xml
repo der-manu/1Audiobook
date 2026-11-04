@@ -128,7 +128,7 @@ Google Play でアプリのレビューや評価を残していただければ�
   <string name="remaining_time">残り時間</string>
   <string name="any_support_unlock_all">利用可能なプロジェクトサポートのレベル(1回限り、毎月、または毎年)を選択します。どのサポートでも、アプリケーションのすべての機能がロック解除されます。サブスクリプションはいつでもキャンセルできます。</string>
   <string name="auto_sleep_timer_end">終了時間</string>
-  <string name="onboarding_welcome_title_g">PlayBookへようこそ!</string>
+  <string name="onboarding_welcome_title_g">PlayBookAdvanceへようこそ!</string>
   <string name="auto_sleep_timer">スケジュールどおりにスヌーズタイマーを開始</string>
   <string name="auto_sleep_timer_start">開始時間</string>
 </resources>

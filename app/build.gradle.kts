@@ -38,7 +38,7 @@ android {
   }
 
   defaultConfig {
-    applicationId = "com.goodwy.audiobooklite" //TODO application ID
+    applicationId = "io.github.dermanu.playbookadvance"
     versionCode = libs.versions.versionCode.get().toInt()
     versionName = libs.versions.versionName.get()
 
@@ -48,19 +48,6 @@ android {
       abiFilters.clear()
       abiFilters += setOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
     }
-
-    val properties = Properties().apply {
-      load(rootProject.file("local.properties").reader())
-    }
-    buildConfigField("String", "PRODUCT_ID_X1", "\"${properties["PRODUCT_ID_X1"]}\"")
-    buildConfigField("String", "PRODUCT_ID_X2", "\"${properties["PRODUCT_ID_X2"]}\"")
-    buildConfigField("String", "PRODUCT_ID_X3", "\"${properties["PRODUCT_ID_X3"]}\"")
-    buildConfigField("String", "SUBSCRIPTION_ID_X1", "\"${properties["SUBSCRIPTION_ID_X1"]}\"")
-    buildConfigField("String", "SUBSCRIPTION_ID_X2", "\"${properties["SUBSCRIPTION_ID_X2"]}\"")
-    buildConfigField("String", "SUBSCRIPTION_ID_X3", "\"${properties["SUBSCRIPTION_ID_X3"]}\"")
-    buildConfigField("String", "SUBSCRIPTION_YEAR_ID_X1", "\"${properties["SUBSCRIPTION_YEAR_ID_X1"]}\"")
-    buildConfigField("String", "SUBSCRIPTION_YEAR_ID_X2", "\"${properties["SUBSCRIPTION_YEAR_ID_X2"]}\"")
-    buildConfigField("String", "SUBSCRIPTION_YEAR_ID_X3", "\"${properties["SUBSCRIPTION_YEAR_ID_X3"]}\"")
   }
 
   fun createSigningConfig(name: String): SigningConfig {
@@ -241,5 +228,4 @@ dependencies {
   androidTestImplementation(libs.uiautomator)
 
   //PlayBook
-  implementation(libs.billing.client)
 }

@@ -128,7 +128,7 @@ Nitashukuru sana ukiacha ukaguzi au ukadiriaji kuhusu programu kwenye Google Pla
   <string name="remaining_time">Muda uliobaki</string>
   <string name="any_support_unlock_all">Chagua kiwango cha msaada wa mradi unaopatikana kwako (wakati mmoja, kila mwezi au kila mwaka). Msaada wowote hufungua vipengele vyote vya programu. Unaweza kughairi usajili wako wakati wowote.</string>
   <string name="auto_sleep_timer_end">Muda wa mwisho</string>
-  <string name="onboarding_welcome_title_g">Karibu kwenye PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Karibu kwenye PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Anza snooze timer kwenye ratiba</string>
   <string name="auto_sleep_timer_start">Muda wa kuanza</string>
 </resources>

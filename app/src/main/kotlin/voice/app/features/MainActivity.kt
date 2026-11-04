@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -25,7 +24,6 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import voice.app.AppController
-import voice.app.BuildConfig
 import voice.app.R
 import voice.app.features.bookOverview.EditCoverDialogController
 import voice.app.injection.appComponent
@@ -71,39 +69,6 @@ class MainActivity : AppCompatActivity() {
   @field:[Inject Named(PrefKeys.PRO)]
   lateinit var isProPref: Pref<Boolean>
 
-  @field:[Inject Named(PrefKeys.PRO_SUBS)]
-  lateinit var isProSubsPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.PRO_RUSTORE)]
-  lateinit var isProRuPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.PRICES)]
-  lateinit var pricesPref: Pref<String>
-
-  @field:[Inject Named(PrefKeys.PRICES_SUBS)]
-  lateinit var pricesSubsPref: Pref<String>
-
-  @field:[Inject Named(PrefKeys.PURCHASED_LIST)]
-  lateinit var purchasedList: Pref<String>
-
-  @field:[Inject Named(PrefKeys.PURCHASED_SUBS_LIST)]
-  lateinit var purchasedSubsList: Pref<String>
-
-  @field:[Inject Named(PrefKeys.PRICES_RUSTORE)]
-  lateinit var pricesRustorePref: Pref<String>
-
-  @field:[Inject Named(PrefKeys.PURCHASED_LIST_RUSTORE)]
-  lateinit var purchasedListRustore: Pref<String>
-
-  @field:[Inject Named(PrefKeys.IS_PLAY_STORE_INSTALLED)]
-  lateinit var isPlayStoreInstalledPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.IS_RU_STORE_INSTALLED)]
-  lateinit var isRuStoreInstalledPref: Pref<Boolean>
-
-  @field:[Inject Named(PrefKeys.USE_GOOGLE_PLAY)]
-  lateinit var useGooglePlay: Pref<Boolean>
-
   @Inject
   lateinit var bookSearchParser: BookSearchParser
 
@@ -122,18 +87,6 @@ class MainActivity : AppCompatActivity() {
   private lateinit var mSettingsContentObserver: SettingsContentObserver
 
   private lateinit var router: Router
-
-  private val purchaseHelper = PurchaseHelper(this)
-  private val productList: ArrayList<String> = arrayListOf(
-    BuildConfig.PRODUCT_ID_X1,
-    BuildConfig.PRODUCT_ID_X2,
-    BuildConfig.PRODUCT_ID_X3,
-    BuildConfig.SUBSCRIPTION_ID_X1,
-    BuildConfig.SUBSCRIPTION_ID_X2,
-    BuildConfig.SUBSCRIPTION_ID_X3,
-    BuildConfig.SUBSCRIPTION_YEAR_ID_X1,
-    BuildConfig.SUBSCRIPTION_YEAR_ID_X2,
-    BuildConfig.SUBSCRIPTION_YEAR_ID_X3 )
 
   override fun onCreate(savedInstanceState: Bundle?) {
     appComponent.inject(this)
@@ -209,17 +162,6 @@ class MainActivity : AppCompatActivity() {
               is Destination.Activity -> {
                 startActivity(destination.intent)
               }
-              is Destination.BuyTip -> {
-                if (destination.usePlayStore) {
-                  if (destination.tip < 3) purchaseHelper.getDonation(productList[destination.tip])
-                  else purchaseHelper.getSubscription(productList[destination.tip])
-                } else {
-                  // RuStore-Zahlung wurde in diesem Fork entfernt
-                }
-              }
-              is Destination.RefreshPurchase -> {
-                if (destination.usePlayStore) initPlayStore() else Unit
-              }
             }
           }
           is NavigationCommand.Execute -> {
@@ -246,15 +188,8 @@ class MainActivity : AppCompatActivity() {
     super.onResume()
     currentVolumePref.value = mSettingsContentObserver.previousVolume
 
-    val isProApp = resources.getBoolean(CommonR.bool.is_pro_app)
-    val isPlayStoreInstalled = isPlayStoreInstalled()
-    isPlayStoreInstalledPref.value = isPlayStoreInstalled
-    isRuStoreInstalledPref.value = false
-    if (!isPlayStoreInstalled) useGooglePlay.value = false
-
-    //Billing
-    if (isProApp) isProPref.value = true
-    if (isPlayStoreInstalled) initPlayStore()
+    // PlayBookAdvance: Alle Funktionen sind frei (bool is_pro_app = true).
+    if (resources.getBoolean(CommonR.bool.is_pro_app)) isProPref.value = true
   }
 
   override fun onDestroy() {
@@ -301,110 +236,6 @@ class MainActivity : AppCompatActivity() {
 
     val rootTransaction = RouterTransaction.with(AppController())
     router.setRoot(rootTransaction)
-  }
-
-  private fun isPlayStoreInstalled(): Boolean {
-    return isPackageInstalled("com.android.vending")
-      || isPackageInstalled("com.google.market")
-  }
-
-  private fun isPackageInstalled(packageName: String?): Boolean {
-    val packageManager = packageManager
-    val intent = packageManager.getLaunchIntentForPackage(packageName!!) ?: return false
-    val list = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
-    return list.isNotEmpty()
-  }
-
-  private fun initPlayStore() {
-    purchaseHelper.initBillingClient()
-    val iapList: ArrayList<String> = arrayListOf(BuildConfig.PRODUCT_ID_X1, BuildConfig.PRODUCT_ID_X2, BuildConfig.PRODUCT_ID_X3)
-    val subList: ArrayList<String> = arrayListOf(BuildConfig.SUBSCRIPTION_ID_X1, BuildConfig.SUBSCRIPTION_ID_X2, BuildConfig.SUBSCRIPTION_ID_X3,
-      BuildConfig.SUBSCRIPTION_YEAR_ID_X1, BuildConfig.SUBSCRIPTION_YEAR_ID_X2, BuildConfig.SUBSCRIPTION_YEAR_ID_X3)
-    purchaseHelper.retrieveDonation(iapList, subList)
-
-    purchaseHelper.iapSkuDetailsInitialized.observe(this) {
-      if (it) {
-        var prices = ""
-        iapList.forEach { item ->
-          val price = purchaseHelper.getPriceDonation(item)
-          prices += if (price != "???") {
-            val resultPrice = price.replace(".00", "", true)
-            if (item == iapList.last()) resultPrice else "$resultPrice;"
-          } else {
-            if (item == subList.last()) "???" else "???;"
-          }
-        }
-        pricesPref.value = prices
-      }
-    }
-    purchaseHelper.subSkuDetailsInitialized.observe(this) {
-      if (it) {
-        var prices = ""
-        subList.forEach { item ->
-          val price = purchaseHelper.getPriceSubscription(item)
-          prices += if (price != "???") {
-            val resultPrice = price.replace(".00", "", true)
-            if (item == subList.last()) resultPrice else "$resultPrice;"
-          } else {
-            if (item == subList.last()) "???" else "???;"
-          }
-        }
-        pricesSubsPref.value = prices
-      }
-    }
-
-    purchaseHelper.isIapPurchased.observe(this) {
-      when (it) {
-        is Tipping.Succeeded -> {
-          isProPref.value = true
-        }
-        is Tipping.NoTips -> {
-          val isProApp = resources.getBoolean(CommonR.bool.is_pro_app)
-          isProPref.value = isProApp
-        }
-        is Tipping.FailedToLoad -> {
-        }
-      }
-    }
-
-    purchaseHelper.isSupPurchased.observe(this) {
-      when (it) {
-        is Tipping.Succeeded -> {
-          isProSubsPref.value = true
-        }
-        is Tipping.NoTips -> {
-          isProSubsPref.value = false
-        }
-        is Tipping.FailedToLoad -> {
-        }
-      }
-    }
-
-    updateCheckedPurchases()
-  }
-
-  private fun updateCheckedPurchases() {
-    val iapList: ArrayList<String> = arrayListOf(BuildConfig.PRODUCT_ID_X1, BuildConfig.PRODUCT_ID_X2, BuildConfig.PRODUCT_ID_X3)
-    val subList: ArrayList<String> = arrayListOf(BuildConfig.SUBSCRIPTION_ID_X1, BuildConfig.SUBSCRIPTION_ID_X2, BuildConfig.SUBSCRIPTION_ID_X3,
-      BuildConfig.SUBSCRIPTION_YEAR_ID_X1, BuildConfig.SUBSCRIPTION_YEAR_ID_X2, BuildConfig.SUBSCRIPTION_YEAR_ID_X3)
-
-    purchaseHelper.isIapPurchasedList.observe(this) {
-      var purchased = ""
-      iapList.forEach { item ->
-        val result = if (purchaseHelper.isIapPurchased(item)) "1" else "0"
-        purchased += if (item == iapList.last()) result else "$result;"
-      }
-      purchasedList.value = purchased
-    }
-
-    purchaseHelper.isSupPurchasedList.observe(this) {
-      var purchased = ""
-      subList.forEach { item ->
-        val result = if (purchaseHelper.isSubPurchased(item)) "1" else "0"
-        purchased += if (item == iapList.last()) result else "$result;"
-      }
-      purchasedSubsList.value = purchased
-    }
   }
 
   companion object {

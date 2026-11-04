@@ -26,7 +26,6 @@ import voice.onboarding.completion.OnboardingCompletion
 import voice.review.ReviewFeature
 import voice.settings.views.Settings
 import voice.settings.about.About
-import voice.settings.purchase.Purchase
 import javax.inject.Inject
 
 class AppController : ComposeController() {
@@ -110,9 +109,6 @@ class AppController : ComposeController() {
         )
         Destination.About -> {
           About()
-        }
-        Destination.Purchase -> {
-          Purchase()
         }
       }
     }

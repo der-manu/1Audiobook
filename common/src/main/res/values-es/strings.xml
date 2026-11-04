@@ -116,7 +116,7 @@ Le agradecería mucho si deja una reseña o calificación sobre la aplicación e
   <string name="change_book_author">Autor</string>
   <string name="edit_book_author">Editar autor</string>
   <string name="auto_sleep_timer_end">Hora de finalización</string>
-  <string name="onboarding_welcome_title_g">¡Bienvenido a PlayBook!</string>
+  <string name="onboarding_welcome_title_g">¡Bienvenido a PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Usar gestos</string>
   <string name="onboarding_show_player">Mostrar reproductor</string>
   <string name="onboarding_show_list_chapters">Mostrar lista de capítulos</string>

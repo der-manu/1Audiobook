@@ -138,7 +138,7 @@
   <string name="remaining_time">Gjenværende tid</string>
   <string name="any_support_unlock_all">Velg nivået på prosjektstøtte som er tilgjengelig for deg (engangs, månedlig eller årlig). All støtte låser opp alle funksjonene i applikasjonen. Du kan si opp abonnementet når som helst.</string>
   <string name="auto_sleep_timer_end">Sluttid</string>
-  <string name="onboarding_welcome_title_g">Velkommen til PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Velkommen til PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Start slumretidtakeren etter planen</string>
   <string name="auto_sleep_timer_start">Starttid</string>
 </resources>

@@ -174,7 +174,7 @@
   <string name="auto_sleep_timer">Start snooze timer on schedule</string>
   <string name="auto_sleep_timer_start">Start time</string>
   <string name="auto_sleep_timer_end">End time</string>
-  <string name="onboarding_welcome_title_g">Welcome to PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Welcome to PlayBookAdvance!</string>
   <!--Playlist order-->
   <string name="sort_order_menu_item">Playlist order…</string>
   <string name="sort_order_title">Playlist order</string>
@@ -190,4 +190,13 @@
   <string name="sort_order_preview_more">… and %1$d more</string>
   <string name="sort_order_apply">Apply</string>
   <string name="sort_order_cancel">Cancel</string>
+  <!--PlayBookAdvance: About / Credits-->
+  <string name="about_description">PlayBookAdvance is a free and open-source audiobook player (GPL-3.0). It is a fork of PlayBook by Goodwy, which is based on Voice by Paul Woitaschek.</string>
+  <string name="about_source_code">Source code and project page</string>
+  <string name="about_report_issue">Report a problem or suggest a feature</string>
+  <string name="about_credits_title">Credits and licenses</string>
+  <string name="about_credits_intro">PlayBookAdvance builds on the work of the following projects. Tap an entry to open its page.</string>
+  <string name="about_credits_based_on">Based on</string>
+  <string name="about_credits_inspiration">Inspiration</string>
+  <string name="about_credits_libraries">Libraries and services</string>
 </resources>

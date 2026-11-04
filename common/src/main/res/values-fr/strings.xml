@@ -137,7 +137,7 @@ Je vous serais très reconnaissant de laisser un avis ou une note sur l\'applica
   <string name="remaining_time">Temps restant</string>
   <string name="any_support_unlock_all">Choisissez le niveau de soutien au projet qui vous est offert (ponctuel, mensuel ou annuel). Tout support débloque toutes les fonctionnalités de l’application. Vous pouvez résilier votre abonnement à tout moment.</string>
   <string name="auto_sleep_timer_end">Heure de fin</string>
-  <string name="onboarding_welcome_title_g">Bienvenue sur PlayBook !</string>
+  <string name="onboarding_welcome_title_g">Bienvenue sur PlayBookAdvance !</string>
   <string name="auto_sleep_timer">Démarrez la minuterie de répétition à l’heure prévue</string>
   <string name="auto_sleep_timer_start">Heure de début</string>
 </resources>

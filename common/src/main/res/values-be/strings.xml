@@ -129,7 +129,7 @@
 
   <!--Onboarding-->
   <string name="auto_sleep_timer_end">Час заканчэння</string>
-  <string name="onboarding_welcome_title_g">Сардэчна запрашаем у PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Сардэчна запрашаем у PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Выкарыстоўвайце жэсты</string>
   <string name="onboarding_show_player">Паказаць плэер</string>
   <string name="onboarding_show_list_chapters">Паказаць спіс кіраўнікоў</string>

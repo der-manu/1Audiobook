@@ -18,10 +18,6 @@ class AboutViewModel
   private val appInfoProvider: AppInfoProvider,
   @Named(PrefKeys.PADDING)
   private val paddingPref: Pref<String>,
-  @Named(PrefKeys.IS_RU_STORE_INSTALLED)
-  private val isRuStoreInstalledPref: Pref<Boolean>,
-  @Named(PrefKeys.USE_GOOGLE_PLAY)
-  private val useGooglePlay: Pref<Boolean>,
 ) : AboutListener {
 
   @Composable
@@ -37,23 +33,7 @@ class AboutViewModel
     navigator.goBack()
   }
 
-  override fun onPurchaseClick() {
-    navigator.goTo(Destination.Purchase)
-  }
-
-  override fun onRateClick() {
-    val rateUrl = if (isRuStoreInstalledPref.value && !useGooglePlay.value) "https://apps.rustore.ru/app/${appInfoProvider.applicationID}"
-    else "https://play.google.com/store/apps/details?id=${appInfoProvider.applicationID}"
-    navigator.goTo(Destination.Website(rateUrl))
-  }
-
-  override fun onMoreAppClick() {
-    val otherAppUrl = if (isRuStoreInstalledPref.value && !useGooglePlay.value) "rustore://apps.rustore.ru/developer/d01f495d"
-    else "https://play.google.com/store/apps/dev?id=8268163890866913014"
-    navigator.goTo(Destination.Website(otherAppUrl))
-  }
-
-  override fun onPrivacyClick() {
-    navigator.goTo(Destination.Website("https://github.com/Goodwy/PlayBooks/blob/master/PRIVACY.md"))
+  override fun onUrlClick(url: String) {
+    navigator.goTo(Destination.Website(url))
   }
 }

@@ -138,7 +138,7 @@ Będziemy bardzo wdzięczni.
   <string name="remaining_time">Pozostały czas</string>
   <string name="any_support_unlock_all">Wybierz dostępny dla Ciebie poziom wsparcia projektowego (jednorazowy, miesięczny lub roczny). Każde wsparcie odblokowuje wszystkie funkcje aplikacji. Subskrypcję można anulować w dowolnym momencie.</string>
   <string name="auto_sleep_timer_end">Godzina zakończenia</string>
-  <string name="onboarding_welcome_title_g">Witamy w PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Witamy w PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Uruchom minutnik drzemki zgodnie z harmonogramem</string>
   <string name="auto_sleep_timer_start">Godzina rozpoczęcia</string>
 </resources>

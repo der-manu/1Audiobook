@@ -1,0 +1,28 @@
+name: Bug report
+description: Something does not work as expected
+body:
+  - type: input
+    id: version
+    attributes:
+      label: App version
+    validations:
+      required: false
+  - type: input
+    id: androidversion
+    attributes:
+      label: Android version (API level)
+    validations:
+      required: false
+  - type: input
+    id: device
+    attributes:
+      label: Device
+    validations:
+      required: false
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: If it is about a book that is sorted wrongly, please describe the folder structure.
+    validations:
+      required: true

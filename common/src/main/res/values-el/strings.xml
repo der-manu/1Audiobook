@@ -128,7 +128,7 @@
   <string name="remaining_time">Υπολειπόμενος χρόνος</string>
   <string name="any_support_unlock_all">Επιλέξτε το επίπεδο υποστήριξης έργου που έχετε στη διάθεσή σας (εφάπαξ, μηνιαία ή ετήσια). Οποιαδήποτε υποστήριξη ξεκλειδώνει όλες τις δυνατότητες της εφαρμογής. Μπορείτε να ακυρώσετε τη συνδρομή σας ανά πάσα στιγμή.</string>
   <string name="auto_sleep_timer_end">Ώρα λήξης</string>
-  <string name="onboarding_welcome_title_g">Καλώς ήρθατε στο PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Καλώς ήρθατε στο PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Ξεκινήστε το χρονόμετρο αναβολής σύμφωνα με το χρονοδιάγραμμα</string>
   <string name="auto_sleep_timer_start">Ώρα έναρξης</string>
 </resources>

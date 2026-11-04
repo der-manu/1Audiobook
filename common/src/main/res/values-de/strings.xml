@@ -115,7 +115,7 @@
   <string name="path">Pfad</string>
   <string name="change_book_author">Verfasser</string>
   <string name="edit_book_author">Autor bearbeiten</string>
-  <string name="onboarding_welcome_title_g">Willkommen bei PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Willkommen bei PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Verwenden von Gesten</string>
   <string name="onboarding_show_player">Player anzeigen</string>
   <string name="onboarding_show_list_chapters">Liste der Kapitel anzeigen</string>
@@ -155,4 +155,13 @@
   <string name="sort_order_preview_more">… und %1$d weitere</string>
   <string name="sort_order_apply">Übernehmen</string>
   <string name="sort_order_cancel">Abbrechen</string>
+  <!--PlayBookAdvance: About / Credits-->
+  <string name="about_description">PlayBookAdvance ist ein freier Open-Source-Hörbuchplayer (GPL-3.0). Er ist ein Fork von PlayBook von Goodwy, das wiederum auf Voice von Paul Woitaschek basiert.</string>
+  <string name="about_source_code">Quellcode und Projektseite</string>
+  <string name="about_report_issue">Problem melden oder Funktion vorschlagen</string>
+  <string name="about_credits_title">Danksagung und Lizenzen</string>
+  <string name="about_credits_intro">PlayBookAdvance baut auf der Arbeit der folgenden Projekte auf. Tippe auf einen Eintrag, um die Seite zu öffnen.</string>
+  <string name="about_credits_based_on">Basiert auf</string>
+  <string name="about_credits_inspiration">Inspiration</string>
+  <string name="about_credits_libraries">Bibliotheken und Dienste</string>
 </resources>

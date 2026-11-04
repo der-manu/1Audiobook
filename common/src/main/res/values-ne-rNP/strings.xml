@@ -128,7 +128,7 @@
   <string name="remaining_time">बाँकी समय</string>
   <string name="any_support_unlock_all">तपाईंको लागि उपलब्ध परियोजना समर्थनको स्तर छनौट गर्नुहोस् (एक पटक, मासिक वा वार्षिक)। कुनै पनि समर्थनले अनुप्रयोगका सबै सुविधाहरू अनलक गर्दछ। तपाईं कुनै पनि समयमा आफ्नो सदस्यता रद्द गर्न सक्नुहुन्छ।</string>
   <string name="auto_sleep_timer_end">अन्त्य समय</string>
-  <string name="onboarding_welcome_title_g">PlayBook मा स्वागत छ!</string>
+  <string name="onboarding_welcome_title_g">PlayBookAdvance मा स्वागत छ!</string>
   <string name="auto_sleep_timer">समयतालिकामा स्नुज टाइमर सुरु गर्नुहोस्</string>
   <string name="auto_sleep_timer_start">सुरु समय</string>
 </resources>

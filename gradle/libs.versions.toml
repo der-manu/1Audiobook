@@ -114,7 +114,6 @@ ktlint-gradlePlugin = { module = "io.github.usefulness:ktlint-gradle-plugin", ve
 ktlint-compose = "io.nlopez.compose.rules:ktlint:0.4.22"
 
 #PlayBook
-billing-client = "com.android.billingclient:billing:6.2.0"
 
 [bundles]
 compose = [

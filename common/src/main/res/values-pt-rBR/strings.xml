@@ -137,7 +137,7 @@ Ficarei muito grato se você deixar um comentário ou avaliação sobre o aplica
   <string name="remaining_time">Tempo restante</string>
   <string name="any_support_unlock_all">Escolha o nível de suporte ao projeto disponível para você (único, mensal ou anual). Qualquer suporte desbloqueia todos os recursos do aplicativo. Você pode cancelar sua assinatura a qualquer momento.</string>
   <string name="auto_sleep_timer_end">Hora de término</string>
-  <string name="onboarding_welcome_title_g">Bem-vindo ao PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Bem-vindo ao PlayBookAdvance!</string>
   <string name="auto_sleep_timer">Inicie o cronômetro de soneca de acordo com a programação</string>
   <string name="auto_sleep_timer_start">Hora de início</string>
 </resources>

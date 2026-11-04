@@ -140,7 +140,7 @@
   <string name="tipping_jar_dialog_error_message">К сожалению, что-то нехорошее произошло во время транзакции чаевых. Не грусти, просто попробуй в другой раз и наслаждайся PlayBook</string>
 
   <!--Onboarding-->
-  <string name="onboarding_welcome_title_g">Добро пожаловать в PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Добро пожаловать в PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Используйте жесты</string>
   <string name="onboarding_show_player">Показать плеер</string>
   <string name="onboarding_show_list_chapters">Показать список глав</string>

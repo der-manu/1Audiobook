@@ -84,10 +84,4 @@ sealed interface Destination {
   @Parcelize
   object About : Compose
 
-  @Parcelize
-  object Purchase : Compose
-
-  data class BuyTip(val usePlayStore: Boolean, val tip: Int) : Destination
-
-  data class RefreshPurchase(val usePlayStore: Boolean) : Destination
 }

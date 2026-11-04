@@ -127,7 +127,7 @@
 
   <!--Onboarding-->
   <string name="auto_sleep_timer_end">Akhir waktu</string>
-  <string name="onboarding_welcome_title_g">Selamat datang di PlayBook!</string>
+  <string name="onboarding_welcome_title_g">Selamat datang di PlayBookAdvance!</string>
   <string name="onboarding_gestures_title">Gunakan gerakan</string>
   <string name="onboarding_show_player">Tampilkan pemutar</string>
   <string name="onboarding_show_list_chapters">Tampilkan daftar bab</string>

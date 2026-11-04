@@ -137,7 +137,7 @@ Zelo bi vam bil hvaležen, če bi pustili mnenje ali oceno o aplikaciji v Googlu
   <string name="remaining_time">Preostali čas</string>
   <string name="any_support_unlock_all">Izberite raven podpore za projekt, ki vam je na voljo (enkratna, mesečna ali letna). Vsaka podpora odklene vse funkcije aplikacije. Naročnino lahko kadar koli prekličete.</string>
   <string name="auto_sleep_timer_end">Končni čas</string>
-  <string name="onboarding_welcome_title_g">Dobrodošli v PlayBooku!</string>
+  <string name="onboarding_welcome_title_g">Dobrodošli v PlayBookAdvanceu!</string>
   <string name="auto_sleep_timer">Zaženite časovnik dremeža po urniku</string>
   <string name="auto_sleep_timer_start">Začetni čas</string>
 </resources>

@@ -154,7 +154,6 @@ private fun SettingsPreview() {
         override fun colorThemeChanged(color: Int) {}
         override fun onColorThemeDialogRowClick() {}
         override fun onAboutClick() {}
-        override fun onPurchaseClick() {}
         override fun toggleUseSwipe() {}
         override fun onUseSwipeFaqClick() {}
         override fun toggleUseHapticFeedback() {}
@@ -212,65 +211,6 @@ private fun Settings(
         .nestedScroll(scrollBehavior.nestedScrollConnection)
     ) {
       Column(Modifier.padding(vertical = 8.dp, horizontal = 16.dp)) {
-        // Support project
-        var enabledShake by remember { mutableStateOf(false) }
-        if (!viewState.isPro) {
-          Row(
-            modifier = Modifier
-              .shake(enabledShake) { enabledShake = false }
-              .clickable { listener.onPurchaseClick() }
-              .fillMaxWidth(),
-            horizontalArrangement = Arrangement.Start,
-            verticalAlignment = Alignment.CenterVertically,
-          ) {
-            Card(
-              shape = RoundedCornerShape(24.dp),
-              colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background),
-              elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
-            ) {
-              Icon(
-                modifier = Modifier
-                  .size(86.dp)
-                  .padding(2.dp),
-                painter = painterResource(id = CommonR.drawable.ic_plus_support),
-                contentDescription = stringResource(id = CommonR.string.action_support_project),
-                tint = MaterialTheme.colorScheme.primary,
-              )
-            }
-            Column(
-              modifier = Modifier
-                .heightIn(86.dp)
-                .padding(bottom = 4.dp),
-              verticalArrangement = Arrangement.SpaceBetween,
-              horizontalAlignment = Alignment.Start,
-            ) {
-              Text(
-                modifier = Modifier.padding(start = 16.dp),
-                text = stringResource(CommonR.string.action_support_project),
-                fontSize = 18.sp,
-              )
-              Text(
-                modifier = Modifier.padding(start = 16.dp),
-                text = stringResource(CommonR.string.action_support_project_summary),
-                fontSize = 13.sp,
-                lineHeight = 16.sp,
-                color = LocalContentColor.current.copy(alpha = 0.5F),
-              )
-              Button(
-                modifier = Modifier.padding(start = 16.dp, top = 3.dp).wrapContentWidth().height(24.dp).alpha(0.6f),
-                onClick = { listener.onPurchaseClick() },
-                contentPadding = PaddingValues(horizontal = 12.dp, vertical = 0.dp)
-              ) {
-                Text(
-                  text = stringResource(CommonR.string.learn_more).toUpperCase(LocaleList.current),
-                  fontSize = 12.sp,
-                )
-              }
-            }
-          }
-          Spacer(modifier = Modifier.size(8.dp))
-        }
-
         // Appearance
         HeaderRow(stringResource(CommonR.string.pref_category_appearance))
         Card(
@@ -278,31 +218,18 @@ private fun Settings(
           colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.inverseOnSurface)
         ) {
           Column {
-            val haptic = LocalHapticFeedback.current
             ThemeRow(viewState.theme, viewState.isPro) {
-              if (viewState.isPro) listener.onThemeDialogRowClick(false)
-              else {
-                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                enabledShake = true
-              }
+              listener.onThemeDialogRowClick(false)
             }
             if (viewState.theme != THEME_AUTO || !COLOR_SCHEME_SETTABLE) {
               DividerRow()
               ColorThemeRow(viewState.isPro) {
-                if (viewState.isPro) listener.onColorThemeDialogRowClick()
-                else {
-                  haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                  enabledShake = true
-                }
+                listener.onColorThemeDialogRowClick()
               }
             }
             DividerRow()
             ThemeRow(viewState.themeWidget, viewState.isPro, isWidget = true) {
-              if (viewState.isPro) listener.onThemeDialogRowClick(true)
-              else {
-                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                enabledShake = true
-              }
+              listener.onThemeDialogRowClick(true)
             }
 //            if (viewState.showDarkThemePref) {
 //              DarkThemeRow(viewState.useDarkTheme, listener::toggleDarkTheme)
@@ -520,22 +447,6 @@ private fun Settings(
               paddingTop = 8.dp,
               click = { listener.openBugReport() }
             )
-            if (viewState.isPro) {
-              DividerRow()
-              Card(
-                modifier = Modifier.padding(horizontal = 4.dp),
-                shape = RoundedCornerShape(10.dp),
-              ) {
-                SettingsRow(
-                  title = stringResource(CommonR.string.tipping_jar_title),
-                  showChevron = true,
-                  color = MaterialTheme.colorScheme.background,
-                  paddingStart = 12.dp,
-                  paddingEnd = 8.dp,
-                  click = { listener.onPurchaseClick() }
-                )
-              }
-            }
             DividerRow()
             AppVersion(appVersion = viewState.appVersion, openAbout = listener::onAboutClick)
           }
