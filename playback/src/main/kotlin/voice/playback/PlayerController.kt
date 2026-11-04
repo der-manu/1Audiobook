@@ -125,6 +125,23 @@ class PlayerController
     return true
   }
 
+  /**
+   * Baut die Warteschlange des Players neu auf, nachdem sich die Kapitel-Reihenfolge geaendert hat.
+   * Das aktuelle Kapitel und die Position bleiben erhalten, weil sie ueber die Kapitel-ID gespeichert sind.
+   * Ist das Buch gerade nicht im Player geladen, passiert nichts (es wird beim naechsten Start neu aufgebaut).
+   */
+  fun reloadBookQueue(bookId: BookId) {
+    scope.launch {
+      val controller = awaitConnect() ?: return@launch
+      if (controller.currentBookId() != bookId) return@launch
+      val book = bookRepository.get(bookId) ?: return@launch
+      val wasPlaying = controller.isPlaying
+      controller.setMediaItem(mediaItemProvider.mediaItem(book))
+      controller.prepare()
+      if (wasPlaying) controller.play()
+    }
+  }
+
   private fun MediaController.currentBookId(): BookId? {
     val currentMediaItem = currentMediaItem ?: return null
     val mediaId = currentMediaItem.mediaId.toMediaIdOrNull() ?: return null

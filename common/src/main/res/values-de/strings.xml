@@ -140,4 +140,19 @@
   <string name="last_played_at">Letztes Vorsprechen</string>
   <string name="remaining_time">Verbleibende Zeit</string>
   <string name="any_support_unlock_all">Wählen Sie den Umfang der Projektunterstützung, die Ihnen zur Verfügung steht (einmalig, monatlich oder jährlich). Jede Unterstützung schaltet alle Funktionen der Anwendung frei. Sie können Ihr Abonnement jederzeit kündigen.</string>
+  <!--Playlist order-->
+  <string name="sort_order_menu_item">Reihenfolge der Dateien…</string>
+  <string name="sort_order_title">Reihenfolge der Dateien</string>
+  <string name="sort_order_default">Standard (wie bisher)</string>
+  <string name="sort_order_group_by_folder">Nach Ordnern gruppieren</string>
+  <string name="sort_order_group_by_folder_hint">Ordner 1 (1–N), dann Ordner 2 (1–N) …</string>
+  <string name="sort_order_sort_by">Sortieren nach</string>
+  <string name="sort_order_key_filename">Dateiname</string>
+  <string name="sort_order_key_title">Titel (Tag)</string>
+  <string name="sort_order_key_date">Datum</string>
+  <string name="sort_order_reversed">Umgekehrte Reihenfolge</string>
+  <string name="sort_order_preview">Vorschau (%1$d Dateien)</string>
+  <string name="sort_order_preview_more">… und %1$d weitere</string>
+  <string name="sort_order_apply">Übernehmen</string>
+  <string name="sort_order_cancel">Abbrechen</string>
 </resources>

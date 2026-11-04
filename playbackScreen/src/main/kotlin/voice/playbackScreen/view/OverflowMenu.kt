@@ -10,12 +10,19 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import voice.strings.R
+
+/**
+ * Wird vom BookPlayController gesetzt. Ueber ein CompositionLocal muss der Menuepunkt nicht
+ * durch alle Ebenen des Player-Layouts gereicht werden.
+ */
+internal val LocalOnSortOrderClick = compositionLocalOf<() -> Unit> { {} }
 
 @Composable
 internal fun OverflowMenu(
@@ -28,6 +35,7 @@ internal fun OverflowMenu(
   onUseChapterCoverClick: () -> Unit,
   onVolumeBoostClick: () -> Unit,
 ) {
+  val onSortOrderClick = LocalOnSortOrderClick.current
   Box {
     var expanded by remember { mutableStateOf(false) }
     IconButton(
@@ -96,6 +104,15 @@ internal fun OverflowMenu(
               onUseChapterCoverClick()
             },
           )
+        },
+      )
+      DropdownMenuItem(
+        onClick = {
+          expanded = false
+          onSortOrderClick()
+        },
+        text = {
+          Text(text = stringResource(id = voice.common.R.string.sort_order_menu_item))
         },
       )
       DropdownMenuItem(

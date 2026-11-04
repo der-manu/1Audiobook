@@ -21,6 +21,7 @@ import voice.data.folders.FolderType
 import voice.data.repo.BookContentRepo
 import voice.data.repo.BookRepository
 import voice.data.repo.ChapterRepo
+import voice.data.repo.ChapterSortStore
 import voice.data.repo.internals.AppDb
 import voice.data.toUri
 import voice.documentfile.FileBasedDocumentFactory
@@ -223,6 +224,7 @@ class MediaScannerTest {
         fileFactory = FileBasedDocumentFactory,
       ),
       deviceHasPermissionBug = mockk(),
+      chapterSortStore = ChapterSortStore(ApplicationProvider.getApplicationContext()),
     )
 
     val bookRepo = BookRepository(chapterRepo, bookContentRepo)

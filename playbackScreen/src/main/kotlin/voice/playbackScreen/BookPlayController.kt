@@ -15,6 +15,7 @@ import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
@@ -28,6 +29,7 @@ import voice.data.getBookId
 import voice.data.putBookId
 import voice.logging.core.Logger
 import voice.playbackScreen.view.BookPlayView
+import voice.playbackScreen.view.LocalOnSortOrderClick
 import voice.playbackScreen.view.jumpToPosition.JumpToPosition
 import voice.sleepTimer.SleepTimerDialog
 import voice.strings.R as StringsR
@@ -73,35 +75,37 @@ class BookPlayController(bundle: Bundle) : ComposeController(bundle) {
         }
       }
     }
-    BookPlayView(
-      viewState,
-      prefViewState,
-      onPlayClick = viewModel::playPause,
-      onFastForwardClick = viewModel::fastForward,
-      onRewindClick = viewModel::rewind,
-      onSeek = viewModel::seekTo,
-      onSeekVolume = viewModel::seekVolumeTo,
-      onBookmarkClick = viewModel::onBookmarkClick,
-      onBookmarkLongClick = viewModel::onBookmarkLongClick,
-      onSkipSilenceClick = viewModel::toggleSkipSilence,
-      onRepeatClick = viewModel::toggleRepeat,
-      onShowChapterNumbersClick = viewModel::toggleShowChapterNumbers,
-      onUseChapterCoverClick = viewModel::toggleUseChapterCover,
-      onSleepTimerClick = viewModel::toggleSleepTimer,
-      onAcceptSleepTime = viewModel::onAcceptSleepTime,
-      onVolumeBoostClick = viewModel::onVolumeGainIconClick,
-      onSpeedChangeClick = viewModel::onPlaybackSpeedIconClick,
-      onCloseClick = { router.popController(this@BookPlayController) },
-      onSkipToNext = viewModel::next,
-      onSkipToPrevious = viewModel::previous,
-      //onCurrentChapterClick = viewModel::onCurrentChapterClick,
-      useLandscapeLayout = LocalConfiguration.current.orientation == ORIENTATION_LANDSCAPE,
-      isNotLong = isNotLong(), //LocalConfiguration.current.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK < SCREENLAYOUT_SIZE_LARGE,
-      isSmallScreen = isSmallScreen(),
-      snackbarHostState = snackbarHostState,
-      onCurrentTimeClick = viewModel::onCurrentTimeClick,
-      onChapterClick = viewModel::onChapterClick,
-    )
+    CompositionLocalProvider(LocalOnSortOrderClick provides { viewModel.onSortOrderClick() }) {
+      BookPlayView(
+        viewState,
+        prefViewState,
+        onPlayClick = viewModel::playPause,
+        onFastForwardClick = viewModel::fastForward,
+        onRewindClick = viewModel::rewind,
+        onSeek = viewModel::seekTo,
+        onSeekVolume = viewModel::seekVolumeTo,
+        onBookmarkClick = viewModel::onBookmarkClick,
+        onBookmarkLongClick = viewModel::onBookmarkLongClick,
+        onSkipSilenceClick = viewModel::toggleSkipSilence,
+        onRepeatClick = viewModel::toggleRepeat,
+        onShowChapterNumbersClick = viewModel::toggleShowChapterNumbers,
+        onUseChapterCoverClick = viewModel::toggleUseChapterCover,
+        onSleepTimerClick = viewModel::toggleSleepTimer,
+        onAcceptSleepTime = viewModel::onAcceptSleepTime,
+        onVolumeBoostClick = viewModel::onVolumeGainIconClick,
+        onSpeedChangeClick = viewModel::onPlaybackSpeedIconClick,
+        onCloseClick = { router.popController(this@BookPlayController) },
+        onSkipToNext = viewModel::next,
+        onSkipToPrevious = viewModel::previous,
+        //onCurrentChapterClick = viewModel::onCurrentChapterClick,
+        useLandscapeLayout = LocalConfiguration.current.orientation == ORIENTATION_LANDSCAPE,
+        isNotLong = isNotLong(), //LocalConfiguration.current.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK < SCREENLAYOUT_SIZE_LARGE,
+        isSmallScreen = isSmallScreen(),
+        snackbarHostState = snackbarHostState,
+        onCurrentTimeClick = viewModel::onCurrentTimeClick,
+        onChapterClick = viewModel::onChapterClick,
+      )
+    }
     if (dialogState != null) {
       when (dialogState) {
         is BookPlayDialogViewState.SpeedDialog -> {
@@ -114,6 +118,14 @@ class BookPlayController(bundle: Bundle) : ComposeController(bundle) {
 
         is BookPlayDialogViewState.SelectChapterDialog -> {
           SelectChapterDialog(dialogState, viewModel)
+        }
+
+        is BookPlayDialogViewState.SortOrderDialog -> {
+          SortOrderDialog(
+            dialogState = dialogState,
+            onApply = viewModel::onSortOrderApply,
+            onDismiss = viewModel::dismissDialog,
+          )
         }
 
         is BookPlayDialogViewState.SleepTimer -> {

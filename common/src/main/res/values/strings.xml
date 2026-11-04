@@ -175,4 +175,19 @@
   <string name="auto_sleep_timer_start">Start time</string>
   <string name="auto_sleep_timer_end">End time</string>
   <string name="onboarding_welcome_title_g">Welcome to PlayBook!</string>
+  <!--Playlist order-->
+  <string name="sort_order_menu_item">Playlist order…</string>
+  <string name="sort_order_title">Playlist order</string>
+  <string name="sort_order_default">Default (as before)</string>
+  <string name="sort_order_group_by_folder">Group by folder</string>
+  <string name="sort_order_group_by_folder_hint">Folder 1 (1–N), then folder 2 (1–N) …</string>
+  <string name="sort_order_sort_by">Sort by</string>
+  <string name="sort_order_key_filename">File name</string>
+  <string name="sort_order_key_title">Title (tag)</string>
+  <string name="sort_order_key_date">Date</string>
+  <string name="sort_order_reversed">Reverse order</string>
+  <string name="sort_order_preview">Preview (%1$d files)</string>
+  <string name="sort_order_preview_more">… and %1$d more</string>
+  <string name="sort_order_apply">Apply</string>
+  <string name="sort_order_cancel">Cancel</string>
 </resources>

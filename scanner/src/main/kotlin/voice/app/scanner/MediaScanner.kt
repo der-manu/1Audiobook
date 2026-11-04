@@ -5,6 +5,8 @@ import voice.data.audioFileCount
 import voice.data.folders.FolderType
 import voice.data.isAudioFile
 import voice.data.repo.BookContentRepo
+import voice.data.repo.ChapterSortStore
+import voice.data.sortChapters
 import voice.documentfile.CachedDocumentFile
 import voice.documentfile.walk
 import voice.logging.core.Logger
@@ -16,6 +18,7 @@ class MediaScanner
   private val chapterParser: ChapterParser,
   private val bookParser: BookParser,
   private val deviceHasPermissionBug: DeviceHasStoragePermissionBug,
+  private val chapterSortStore: ChapterSortStore,
 ) {
 
   suspend fun scan(folders: Map<FolderType, List<CachedDocumentFile>>) {
@@ -71,8 +74,12 @@ class MediaScanner
   }
 
   private suspend fun scan(file: CachedDocumentFile) {
-    val chapters = chapterParser.parse(file)
-    if (chapters.isEmpty()) return
+    val parsed = chapterParser.parse(file)
+    if (parsed.isEmpty()) return
+
+    // Hat der Nutzer fuer dieses Buch eine eigene Reihenfolge gewaehlt, gilt sie auch nach jedem Rescan.
+    val sortSettings = chapterSortStore.get(BookId(file.uri))
+    val chapters = if (sortSettings == null) parsed else sortChapters(parsed, sortSettings)
 
     val content = bookParser.parseAndStore(chapters, file)
 

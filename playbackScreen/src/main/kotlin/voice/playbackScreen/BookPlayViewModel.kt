@@ -30,10 +30,13 @@ import voice.common.navigation.Destination
 import voice.common.navigation.Navigator
 import voice.common.pref.CurrentBook
 import voice.common.pref.PrefKeys
+import voice.data.ChapterSortSettings
 import voice.data.durationMs
 import voice.data.markForPosition
+import voice.data.sortChapters
 import voice.data.repo.BookRepository
 import voice.data.repo.BookmarkRepo
+import voice.data.repo.ChapterSortStore
 import voice.logging.core.Logger
 import voice.playback.PlayerController
 import voice.playback.misc.Decibel
@@ -94,6 +97,7 @@ class BookPlayViewModel
   private val currentBookId: DataStore<BookId?>,
   private val navigator: Navigator,
   private val bookmarkRepository: BookmarkRepo,
+  private val chapterSortStore: ChapterSortStore,
   private val volumeGainFormatter: VolumeGainFormatter,
   private val batteryOptimization: BatteryOptimization,
   private val audioVolume: AudioVolume,
@@ -190,6 +194,36 @@ class BookPlayViewModel
       useHapticFeedback = useHapticFeedback,
       useAnimatedMarquee = useAnimatedMarquee,
     )
+  }
+
+  fun onSortOrderClick() {
+    scope.launch {
+      val book = bookRepository.get(bookId) ?: return@launch
+      _dialogState.value = BookPlayDialogViewState.SortOrderDialog(
+        chapters = book.chapters,
+        current = chapterSortStore.get(bookId),
+      )
+    }
+  }
+
+  /**
+   * Uebernimmt die gewaehlte Reihenfolge: merken (damit auch ein Rescan sie beibehaelt),
+   * die Kapitelliste des Buchs neu schreiben und die Warteschlange des Players neu aufbauen.
+   * `null` stellt die Standard-Reihenfolge wieder her.
+   */
+  fun onSortOrderApply(settings: ChapterSortSettings?) {
+    scope.launch {
+      val book = bookRepository.get(bookId)
+      if (book != null) {
+        chapterSortStore.set(bookId, settings)
+        val newOrder = sortChapters(book.chapters, settings).map { it.id }
+        if (newOrder != book.content.chapters) {
+          bookRepository.updateBook(bookId) { it.copy(chapters = newOrder) }
+          player.reloadBookQueue(bookId)
+        }
+      }
+      _dialogState.value = null
+    }
   }
 
   fun dismissDialog() {
