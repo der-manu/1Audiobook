@@ -86,7 +86,7 @@
   <string name="last_played_at">最後のオーディション</string>
   <string name="remaining_time">残り時間</string>
   <string name="auto_sleep_timer_end">終了時間</string>
-  <string name="onboarding_welcome_title_g">PlayBookAdvanceへようこそ!</string>
+  <string name="onboarding_welcome_title_g">1Audiobookへようこそ!</string>
   <string name="auto_sleep_timer">スケジュールどおりにスヌーズタイマーを開始</string>
   <string name="auto_sleep_timer_start">開始時間</string>
 </resources>

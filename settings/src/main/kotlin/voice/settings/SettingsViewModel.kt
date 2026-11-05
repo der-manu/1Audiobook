@@ -70,6 +70,8 @@ class SettingsViewModel
   private val useHapticFeedback: Pref<Boolean>,
   @Named(PrefKeys.SCAN_COVER_CHAPTER)
   private val scanCoverChapter: Pref<Boolean>,
+  @Named(PrefKeys.USE_ONLINE_COVER_SEARCH)
+  private val useOnlineCoverSearch: Pref<Boolean>,
   @Named(PrefKeys.USE_MENU_ICONS)
   private val useMenuIconsPref: Pref<Boolean>,
   @Named(PrefKeys.USE_ANIMATED_MARQUEE)
@@ -110,6 +112,7 @@ class SettingsViewModel
     val useHapticFeedback by remember { useHapticFeedback.flow }.collectAsState(initial = true)
     val sizeCoversDirectory by remember { coverSaver.sizeCoversDirectory }.collectAsState(initial = "0")
     val scanCoverChapter by remember { scanCoverChapter.flow }.collectAsState(initial = false)
+    val useOnlineCoverSearch by remember { useOnlineCoverSearch.flow }.collectAsState(initial = false)
     val useMenuIconsPref by remember { useMenuIconsPref.flow }.collectAsState(initial = false)
     val useAnimatedMarquee by remember { useAnimatedMarqueePref.flow }.collectAsState(initial = true)
     return SettingsViewState(
@@ -145,6 +148,7 @@ class SettingsViewModel
       useHapticFeedback = useHapticFeedback,
       sizeCoversDirectory = sizeCoversDirectory,
       scanCoverChapter = scanCoverChapter,
+      useOnlineCoverSearch = useOnlineCoverSearch,
       useMenuIconsPref = useMenuIconsPref,
       useAnimatedMarquee = useAnimatedMarquee,
     )
@@ -160,30 +164,6 @@ class SettingsViewModel
 
   override fun toggleShowSliderVolume() {
     showSliderVolumePref.value = !showSliderVolumePref.value
-  }
-
-  override fun toggleGrid() {
-    gridModePref.value = when (gridModePref.value) {
-      GridMode.LIST -> GridMode.GRID
-      GridMode.GRID -> GridMode.LIST
-      GridMode.FOLLOW_DEVICE -> if (gridCount.useGridAsDefault()) {
-        GridMode.LIST
-      } else {
-        GridMode.GRID
-      }
-    }
-  }
-
-  override fun gridModeDialog() {
-    gridModePref.value = when (gridModePref.value) {
-      GridMode.LIST -> GridMode.GRID
-      GridMode.GRID -> GridMode.LIST
-      GridMode.FOLLOW_DEVICE -> if (gridCount.useGridAsDefault()) {
-        GridMode.LIST
-      } else {
-        GridMode.GRID
-      }
-    }
   }
 
   override fun gridModeDialogChanged(item: Int) {
@@ -279,16 +259,8 @@ class SettingsViewModel
     dialog.value = null
   }
 
-  override fun getSupport() {
-    navigator.goTo(Destination.Website("https://github.com/der-manu/PlayBookAdvance/issues/new"))
-  }
-
-  override fun suggestIdea() {
-    navigator.goTo(Destination.Website("https://github.com/der-manu/PlayBookAdvance/issues/new"))
-  }
-
   override fun openBugReport() {
-    val url = "https://github.com/der-manu/PlayBookAdvance/issues/new".toUri()
+    val url = "https://github.com/der-manu/1Audiobook/issues/new".toUri()
       .buildUpon()
       .appendQueryParameter("template", "bug.yml")
       .appendQueryParameter("version", appInfoProvider.versionName)
@@ -296,11 +268,6 @@ class SettingsViewModel
       .appendQueryParameter("device", Build.MODEL)
       .toString()
     navigator.goTo(Destination.Website(url))
-  }
-
-  override fun openTranslations() {
-    dismissDialog()
-    navigator.goTo(Destination.Website("https://www.transifex.com/projects/p/voice"))
   }
 
   override fun toggleAutoSleepTimer() {
@@ -341,6 +308,10 @@ class SettingsViewModel
 
   override fun onClearCoversDirectoryRowClick() {
     dialog.value = SettingsViewState.Dialog.ClearCoversDirectoryAlertDialog
+  }
+
+  override fun toggleOnlineCoverSearch() {
+    useOnlineCoverSearch.value = !useOnlineCoverSearch.value
   }
 
   override fun toggleScanCoverChapter() {

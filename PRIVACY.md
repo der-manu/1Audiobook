@@ -1,28 +1,32 @@
-# Privacy policy
+# Privacy policy / Datenschutz
 
-PlayBookAdvance is free, open-source software. This policy describes the builds published from this repository
-(the `libre` variant).
+1Audiobook is free, open-source software. This policy describes the builds published from this repository.
+*Diese Erklärung gilt für die aus diesem Repository veröffentlichten Builds.*
 
 ## What the app does not do
 
 * It does **not** collect, store on a server, or transmit personal data.
 * It contains **no** analytics, crash reporting, advertising, tracking or account system.
-* It contains **no** Google Play Services, Google Play Billing or in-app purchases.
+* It contains **no** Google Play Services, Google Play Billing, in-app purchases or any app store connection.
 
 ## What stays on your device
 
-Your library, listening positions, bookmarks, settings and the playlist order you choose for each book are stored
-only on your device. The app reads the folders you explicitly grant access to through Android's folder picker.
+Your library, listening positions, bookmarks, settings, chosen book titles and the playlist order you pick for each
+book are stored only on your device. The app reads the folders you explicitly grant access to through Android's
+folder picker. It does not change your audio files. The only exception is the *Delete Book* action: if you choose it
+and explicitly confirm *Delete my files*, the files of that book are deleted from your device.
 
 ## Network use
 
-The only feature that uses the internet is the **optional cover search**. If you use it:
+The app works fully offline. The only feature that uses the internet is the **cover search**, which is **switched off by
+default**. You can switch it on under *Settings → Cover → Search missing covers via DuckDuckGo*. Only then does the
+book menu offer *Cover from the Internet*, and if you use it:
 
 * the search term you type (usually the book title) is sent to the image search of
   [DuckDuckGo](https://duckduckgo.com/privacy);
 * the image you pick is downloaded from the server that hosts it, which can see your IP address.
 
-If you never use the cover search, the app makes no network requests. Tapping a link in the *About* screen opens
+While the switch is off, the app makes no network requests. Tapping a link in the *About* screen opens
 it in your browser.
 
 ## Permissions
@@ -31,8 +35,8 @@ it in your browser.
 |---|---|
 | Foreground service (media playback), wake lock | keep audio playing with the screen off |
 | Ignore battery optimizations (optional request) | avoid playback being stopped by the system |
-| Internet, network state | optional cover search |
+| Internet, network state | cover search (only if you switch it on) |
 
 ## Contact
 
-Questions about this policy: open an [issue](https://github.com/der-manu/PlayBookAdvance/issues).
+Questions about this policy: open an [issue](https://github.com/der-manu/1Audiobook/issues).

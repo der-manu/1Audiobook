@@ -41,10 +41,8 @@
     <string name="delete">Vymazať</string>
     <string name="add">Pridať</string>
     <string name="mark_as_not_started">Označiť za nezačaté</string>
-    <string name="pref_get_support">Podpora</string>
     <string name="mark_as_completed">Označiť za ukončené</string>
     <string name="pause">Pozastaviť</string>
-    <string name="pref_help_translating">Pomôcť s prekladom</string>
     <string name="folder_type_no_books">Aplikácia nenašla žiadne knihy. Sú tam nejaké audio súbory\?</string>
     <string name="pref_app_version">Verzia aplikácie</string>
     <string name="cover_search.author">Autor</string>

@@ -96,7 +96,7 @@
   <string name="pref_privacy_title">Политика конфиденциальности</string>
 
   <!--Onboarding-->
-  <string name="onboarding_welcome_title_g">Добро пожаловать в PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Добро пожаловать в 1Audiobook!</string>
   <string name="onboarding_gestures_title">Используйте жесты</string>
   <string name="onboarding_show_player">Показать плеер</string>
   <string name="onboarding_show_list_chapters">Показать список глав</string>

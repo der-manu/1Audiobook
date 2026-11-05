@@ -109,6 +109,7 @@ private fun SettingsPreview() {
     useHapticFeedback = true,
     sizeCoversDirectory = "0MB",
     scanCoverChapter = false,
+    useOnlineCoverSearch = false,
     useMenuIconsPref = false,
     useAnimatedMarquee = false,
   )
@@ -124,15 +125,10 @@ private fun SettingsPreview() {
         override fun autoRewindAmountChanged(seconds: Int) {}
         override fun onAutoRewindRowClick() {}
         override fun dismissDialog() {}
-        override fun openTranslations() {}
-        override fun getSupport() {}
-        override fun suggestIdea() {}
         override fun openBugReport() {}
-        override fun toggleGrid() {}
         override fun toggleAutoSleepTimer() {}
         override fun setAutoSleepTimerStart(hour: Int, minute: Int) {}
         override fun setAutoSleepTimerEnd(hour: Int, minute: Int) {}
-        override fun gridModeDialog() {}
         override fun gridModeDialogChanged(item: Int) {}
         override fun onGridModeDialogRowClick() {}
         override fun toggleTransparentNavigation() {}
@@ -157,6 +153,7 @@ private fun SettingsPreview() {
         override fun clearCoversDirectory() {}
         override fun onClearCoversDirectoryRowClick() {}
         override fun toggleScanCoverChapter() {}
+        override fun toggleOnlineCoverSearch() {}
         override fun onScanCoverChapterRowClick() {}
         override fun toggleUseMenuIcons() {}
         override fun toggleUseAnimatedMarquee() {}
@@ -385,6 +382,15 @@ private fun Settings(
           colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.inverseOnSurface)
         ) {
           Column {
+            SettingsSwitchRow(
+              title = stringResource(CommonR.string.pref_online_cover_search),
+              subtitle = stringResource(CommonR.string.pref_subtitle_online_cover_search),
+              initSwitch = viewState.useOnlineCoverSearch,
+              toggle = listener::toggleOnlineCoverSearch,
+              paddingTop = 7.dp,
+              paddingBottom = 6.dp,
+            )
+            DividerRow()
             SettingsSwitchRow(
               title = stringResource(CommonR.string.pref_scan_chapter_covers),
               subtitle = stringResource(CommonR.string.pref_subtitle_scan_chapter_covers),

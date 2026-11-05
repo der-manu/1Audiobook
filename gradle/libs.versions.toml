@@ -1,7 +1,6 @@
 [versions]
-leakcanary = "2.14"
-versionCode = "411"
-versionName = "4.1.1"
+versionCode = "1"
+versionName = "1.0.0-rc.1"
 
 sdk-compile = "35"
 sdk-min = "26"
@@ -22,8 +21,6 @@ accompanist = "0.30.0"
 
 [libraries]
 androidPluginForGradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
-leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android-startup", version.ref = "leakcanary" }
-leakcanary-plumber = { module = "com.squareup.leakcanary:plumber-android-startup", version.ref = "leakcanary" }
 material = "com.google.android.material:material:1.12.0"
 ffmpeg = "dev.ffmpegkit-maintained:ffmpeg-kit-free:6.0.2"
 junit = "junit:junit:4.13.2"
@@ -51,8 +48,6 @@ molecule = "app.cash.molecule:molecule-runtime:2.0.0"
 immutable = "org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.8"
 uiautomator = "androidx.test.uiautomator:uiautomator:2.3.0"
 okhttp = "com.squareup.okhttp3:okhttp:4.12.0"
-review = "com.google.android.play:review-ktx:2.0.2"
-lottie = "com.airbnb.android:lottie-compose:6.6.2"
 clikt = "com.github.ajalt.clikt:clikt:5.0.2"
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -158,6 +153,5 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 anvil = { id = "com.squareup.anvil", version = "2.5.1" }
 ktlint = { id = "io.github.usefulness.ktlint-gradle-plugin", version.ref = "ktlint-gradlePlugin" }
 ksp = { id = "com.google.devtools.ksp", version = "2.1.10-1.0.29" }
-playPublish = { id = "com.github.triplet.play", version = "3.12.1" }
 android-app = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }

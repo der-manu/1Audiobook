@@ -1,7 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
 import com.android.build.api.dsl.ManagedVirtualDevice
-import com.android.build.gradle.internal.dsl.SigningConfig
 import java.util.Properties
 
 plugins {
@@ -11,15 +10,6 @@ plugins {
   id("kotlin-kapt")
   alias(libs.plugins.kotlin.serialization)
   alias(libs.plugins.anvil)
-  alias(libs.plugins.playPublish)
-}
-
-play {
-  defaultToAppBundles.value(true)
-  val serviceAccountJson = file("play_service_account.json")
-  if (serviceAccountJson.exists()) {
-    serviceAccountCredentials.set(serviceAccountJson)
-  }
 }
 
 kapt {
@@ -38,7 +28,7 @@ android {
   }
 
   defaultConfig {
-    applicationId = "io.github.dermanu.playbookadvance"
+    applicationId = "io.github.dermanu.oneaudiobook"
     versionCode = libs.versions.versionCode.get().toInt()
     versionName = libs.versions.versionName.get()
 
@@ -46,45 +36,34 @@ android {
 
     ndk {
       abiFilters.clear()
-      abiFilters += setOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+      // Die mitgelieferte FFmpeg-Bibliothek gibt es nur fuer 64-Bit-ARM (siehe README).
+      abiFilters += setOf("arm64-v8a")
     }
   }
 
-  fun createSigningConfig(name: String): SigningConfig {
-    return signingConfigs.create(name) {
+  signingConfigs {
+    // Debug-Builds nutzen einen festen, oeffentlichen Schluessel (signing/debug), damit sich neue Debug-Versionen
+    // ueber alte installieren lassen. Er schuetzt nichts und ist ausdruecklich KEIN Release-Schluessel.
+    getByName("debug") {
       val properties = Properties()
-      val propertiesFile = rootProject.file("signing/$name/signing.properties")
-        .takeIf { it.canRead() }
-        ?: rootProject.file("signing/ci/signing.properties")
-      properties.load(propertiesFile.inputStream())
+      val propertiesFile = rootProject.file("signing/debug/signing.properties")
+      propertiesFile.inputStream().use { properties.load(it) }
       storeFile = File(propertiesFile.parentFile, "signing.keystore")
       storePassword = properties["STORE_PASSWORD"] as String
       keyAlias = properties["KEY_ALIAS"] as String
       keyPassword = properties["KEY_PASSWORD"] as String
     }
-  }
 
-  val playSigningConfig = createSigningConfig("play")
-  val githubSigningConfig = createSigningConfig("github")
-
-  val signingFlavor = "signing"
-  val freeFlavor = "free"
-  flavorDimensions += signingFlavor
-  flavorDimensions += freeFlavor
-  productFlavors {
-    register("github") {
-      dimension = signingFlavor
-      signingConfig = githubSigningConfig
-    }
-    register("play") {
-      dimension = signingFlavor
-      signingConfig = playSigningConfig
-    }
-    register("libre") {
-      dimension = freeFlavor
-    }
-    register("proprietary") {
-      dimension = freeFlavor
+    // Release-Signierung nur, wenn die Umgebung sie bereitstellt (GitHub-Secrets, siehe docs/RELEASE.md).
+    // Ohne diese Variablen entsteht ein unsigniertes APK, das z. B. F-Droid selbst signiert.
+    val releaseKeystore = System.getenv("RELEASE_KEYSTORE_FILE")
+    if (!releaseKeystore.isNullOrBlank()) {
+      create("release") {
+        storeFile = rootProject.file(releaseKeystore)
+        storePassword = System.getenv("RELEASE_KEYSTORE_PASSWORD")
+        keyAlias = System.getenv("RELEASE_KEY_ALIAS")
+        keyPassword = System.getenv("RELEASE_KEY_PASSWORD")
+      }
     }
   }
 
@@ -92,6 +71,7 @@ android {
     getByName("release") {
       isMinifyEnabled = true
       isShrinkResources = true
+      signingConfig = signingConfigs.findByName("release")
     }
     getByName("debug") {
       isMinifyEnabled = false
@@ -182,9 +162,6 @@ dependencies {
   implementation(libs.materialDialog.core)
   implementation(libs.materialDialog.input)
   implementation(libs.coil)
-
-  "proprietaryImplementation"(projects.review.play)
-  "libreImplementation"(projects.review.noop)
 
   debugImplementation(projects.logging.debug)
 

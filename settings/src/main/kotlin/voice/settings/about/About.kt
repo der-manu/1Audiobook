@@ -114,7 +114,7 @@ private fun About(viewState: AboutViewState, listener: AboutListener) {
           leadingContent = {
             Icon(
               modifier = Modifier.size(72.dp),
-              painter = painterResource(id = CommonR.drawable.ic_playbook),
+              painter = painterResource(id = CommonR.drawable.ic_app_logo),
               contentDescription = stringResource(id = CommonR.string.app_name),
             )
           },

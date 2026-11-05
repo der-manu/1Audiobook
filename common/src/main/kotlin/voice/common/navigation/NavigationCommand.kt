@@ -75,9 +75,6 @@ sealed interface Destination {
   object OnboardingCompletionFaq : Compose
 
   @Parcelize
-  object OnboardingExplanation : Compose
-
-  @Parcelize
   data class AddContent(val mode: Mode) : Compose {
 
     enum class Mode {

@@ -77,7 +77,7 @@
   <string name="path">Pfad</string>
   <string name="change_book_author">Verfasser</string>
   <string name="edit_book_author">Autor bearbeiten</string>
-  <string name="onboarding_welcome_title_g">Willkommen bei PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Willkommen bei 1Audiobook!</string>
   <string name="onboarding_gestures_title">Verwenden von Gesten</string>
   <string name="onboarding_show_player">Player anzeigen</string>
   <string name="onboarding_show_list_chapters">Liste der Kapitel anzeigen</string>
@@ -105,12 +105,12 @@
   <string name="sort_order_preview_more">… und %1$d weitere</string>
   <string name="sort_order_apply">Übernehmen</string>
   <string name="sort_order_cancel">Abbrechen</string>
-  <!--PlayBookAdvance: About / Credits-->
-  <string name="about_description">PlayBookAdvance ist ein freier Open-Source-Hörbuchplayer (GPL-3.0). Er ist ein Fork von PlayBook von Goodwy, das wiederum auf Voice von Paul Woitaschek basiert.</string>
+  <!--1Audiobook: About / Credits-->
+  <string name="about_description">1Audiobook ist ein freier Open-Source-Hörbuchplayer (GPL-3.0) für Audiodateien auf deinem Gerät. Er stammt von PlayBook von Goodwy ab, das auf Voice von Paul Woitaschek basiert, und ist vom Mort Audiobook Player inspiriert. Er wurde zusammen mit einem KI-Assistenten „vibe-codiert“.</string>
   <string name="about_source_code">Quellcode und Projektseite</string>
   <string name="about_report_issue">Problem melden oder Funktion vorschlagen</string>
   <string name="about_credits_title">Danksagung und Lizenzen</string>
-  <string name="about_credits_intro">PlayBookAdvance baut auf der Arbeit der folgenden Projekte auf. Tippe auf einen Eintrag, um die Seite zu öffnen.</string>
+  <string name="about_credits_intro">1Audiobook baut auf der Arbeit der folgenden Projekte auf. Tippe auf einen Eintrag, um die Seite zu öffnen.</string>
   <string name="about_credits_based_on">Basiert auf</string>
   <string name="about_credits_inspiration">Inspiration</string>
   <string name="about_credits_libraries">Bibliotheken und Dienste</string>
@@ -141,10 +141,11 @@
   <string name="library_flag_part">Sieht aus wie eine CD eines Buchs</string>
   <string name="library_flag_playlist_defective">Playlist ist defekt, stattdessen wird sortiert</string>
   <string name="library_rename_title">Buchtitel</string>
-  <string name="library_order_title">Reihenfolge und Vorschau</string>
   <string name="library_use_playlist">Playlist (m3u) verwenden</string>
   <string name="library_playlist_info">%1$s · %2$d von %3$d Einträgen zugeordnet · %4$d Dateien nicht in der Liste</string>
   <string name="library_not_in_playlist">nicht in der Playlist</string>
   <string name="sort_order_key_magic">Zaubern (CD-Nummern in Dateinamen erkennen)</string>
   <string name="library_order_magic">Zaubern (CD-Nummern)</string>
+  <string name="pref_online_cover_search">Fehlende Cover per DuckDuckGo suchen</string>
+  <string name="pref_subtitle_online_cover_search">Aus: Die App bleibt komplett offline. An: Das Buchmenü bietet „Titelbild aus dem Internet“; dabei wird der Buchtitel an DuckDuckGo gesendet.</string>
 </resources>

@@ -88,7 +88,7 @@
   <string name="last_played_at">Siste audition</string>
   <string name="remaining_time">Gjenværende tid</string>
   <string name="auto_sleep_timer_end">Sluttid</string>
-  <string name="onboarding_welcome_title_g">Velkommen til PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Velkommen til 1Audiobook!</string>
   <string name="auto_sleep_timer">Start slumretidtakeren etter planen</string>
   <string name="auto_sleep_timer_start">Starttid</string>
 </resources>

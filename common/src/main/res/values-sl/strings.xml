@@ -86,7 +86,7 @@
   <string name="last_played_at">Zadnja avdicija</string>
   <string name="remaining_time">Preostali čas</string>
   <string name="auto_sleep_timer_end">Končni čas</string>
-  <string name="onboarding_welcome_title_g">Dobrodošli v PlayBookAdvanceu!</string>
+  <string name="onboarding_welcome_title_g">Dobrodošli v 1Audiobooku!</string>
   <string name="auto_sleep_timer">Zaženite časovnik dremeža po urniku</string>
   <string name="auto_sleep_timer_start">Začetni čas</string>
 </resources>

@@ -25,6 +25,7 @@ data class SettingsViewState(
   val useHapticFeedback: Boolean,
   val sizeCoversDirectory: String,
   val scanCoverChapter: Boolean,
+  val useOnlineCoverSearch: Boolean,
   val useMenuIconsPref: Boolean,
   val useAnimatedMarquee: Boolean,
 ) {

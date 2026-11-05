@@ -86,7 +86,7 @@
   <string name="last_played_at">Buổi thử giọng cuối cùng</string>
   <string name="remaining_time">Thời gian còn lại</string>
   <string name="auto_sleep_timer_end">Thời gian kết thúc</string>
-  <string name="onboarding_welcome_title_g">Chào mừng bạn đến với PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Chào mừng bạn đến với 1Audiobook!</string>
   <string name="auto_sleep_timer">Bắt đầu hẹn giờ báo lại đúng lịch trình</string>
   <string name="auto_sleep_timer_start">Thời gian bắt đầu</string>
 </resources>

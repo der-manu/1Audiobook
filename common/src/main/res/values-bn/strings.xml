@@ -85,7 +85,7 @@
   <string name="pref_privacy_title">Privacy policy</string>
 
   <!--Onboarding-->
-  <string name="onboarding_welcome_title_g">Welcome to PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Welcome to 1Audiobook!</string>
   <string name="onboarding_gestures_title">Use gestures</string>
   <string name="onboarding_show_player">Show player</string>
   <string name="onboarding_show_list_chapters">Show list of chapters</string>

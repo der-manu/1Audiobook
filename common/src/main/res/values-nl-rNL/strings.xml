@@ -86,7 +86,7 @@
   <string name="last_played_at">Laatste auditie</string>
   <string name="remaining_time">Resterende tijd</string>
   <string name="auto_sleep_timer_end">Eindtijd</string>
-  <string name="onboarding_welcome_title_g">Welkom bij PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Welkom bij 1Audiobook!</string>
   <string name="auto_sleep_timer">Start snooze-timer op schema</string>
   <string name="auto_sleep_timer_start">Starttijd</string>
 </resources>

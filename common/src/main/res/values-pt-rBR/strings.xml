@@ -86,7 +86,7 @@
   <string name="last_played_at">Última audição</string>
   <string name="remaining_time">Tempo restante</string>
   <string name="auto_sleep_timer_end">Hora de término</string>
-  <string name="onboarding_welcome_title_g">Bem-vindo ao PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Bem-vindo ao 1Audiobook!</string>
   <string name="auto_sleep_timer">Inicie o cronômetro de soneca de acordo com a programação</string>
   <string name="auto_sleep_timer_start">Hora de início</string>
 </resources>

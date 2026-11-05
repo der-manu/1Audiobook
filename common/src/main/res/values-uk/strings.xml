@@ -89,7 +89,7 @@
 
   <!--Onboarding-->
   <string name="auto_sleep_timer_end">Час закінчення</string>
-  <string name="onboarding_welcome_title_g">Ласкаво просимо в PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Ласкаво просимо в 1Audiobook!</string>
   <string name="onboarding_gestures_title">Використовуйте жести</string>
   <string name="onboarding_show_player">Показати плеєр</string>
   <string name="onboarding_show_list_chapters">Показати список глав</string>

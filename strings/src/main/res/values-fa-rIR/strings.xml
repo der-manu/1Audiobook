@@ -35,10 +35,7 @@
     <string name="mark_as_completed">علامت زدن به عنوان تکمیل شده</string>
     <string name="mark_as_not_started">علامت زدن به عنوان شروع نشده</string>
     <string name="pref_theme_dark">تم مشکی</string>
-    <string name="pref_suggest_idea">یک ایده پیشنهاد کنید</string>
-    <string name="pref_use_grid">چینش بصورت شبکه ای</string>
     <string name="pref_report_issue">گزارش مشکل</string>
-    <string name="pref_get_support">دریافت پشتیبانی</string>
     <string name="pref_app_version">ورژن اپلیکیشن</string>
     <string name="play_current">پخش فایل جاری</string>
     <string name="book_header_not_started">هنوز شروع نشده</string>
@@ -51,9 +48,7 @@
     <string name="battery_optimization_action">بروزرسانی</string>
     <string name="media_session_recent">به تازگی</string>
     <string name="notification_sleep_timer_enable">فعال کردن تایمر خواب</string>
-    <string name="onboarding.explanation.subtitle">با Voice می‌توانید کتاب‌ها را به‌عنوان فایل‌های جداگانه اضافه کنید یا آنها را در پوشه‌ها سازماندهی کنید.به انتخاب خودتان!</string>
     <string name="onboarding.completion.next_button">شروع به گوش دادن</string>
-    <string name="sleep_timer.title">رویاهای شیرین! 🌙</string>
     <string name="sleep_timer.button.decrement">کوتاه تر</string>
     <string name="sleep_timer.button.increment">طولانی تر</string>
     <plurals name="minutes">
@@ -76,7 +71,6 @@
     <string name="delete_book_dialog_title">پاک کردن کتاب</string>
     <string name="media_session_root">همه کتاب های صوتی</string>
     <string name="notification_sleep_timer_disable">غیرفعال کردن تایمر خواب</string>
-    <string name="review.feedback.button.no">لغو</string>
     <plurals name="folder_type_file_count">
         <item quantity="one">%d فایل صوتی</item>
         <item quantity="other">%d فایل های صوتی</item>
@@ -89,11 +83,8 @@
     <string name="storage_bug_title">مجوز لازم است</string>
     <string name="select_folder_title_default">کتاب[های] صوتی خود را اضافه کنید</string>
     <string name="storage_bug_button">اعطا مجوز</string>
-    <string name="review.request.button.no">نه، متشکرم</string>
-    <string name="review.feedback.button.yes">فرستادن بازخورد</string>
     <string name="cover_search_template_with_author">%1$s توسط %2$s کاور کتاب صوتی</string>
     <string name="cover_search_template_no_author">%s کاور کتاب صوتی</string>
-    <string name="pref_help_translating">کمک برای ترجمه Voice</string>
     <string name="generic_error_message">مشکلی پیش آمد 😢</string>
     <string name="voice_intro_first_book">پوشه کتاب صوتی خود را اضافه کنید تا بتوانید شروع به گوش دادن کنید!</string>
     <string name="pause">توقف</string>
@@ -105,8 +96,6 @@
     <string name="cover_search.author">نویسنده</string>
     <string name="mark_as_current">علامت زدن به عنوان جاری</string>
     <string name="migration_delete_dialog_action_delete">پاک کردن</string>
-    <string name="onboarding.completion.title">همه چیز آماده است!</string>
-    <string name="onboarding.explanation.title">کتابخانه شما، به روش شما</string>
     <string name="book_header_completed">تمام شده</string>
     <string name="folder_mode_author">حالت نویسنده-کتاب: زیرپوشه ها نویسنده هستند، زیر-زیرپوشه ها کتابها هستند.</string>
     <string name="folder_type_no_books">Voice نتوانست هیچ کتابی را شناسایی کند. آیا فایل های صوتی وجود دارد؟</string>
@@ -118,13 +107,6 @@
     <string name="select_folder_type_folder">پوشه</string>
     <string name="storage_bug_subtitle">در برخی از دستگاه‌ها، یک برنامه سیستم مجوز لازم برای دسترسی به کارت حافظه خارجی را ندارد. این دسترسی برای Voice برای خواندن کتاب‌های صوتی شما ضروری است.</string>
     <string name="select_folder_subtitle">آیا می خواهید یک فایل را به عنوان یک کتاب یا یک پوشه اضافه کنید؟</string>
-    <string name="onboarding.completion.subtitle">اولین کتاب صوتی شما آماده پخش است. از گشت و گذار خود با Voice لذت ببرید!</string>
-    <string name="review.feedback.title">از شنیدن آن متاسفیم!</string>
-    <string name="review.feedback.content">ممکن است به ما بگویید چه اشتباهی رخ داده است؟ ما از بازخورد شما قدردانی می کنیم و به ما کمک می کند تا تجربه شما را بهبود ببخشیم.</string>
-    <string name="onboarding_welcome_title">به برنامه Voice خوش آمدید!</string>
-    <string name="review.request.title">از Voice خوشتان آمد؟</string>
-    <string name="review.request.content">بازخورد شما برای ما مهم است! اگر فرصت دارید، به ما امتیاز دهید و تجربه خود را به اشتراک بگذارید. این به ما کمک می کند تا بهبودها را ایجاد کنیم و تجربه شنیداری بهتری را ارائه دهیم.</string>
-    <string name="review.request.button.yes">الان امتیاز بدهید</string>
     <string name="onboarding_welcome_subtitle">پخش کننده کتاب صوتی جیبی شخصی شما. بیایید نرم افزار را راه اندازی کنیم.</string>
     <string name="onboarding.button_next">بعدی</string>
     <string name="migration_hint_content">با توجه به تغییرات نسخه های جدیدتر اندروید، لازم است پوشه کتاب صوتی خود را با استفاده از انتخابگر سیستم انتخاب کنید.

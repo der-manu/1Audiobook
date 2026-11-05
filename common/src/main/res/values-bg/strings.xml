@@ -86,7 +86,7 @@
   <string name="last_played_at">Последно прослушване</string>
   <string name="remaining_time">Оставащо време</string>
   <string name="auto_sleep_timer_end">Краен час</string>
-  <string name="onboarding_welcome_title_g">Добре дошли в PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Добре дошли в 1Audiobook!</string>
   <string name="auto_sleep_timer">Стартирайте таймера за отлагане по график</string>
   <string name="auto_sleep_timer_start">Начален час</string>
 </resources>

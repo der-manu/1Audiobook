@@ -74,6 +74,8 @@ constructor(
   private val sortingFinishedPref: Pref<Int>,
   @Named(PrefKeys.USE_GESTURES)
   private val useGestures: Pref<Boolean>,
+  @Named(PrefKeys.USE_ONLINE_COVER_SEARCH)
+  private val useOnlineCoverSearch: Pref<Boolean>,
   @Named(PrefKeys.USE_HAPTIC_FEEDBACK)
   private val useHapticFeedback: Pref<Boolean>,
   @Named(PrefKeys.SCAN_COVER_CHAPTER)
@@ -128,6 +130,7 @@ constructor(
     val sortingNotStartedPref = sortingNotStartedPref.flow.collectAsState(initial = SORTING_NAME).value
     val sortingFinishedPref = sortingFinishedPref.flow.collectAsState(initial = SORTING_LAST).value
     val useGestures = useGestures.flow.collectAsState(initial = true).value
+    val useOnlineCoverSearch = useOnlineCoverSearch.flow.collectAsState(initial = false).value
     val useHapticFeedback = useHapticFeedback.flow.collectAsState(initial = true).value
     val scanCoverChapter = scanCoverChapter.flow.collectAsState(initial = true).value
     val useMenuIconsPref = useMenuIconsPref.flow.collectAsState(initial = false).value
@@ -192,6 +195,7 @@ constructor(
       currentBook = currentBookId,
       miniPlayerStyle = miniPlayerStyle,
       useGestures = useGestures,
+      useOnlineCoverSearch = useOnlineCoverSearch,
       useHapticFeedback = useHapticFeedback,
       useMenuIconsPref = useMenuIconsPref,
       sortingCurrent = sortingCurrentPref,

@@ -86,7 +86,7 @@
   <string name="last_played_at">Ostatnie przesłuchanie</string>
   <string name="remaining_time">Pozostały czas</string>
   <string name="auto_sleep_timer_end">Godzina zakończenia</string>
-  <string name="onboarding_welcome_title_g">Witamy w PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Witamy w 1Audiobook!</string>
   <string name="auto_sleep_timer">Uruchom minutnik drzemki zgodnie z harmonogramem</string>
   <string name="auto_sleep_timer_start">Godzina rozpoczęcia</string>
 </resources>

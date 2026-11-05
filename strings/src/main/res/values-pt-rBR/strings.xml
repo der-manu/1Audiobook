@@ -39,11 +39,7 @@
     <string name="mark_as_completed">Marcar como Concluído</string>
     <string name="mark_as_current">Marca com Actual</string>
     <string name="mark_as_not_started">Marca como não iniciado</string>
-    <string name="pref_suggest_idea">Sugerir uma ideia</string>
-    <string name="pref_use_grid">Utilizar a disposição da grelha</string>
     <string name="pref_report_issue">Reportar um problema</string>
-    <string name="pref_help_translating">Ajuda traduzindo Voice</string>
-    <string name="pref_get_support">Obter apoio</string>
     <string name="pref_app_version">Versão</string>
     <string name="close">Fechar</string>
     <string name="delete">Apagar</string>
@@ -96,34 +92,21 @@
     <string name="notification_sleep_timer_disable">Desativar desligamento automático</string>
     <string name="generic_error_message">Algo deu errado 😢</string>
     <string name="generic_error_retry">Tentar novamente</string>
-    <string name="onboarding.explanation.title">Sua Livraria, do Seu Jeito</string>
     <string name="onboarding.button_next">Próximo</string>
-    <string name="sleep_timer.title">Bons sonhos! 🌙</string>
     <plurals name="minutes">
         <item quantity="one">%d minuto</item>
         <item quantity="many">%d minutos</item>
         <item quantity="other">%d minutos</item>
     </plurals>
     <string name="folder_mode_author">Modo Autor de Livro: Subpastas são autores, sub-subpasta são livros.</string>
-    <string name="review.request.title">Está gostando de Voice?</string>
-    <string name="review.request.content">O seu feedback é importante para nós! Se você tiver um momento, nos avalie e compartilhe a sua experiência. Ele ajuda a gente a melhorar ainda mais as suas lidas.</string>
     <string name="cover_search_template_no_author">Capa do audiobook %s</string>
     <string name="storage_bug_subtitle">Em certos dispositivos, o aplicativo pode exigir permissões para acessar o armazenamento externo. Esse acesso é essencial para Voice ler os seus audiobooks.</string>
     <string name="onboarding_welcome_subtitle">Seu tocador de bolso pessoal de audiobook. Bora nos arrumar para isso.</string>
-    <string name="onboarding.completion.title">Está tudo pronto!</string>
-    <string name="onboarding.explanation.subtitle">Com Voice, você pode adicionar livros como arquivos individuais ou organizar eles em pastas. Você decide como!</string>
-    <string name="onboarding.completion.subtitle">O seu primeiro audiobook está pronto para rodar. Aprecie a sua jornada com Voice!</string>
-    <string name="review.feedback.button.yes">Enviar Feedback</string>
-    <string name="review.feedback.button.no">Cancelar</string>
     <string name="sleep_timer.button.increment">Mais longo</string>
     <string name="sleep_timer.button.decrement">Mais curto</string>
-    <string name="review.feedback.content">Poderia nos dizer o que errado? A gente valoriza o seu feedback e com ele sabemos como melhorar a sua experiência.</string>
     <string name="storage_bug_title">Permissão necessária</string>
     <string name="storage_bug_button">Conceder permissão</string>
     <string name="select_folder_title_onboarding">Adicione o Seu Primeiro Audiobook</string>
-    <string name="review.request.button.yes">Avalie agora</string>
-    <string name="review.request.button.no">Não, obrigado</string>
-    <string name="review.feedback.title">A gente sente muito por isso!</string>
     <string name="cover_search_template_with_author">Capa do audiobook %1$s, feito por %2$s</string>
     <string name="cover_search.icon_recent">Pesquisa recente</string>
     <string name="cover_search.author">Autor</string>
@@ -131,6 +114,5 @@
     <string name="select_folder_type_file">Ficheiro</string>
     <string name="select_folder_type_folder">Pasta</string>
     <string name="select_folder_subtitle">Gostaria de adicionar um único arquivo como um livro ou pasta?</string>
-    <string name="onboarding_welcome_title">Seja bem vindo ao Voice!</string>
     <string name="onboarding.completion.next_button">Começar a ouvir</string>
 </resources>

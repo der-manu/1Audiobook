@@ -86,7 +86,7 @@
   <string name="last_played_at">آخر اختبار</string>
   <string name="remaining_time">الوقت المتبقي</string>
   <string name="auto_sleep_timer_end">وقت الانتهاء</string>
-  <string name="onboarding_welcome_title_g">مرحبا بكم في PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">مرحبا بكم في 1Audiobook!</string>
   <string name="auto_sleep_timer">بدء مؤقت الغفوة في الموعد المحدد</string>
   <string name="auto_sleep_timer_start">وقت البدء</string>
 </resources>

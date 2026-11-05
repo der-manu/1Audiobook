@@ -86,7 +86,7 @@
   <string name="last_played_at">अन्तिम पटक सुनिएको</string>
   <string name="remaining_time">बाँकी समय</string>
   <string name="auto_sleep_timer_end">अन्त्य समय</string>
-  <string name="onboarding_welcome_title_g">PlayBookAdvance मा स्वागत छ!</string>
+  <string name="onboarding_welcome_title_g">1Audiobook मा स्वागत छ!</string>
   <string name="auto_sleep_timer">समयतालिकामा स्नुज टाइमर सुरु गर्नुहोस्</string>
   <string name="auto_sleep_timer_start">सुरु समय</string>
 </resources>

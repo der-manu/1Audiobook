@@ -21,10 +21,8 @@ import voice.folderPicker.folderPicker.FolderOverview
 import voice.folderPicker.libraryImport.LibraryImport
 import voice.folderPicker.selectType.SelectFolderType
 import voice.migration.views.Migration
-import voice.onboarding.OnboardingExplanation
 import voice.onboarding.OnboardingWelcome
 import voice.onboarding.completion.OnboardingCompletion
-import voice.review.ReviewFeature
 import voice.settings.views.Settings
 import voice.settings.about.About
 import javax.inject.Inject
@@ -92,20 +90,7 @@ class AppController : ComposeController() {
 
         Destination.OnboardingCompletion -> OnboardingCompletion()
         Destination.OnboardingCompletionFaq -> OnboardingCompletion(isFaq = true)
-        Destination.OnboardingExplanation -> OnboardingExplanation(
-          onNext = {
-            navController.navigate(
-              Destination.AddContent(
-                mode = Destination.AddContent.Mode.Onboarding,
-              ),
-            )
-          },
-          onBack = {
-            navController.pop()
-          },
-        )
         Destination.OnboardingWelcome -> OnboardingWelcome(
-//          onNext = { navController.navigate(Destination.OnboardingExplanation) },
           onNext = {
             navController.navigate(
               Destination.AddContent(
@@ -119,8 +104,6 @@ class AppController : ComposeController() {
         }
       }
     }
-
-    ReviewFeature()
 
     LaunchedEffect(navigator) {
       navigator.navigationCommands.collect { command ->

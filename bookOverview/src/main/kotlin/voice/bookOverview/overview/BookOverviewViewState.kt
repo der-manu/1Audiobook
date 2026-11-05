@@ -36,6 +36,8 @@ data class BookOverviewViewState(
   val sortingCurrent: Int,
   val sortingNotStarted: Int,
   val sortingFinished: Int,
+  /** Nur wenn der Nutzer die Online-Cover-Suche eingeschaltet hat, wird sie im Menue angeboten. */
+  val useOnlineCoverSearch: Boolean = false,
 ) {
 
   companion object {

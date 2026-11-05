@@ -6,6 +6,6 @@
     <intent
       android:action="playCurrent"
       android:targetClass="voice.app.features.MainActivity"
-      android:targetPackage="io.github.dermanu.playbookadvance" />
+      android:targetPackage="io.github.dermanu.oneaudiobook" />
   </shortcut>
 </shortcuts>

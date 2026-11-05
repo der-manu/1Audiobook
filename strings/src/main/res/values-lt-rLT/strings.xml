@@ -35,11 +35,7 @@
     <string name="pref_seek_time">Peršokimo trukmė</string>
     <string name="pref_theme_dark">Tamsi tema</string>
     <string name="pref_auto_rewind_title">Automatinis atsukimas atgal</string>
-    <string name="pref_suggest_idea">Pasiūlyti idėją</string>
-    <string name="pref_use_grid">Naudoti tinklelio išdėstymą</string>
     <string name="pref_report_issue">Pranešti apie problemą</string>
-    <string name="pref_help_translating">Padėkite verčiant „Voice“</string>
-    <string name="pref_get_support">Gauti palaikymą</string>
     <string name="pref_app_version">Programėlės versija</string>
     <string name="popup_edit">Redaguoti</string>
     <string name="remove">Pašalinti</string>

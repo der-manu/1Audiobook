@@ -86,7 +86,7 @@
   <string name="last_played_at">Paskutinis klausymas</string>
   <string name="remaining_time">Likęs laikas</string>
   <string name="auto_sleep_timer_end">Pabaigos laikas</string>
-  <string name="onboarding_welcome_title_g">Sveiki atvykę į \"PlayBookAdvance\"!</string>
+  <string name="onboarding_welcome_title_g">Sveiki atvykę į \"1Audiobook\"!</string>
   <string name="auto_sleep_timer">Paleiskite snaudimo laikmatį pagal tvarkaraštį</string>
   <string name="auto_sleep_timer_start">Pradžios laikas</string>
 </resources>

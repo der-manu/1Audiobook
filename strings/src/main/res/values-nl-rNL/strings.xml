@@ -34,11 +34,7 @@
     <string name="pref_seek_time">Aantal overslaan</string>
     <string name="pref_theme_dark">Donker thema</string>
     <string name="pref_auto_rewind_title">Automatisch terugspoelen</string>
-    <string name="pref_suggest_idea">Idee delen</string>
-    <string name="pref_use_grid">Roosterindeling gebruiken</string>
     <string name="pref_report_issue">Probleem melden</string>
-    <string name="pref_help_translating">Helpen met vertalen</string>
-    <string name="pref_get_support">Ondersteuning vragen</string>
     <string name="pref_app_version">Appversie</string>
     <string name="popup_edit">Bewerken</string>
     <string name="remove">Verwijderen</string>
@@ -101,13 +97,6 @@
     <string name="storage_bug_title">Toegang vereist</string>
     <string name="storage_bug_button">Toegang geven</string>
     <string name="select_folder_title_onboarding">Voeg je eerste audiobook toe</string>
-    <string name="review.request.title">Tevreden met Voice?</string>
-    <string name="review.request.button.yes">Beoordeeld Nu</string>
-    <string name="review.request.button.no">Nee, bedankt</string>
-    <string name="review.feedback.title">Het spijt ons dit te horen!</string>
-    <string name="review.feedback.content">Kan je ons vertellen wat misliep? We appreciëren jou mening en dit help ons je ervaring te verbeteren.</string>
-    <string name="review.feedback.button.no">Annuleer</string>
-    <string name="sleep_timer.title">Slaapwel! 🌙</string>
     <string name="sleep_timer.button.increment">Langer</string>
     <string name="sleep_timer.button.decrement">Korter</string>
     <plurals name="minutes">
@@ -115,14 +104,9 @@
         <item quantity="other">%d minuten</item>
     </plurals>
     <string name="cover_search.author">Auteur</string>
-    <string name="onboarding_welcome_title">Welkom bij Voice!</string>
     <string name="onboarding.button_next">Volgende</string>
     <string name="select_folder_type_folder">Map</string>
-    <string name="onboarding.explanation.subtitle">Met Voice kan je individuele boeken toevoegen of ze organiseren in folders. Jij kiest!</string>
-    <string name="onboarding.explanation.title">Jouw bibliotheek, jouw manier</string>
     <string name="onboarding.completion.next_button">Begin te luisteren</string>
     <string name="cover_search.icon_recent">Recente zoekopdracht</string>
     <string name="select_folder_subtitle">Wil je een enkel bestand toevoegen als een boek of een folder?</string>
-    <string name="onboarding.completion.subtitle">Je eerste audioboek is klaar om af te spelen. Geniet van je ervaring met Voice!</string>
-    <string name="review.request.content">Je menig is van belang voor ons. Neem even de tijd, beoordeeld ons en deel je ervaring. Dit helpt ons verbeteringen aan te brengen en een betere ervaring aan te bieden.</string>
 </resources>

@@ -86,7 +86,7 @@
   <string name="last_played_at">Poslední konkurz</string>
   <string name="remaining_time">Zbývající čas</string>
   <string name="auto_sleep_timer_end">Čas ukončení</string>
-  <string name="onboarding_welcome_title_g">Vítejte v PlayBookAdvanceu!</string>
+  <string name="onboarding_welcome_title_g">Vítejte v 1Audiobooku!</string>
   <string name="auto_sleep_timer">Spuštění časovače odložení podle plánu</string>
   <string name="auto_sleep_timer_start">Čas zahájení</string>
 </resources>

@@ -86,7 +86,7 @@
   <string name="last_played_at">Τελευταία οντισιόν</string>
   <string name="remaining_time">Υπολειπόμενος χρόνος</string>
   <string name="auto_sleep_timer_end">Ώρα λήξης</string>
-  <string name="onboarding_welcome_title_g">Καλώς ήρθατε στο PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Καλώς ήρθατε στο 1Audiobook!</string>
   <string name="auto_sleep_timer">Ξεκινήστε το χρονόμετρο αναβολής σύμφωνα με το χρονοδιάγραμμα</string>
   <string name="auto_sleep_timer_start">Ώρα έναρξης</string>
 </resources>

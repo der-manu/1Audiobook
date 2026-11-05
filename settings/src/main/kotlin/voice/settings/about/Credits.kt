@@ -1,9 +1,8 @@
 package voice.settings.about
 
 /**
- * Alle Projekte, auf denen PlayBookAdvance aufbaut. Wird im "Ueber"-Bildschirm angezeigt.
- * Bitte hier ergaenzen, sobald eine neue Bibliothek oder Quelle dazukommt.
- * Dieselbe Liste steht (ausfuehrlicher) in NOTICE.md.
+ * Alle Projekte, auf denen 1Audiobook aufbaut. Wird im "Ueber"-Bildschirm angezeigt.
+ * Bitte hier UND in NOTICE.md ergaenzen, sobald eine Bibliothek oder Quelle dazukommt.
  */
 internal data class Credit(
   val name: String,
@@ -12,9 +11,9 @@ internal data class Credit(
 )
 
 internal object Links {
-  const val PROJECT = "https://github.com/der-manu/PlayBookAdvance"
-  const val ISSUES = "https://github.com/der-manu/PlayBookAdvance/issues/new"
-  const val PRIVACY = "https://github.com/der-manu/PlayBookAdvance/blob/master/PRIVACY.md"
+  const val PROJECT = "https://github.com/der-manu/1Audiobook"
+  const val ISSUES = "https://github.com/der-manu/1Audiobook/issues/new"
+  const val PRIVACY = "https://github.com/der-manu/1Audiobook/blob/master/PRIVACY.md"
 }
 
 internal object Credits {
@@ -23,7 +22,7 @@ internal object Credits {
   val basedOn = listOf(
     Credit(
       name = "PlayBook",
-      detail = "Goodwy \u00B7 GPL-3.0 \u00B7 direct upstream of this fork",
+      detail = "Goodwy \u00B7 GPL-3.0 \u00B7 direct upstream of this app",
       url = "https://github.com/Goodwy/PlayBook",
     ),
     Credit(
@@ -42,6 +41,7 @@ internal object Credits {
     ),
   )
 
+  /** Bibliotheken, die in der App stecken. Test- und Build-Werkzeuge stehen nur in NOTICE.md. */
   val libraries = listOf(
     Credit(
       name = "FFmpegKit (maintained fork)",
@@ -54,14 +54,34 @@ internal object Credits {
       url = "https://ffmpeg.org",
     ),
     Credit(
-      name = "AndroidX Media3 (ExoPlayer)",
+      name = "AndroidX Media3 (ExoPlayer, Session)",
       detail = "Google \u00B7 Apache-2.0",
       url = "https://github.com/androidx/media",
     ),
     Credit(
-      name = "Jetpack Compose, Material 3, Room, DataStore and other AndroidX libraries",
+      name = "Jetpack Compose, Material 3 and Material Icons",
       detail = "Google \u00B7 Apache-2.0",
-      url = "https://developer.android.com/jetpack",
+      url = "https://developer.android.com/jetpack/compose",
+    ),
+    Credit(
+      name = "AndroidX Core, AppCompat, Activity, Lifecycle, Room, DataStore, Paging, Startup, DocumentFile",
+      detail = "Google \u00B7 Apache-2.0",
+      url = "https://developer.android.com/jetpack/androidx",
+    ),
+    Credit(
+      name = "Material Components for Android",
+      detail = "Google \u00B7 Apache-2.0",
+      url = "https://github.com/material-components/material-components-android",
+    ),
+    Credit(
+      name = "Accompanist (System UI Controller)",
+      detail = "Google \u00B7 Apache-2.0",
+      url = "https://github.com/google/accompanist",
+    ),
+    Credit(
+      name = "Android Core Library Desugaring (desugar_jdk_libs)",
+      detail = "Google, derived from OpenJDK \u00B7 GPL-2.0 with Classpath Exception",
+      url = "https://github.com/google/desugar_jdk_libs",
     ),
     Credit(
       name = "Dagger",
@@ -74,6 +94,11 @@ internal object Credits {
       url = "https://github.com/bluelinelabs/Conductor",
     ),
     Credit(
+      name = "Navigation Reimagined for Compose",
+      detail = "Olshevski \u00B7 Apache-2.0",
+      url = "https://github.com/olshevski/compose-navigation-reimagined",
+    ),
+    Credit(
       name = "Coil",
       detail = "Coil contributors \u00B7 Apache-2.0",
       url = "https://github.com/coil-kt/coil",
@@ -84,12 +109,17 @@ internal object Credits {
       url = "https://square.github.io/okhttp/",
     ),
     Credit(
+      name = "Seismic",
+      detail = "Square \u00B7 Apache-2.0",
+      url = "https://github.com/square/seismic",
+    ),
+    Credit(
       name = "Material Dialogs",
       detail = "Aidan Follestad \u00B7 Apache-2.0",
       url = "https://github.com/afollestad/material-dialogs",
     ),
     Credit(
-      name = "kotlinx.coroutines and kotlinx.serialization",
+      name = "kotlinx.coroutines, kotlinx.serialization, kotlinx.collections.immutable",
       detail = "JetBrains \u00B7 Apache-2.0",
       url = "https://github.com/Kotlin/kotlinx.coroutines",
     ),

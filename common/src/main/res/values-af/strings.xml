@@ -86,7 +86,7 @@
   <string name="last_played_at">Laaste oudisie</string>
   <string name="remaining_time">Oorblywende tyd</string>
   <string name="auto_sleep_timer_end">Eindtyd</string>
-  <string name="onboarding_welcome_title_g">Welkom by PlayBookAdvance!</string>
+  <string name="onboarding_welcome_title_g">Welkom by 1Audiobook!</string>
   <string name="auto_sleep_timer">Begin sluimertimer op skedule</string>
   <string name="auto_sleep_timer_start">Begin tyd</string>
 </resources>

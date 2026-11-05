@@ -86,7 +86,7 @@
   <string name="last_played_at">Dernière audition</string>
   <string name="remaining_time">Temps restant</string>
   <string name="auto_sleep_timer_end">Heure de fin</string>
-  <string name="onboarding_welcome_title_g">Bienvenue sur PlayBookAdvance !</string>
+  <string name="onboarding_welcome_title_g">Bienvenue sur 1Audiobook !</string>
   <string name="auto_sleep_timer">Démarrez la minuterie de répétition à l’heure prévue</string>
   <string name="auto_sleep_timer_start">Heure de début</string>
 </resources>

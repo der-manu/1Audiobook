@@ -36,11 +36,7 @@
     <string name="book_header_completed">Voltooi</string>
     <string name="mark_as_completed">Merk as klaar</string>
     <string name="mark_as_not_started">Merk as nog nie begin nie</string>
-    <string name="pref_suggest_idea">Deel \'n idee</string>
-    <string name="pref_use_grid">Gebruik rooster uitleg</string>
     <string name="pref_report_issue">Rapporteer \'n probleem</string>
-    <string name="pref_help_translating">Help met vertaling</string>
-    <string name="pref_get_support">Kry ondersteuning</string>
     <string name="close">Sluit</string>
     <string name="delete">Skrap</string>
     <string name="add">Voeg toe</string>

@@ -35,11 +35,7 @@
     <string name="pref_seek_time">Pas derulare</string>
     <string name="pref_theme_dark">Temă întunecată</string>
     <string name="pref_auto_rewind_title">Reluare automată</string>
-    <string name="pref_suggest_idea">Propuneți o idee</string>
-    <string name="pref_use_grid">Folosiți aspect grilă</string>
     <string name="pref_report_issue">Raportați o problemă</string>
-    <string name="pref_help_translating">Ajutați la traducerea Voice</string>
-    <string name="pref_get_support">Obțineți asistență</string>
     <string name="pref_app_version">Versiune aplicație</string>
     <string name="popup_edit">Modificare</string>
     <string name="remove">Eliminare</string>

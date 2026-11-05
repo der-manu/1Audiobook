@@ -101,20 +101,6 @@ object PrefsModule {
 
   @Provides
   @Singleton
-  @Named(PrefKeys.SINGLE_BOOK_FOLDERS)
-  fun provideSingleBookFoldersPreference(prefs: AndroidPreferences): Pref<Set<String>> {
-    return prefs.stringSet(PrefKeys.SINGLE_BOOK_FOLDERS, emptySet())
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.COLLECTION_BOOK_FOLDERS)
-  fun provideCollectionFoldersPreference(prefs: AndroidPreferences): Pref<Set<String>> {
-    return prefs.stringSet(PrefKeys.COLLECTION_BOOK_FOLDERS, emptySet())
-  }
-
-  @Provides
-  @Singleton
   @Named(PrefKeys.GRID_MODE)
   fun gridViewPref(prefs: AndroidPreferences): Pref<GridMode> {
     return prefs.enum(PrefKeys.GRID_MODE, GridMode.FOLLOW_DEVICE)
@@ -274,20 +260,6 @@ object PrefsModule {
 
   @Provides
   @Singleton
-  @Named(PrefKeys.COVER_RADIUS)
-  fun coverRadiusPreference(prefs: AndroidPreferences): Pref<Int> {
-    return prefs.int(PrefKeys.COVER_RADIUS, 12)
-  }
-
-  @Provides
-  @Singleton
-  @Named(PrefKeys.COVER_ELEVATION)
-  fun coverElevationPreference(prefs: AndroidPreferences): Pref<Int> {
-    return prefs.int(PrefKeys.COVER_ELEVATION, 16)
-  }
-
-  @Provides
-  @Singleton
   @Named(PrefKeys.REPEAT_MODE)
   fun repeatModePreference(prefs: AndroidPreferences): Pref<Int> {
     return prefs.int(PrefKeys.REPEAT_MODE, REPEAT_OFF)
@@ -333,6 +305,14 @@ object PrefsModule {
   @Named(PrefKeys.USE_HAPTIC_FEEDBACK)
   fun useHapticFeedback(prefs: AndroidPreferences): Pref<Boolean> {
     return prefs.boolean(PrefKeys.USE_HAPTIC_FEEDBACK, false)
+  }
+
+  @Provides
+  @Singleton
+  @Named(PrefKeys.USE_ONLINE_COVER_SEARCH)
+  fun useOnlineCoverSearch(prefs: AndroidPreferences): Pref<Boolean> {
+    // Standard: aus. Ohne ausdrueckliche Zustimmung nutzt die App das Internet nicht.
+    return prefs.boolean(PrefKeys.USE_ONLINE_COVER_SEARCH, false)
   }
 
   @Provides

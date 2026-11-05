@@ -6,7 +6,6 @@
     <string name="cover">Cover</string>
     <string name="mark_as_completed">Tandai Selesai</string>
     <string name="mark_as_current">Tandai Sedang Dibaca</string>
-    <string name="pref_help_translating">Bantu terjemahkan Voice</string>
     <string name="download_book_cover">Sampul dari Internet</string>
     <string name="dialog_cancel">Batalkan</string>
     <string name="pick_book_cover">Sampul dari file sistem</string>
@@ -23,7 +22,6 @@
     <string name="playback_speed">Kecepatan pemutaran</string>
     <string name="bookmark">Markah</string>
     <string name="book_header_current">Saat ini</string>
-    <string name="pref_get_support">Dapatkan bantuan</string>
     <string name="pref_app_version">Versi aplikasi</string>
     <string name="popup_edit">Edit</string>
     <string name="book_header_not_started">Belum dimulai</string>
@@ -36,12 +34,10 @@
     <plurals name="seconds">
         <item quantity="other">%d detik</item>
     </plurals>
-    <string name="pref_suggest_idea">Sarankan ide</string>
     <string name="pref_seek_time">Lewati jumlah</string>
     <string name="cover_search.author">Penulis</string>
     <string name="close">Tutup</string>
     <string name="pref_theme_dark">Tema Gelap</string>
-    <string name="pref_use_grid">Gunakan tata letak kisi</string>
     <string name="remove">Buang</string>
     <string name="book_header_completed">Selesai</string>
     <string name="skip_silence">Lewati Keheningan</string>

@@ -9,7 +9,7 @@
 
   <color name="ic_shortcut_play_background">#FFFFFF</color>
 
-  <!-- PlayBookAdvance launcher icon -->
+  <!-- 1Audiobook launcher icon -->
   <color name="ic_launcher_background">#1F3A5F</color>
   <color name="ic_launcher_foreground">#F6E7C6</color>
   <color name="ic_splash_background">#1F3A5F</color>

@@ -17,28 +17,7 @@ dependencyResolutionManagement {
   repositories {
     google()
 
-    exclusiveContent {
-      forRepository {
-        maven(url = "https://jitpack.io")
-      }
-      filter {
-        includeGroupByRegex("com.github.PaulWoitaschek.*")
-      }
-    }
-
     mavenCentral()
-  }
-}
-
-plugins {
-  id("com.gradle.develocity") version "3.19.1"
-  id("org.gradle.toolchains.foojay-resolver-convention") version ("0.9.0")
-}
-
-develocity {
-  buildScan {
-    termsOfUseUrl = "https://gradle.com/terms-of-service"
-    termsOfUseAgree = "yes"
   }
 }
 
@@ -65,5 +44,3 @@ include(":logging:core")
 include(":logging:debug")
 include(":documentfile")
 include(":onboarding")
-include(":review:play")
-include(":review:noop")

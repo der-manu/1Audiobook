@@ -35,8 +35,6 @@
     <string name="bookmark_just_now">Baharu tadi</string>
     <string name="book_header_current">Sekarang</string>
     <string name="more">Lain-lain</string>
-    <string name="pref_help_translating">Bantu menterjemah Voice</string>
-    <string name="pref_get_support">Dapatkan bantuan</string>
     <string name="popup_edit">Sunting</string>
     <string name="delete">Padam</string>
     <string name="add">Tambah</string>
@@ -57,8 +55,6 @@
     <string name="pref_seek_time">Jumlah langkau</string>
     <string name="pref_theme_dark">Tema Gelap</string>
     <string name="pref_auto_rewind_title">Mandir automatik</string>
-    <string name="pref_suggest_idea">Cadangkan idea</string>
-    <string name="pref_use_grid">Guna paparan grid</string>
     <string name="remove">Keluarkan</string>
     <string name="play_current">Mainkan sekarang</string>
     <string name="folder_mode_root">Mod Buku Peringkat Tertinggi: Subfolder adalah buku</string>

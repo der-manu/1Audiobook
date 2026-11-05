@@ -328,11 +328,11 @@ fun BookOverviewScreen(modifier: Modifier = Modifier) {
               ) {
                 BottomSheetContent(
                   EditBookBottomSheetState(
-                    items = listOf(
+                    items = listOfNotNull(
                       BottomSheetItem.Title,
                       BottomSheetItem.Author,
-                      BottomSheetItem.InternetCover,
-                      BottomSheetItem.FileCover
+                      BottomSheetItem.InternetCover.takeIf { viewState.useOnlineCoverSearch },
+                      BottomSheetItem.FileCover,
                     )
                   )
                 ) { item ->
