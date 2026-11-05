@@ -6,7 +6,7 @@ Inspiriert von PlayBook und Mort Player Audiobooks. Vibe coded.
 
 BIBLIOTHEK IMPORTIEREN
 • Ordner wählen, die App findet deine Bücher: einzelne Ordner, Mehr-CD-Bücher (CD1, CD2, Disc 2, Teil 3 …), Autoren- und Reihen-Ordner
-• Release-Ordnernamen wie "Karen.Rose.-.2011.-.Todesstoss.Germ.wOOt" werden zu lesbaren Titeln
+• Release-Ordnernamen wie "Karen.Test.-.2011.-.Todesstrafe.Germ.wOOt" werden zu lesbaren Titeln
 • Erst nach deiner Bestätigung einer bearbeitbaren Vorschau wird etwas hinzugefügt: Bücher umbenennen, abwählen, Reihenfolge ändern, sehen, welche einen Blick brauchen
 • Versteckte Dateien und macOS-Reste landen nie in einer Playlist
 
@@ -31,4 +31,4 @@ GUT ZU WISSEN
 • Android 8.0 oder neuer auf einem 64-Bit-ARM-Gerät
 • Dies ist ein Release Candidate: bitte Probleme auf GitHub melden
 
-Abgeleitet von PlayBook von Goodwy und Voice von Paul Woitaschek (GPL-3.0). Vibe coded: gemeinsam mit einem KI-Assistenten entwickelt und vom Maintainer getestet. Alle Komponenten und Quellen stehen im „Über"-Bildschirm der App.
+Abgeleitet von PlayBook von Goodwy und Voice von Paul Woitaschek (GPL-3.0). Das Einlesen ganzer Buchordner ist vom Mort Audiobook Player von Mirko Schenk inspiriert (nur die Idee, kein Code). Vibe coded: gemeinsam mit einem KI-Assistenten entwickelt und vom Maintainer getestet. Alle Komponenten und Quellen stehen im „Über"-Bildschirm der App.

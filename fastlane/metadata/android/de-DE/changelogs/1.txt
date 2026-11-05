@@ -4,3 +4,4 @@ Erster Release Candidate.
 - m3u-Playlists, Reihenfolge mit Live-Vorschau und „Zaubern"
 - Hell/Dunkel-Schalter, neues Icon
 - Keine Store-Anbindung, kein Tracking
+- Cover-Suche mit Vorschlägen und klaren Fehlern

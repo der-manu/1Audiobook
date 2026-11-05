@@ -13,6 +13,9 @@
 - Quick light/dark switch in the settings.
 - New name, application id (`io.github.dermanu.oneaudiobook`) and app icon.
 - Hidden files and macOS leftovers (`._*`, `__MACOSX`) never end up in a playlist.
+- Cover search is clearer and more robust: it explains *why* a search failed, shows shorter search suggestions made
+  from title and author, and offers *Search in browser* and *Use image link* as fallbacks. A blocked original image now
+  falls back to DuckDuckGo's thumbnail instead of ending with no cover.
 - Online cover search is **off by default**. A switch in *Settings → Cover* ("Search missing covers via
   DuckDuckGo") turns it on; only then does the book menu offer *Cover from the Internet*.
 
@@ -21,6 +24,10 @@
   every purchase, donation and "Pro" screen. All features are free.
 - Build-time telemetry (Develocity build scans) and automatic JDK downloads.
 - Dead code, unused settings and 64 unused texts (removed from all translations).
+
+### Fixed
+- The debug build no longer shows "[Debug]" in the app name.
+- The library mode in the *Add folder* dialog now says it also uses advanced playlist creation.
 
 ### Changed
 - Only 64-bit ARM (`arm64-v8a`) is supported, because the maintained FFmpegKit fork only ships that library.

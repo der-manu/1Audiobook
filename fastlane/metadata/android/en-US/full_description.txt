@@ -6,7 +6,7 @@ Inspired by PlayBook and Mort Player Audiobooks. Vibe coded.
 
 LIBRARY IMPORT
 • Choose a folder and let the app find your books: single folders, multi-CD books (CD1, CD2, Disc 2, Teil 3 …), author and series folders
-• Release-style folder names like "Karen.Rose.-.2011.-.Todesstoss.Germ.wOOt" become readable titles
+• Release-style folder names like "Karen.Test.-.2011.-.Todesstrafe.Germ.wOOt" become readable titles
 • Nothing is added before you confirm an editable preview: rename books, deselect them, change the order, see which ones need a look
 • Hidden files and macOS leftovers never end up in a playlist
 
@@ -31,4 +31,4 @@ GOOD TO KNOW
 • Android 8.0 or newer on a 64-bit ARM device
 • This is a release candidate: please report problems on GitHub
 
-Derived from PlayBook by Goodwy and Voice by Paul Woitaschek (GPL-3.0). Vibe coded: developed together with an AI assistant and tested by the maintainer. All components and sources are listed in the app's About screen.
+Derived from PlayBook by Goodwy and Voice by Paul Woitaschek (GPL-3.0). The way it reads whole book folders was inspired by the Mort Audiobook Player by Mirko Schenk (idea only, no code used). Vibe coded: developed together with an AI assistant and tested by the maintainer. All components and sources are listed in the app's About screen.

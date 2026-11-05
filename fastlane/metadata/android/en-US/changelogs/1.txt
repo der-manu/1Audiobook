@@ -4,3 +4,4 @@ First release candidate.
 - .m3u playlists, order dialog with live preview and "Magic" sorting
 - Light/dark switch, new icon
 - No store connections, no tracking
+- Cover search with suggestions and clear errors

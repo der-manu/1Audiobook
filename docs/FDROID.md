@@ -20,8 +20,8 @@ Goal: list 1Audiobook in the main F-Droid repository. This file records what the
 ## Still open
 
 1. **Cover search (decided: keep, off by default).** It uses DuckDuckGo, a non-free network service, and the user has to
-   switch it on in the settings. F-Droid may still label the app with the anti-feature `NonFreeNet`; say in the merge
-   request that the feature is opt-in. The alternative would be to remove it and the `INTERNET` permission.
+   switch it on in the settings. The recipe therefore declares the anti-feature `NonFreeNet` with an explanation that the
+   feature is opt-in. The alternative would be to remove it and the `INTERNET` permission.
 2. **Name.** The upstream project is called PlayBook; this app is named 1Audiobook, so there is no name clash.
 3. **Screenshots** for `fastlane/metadata/android/*/images/phoneScreenshots/` (use neutral, non-personal content).
 4. **A release candidate that has been installed and tested** on a real device (see `docs/RELEASE.md`).
@@ -35,7 +35,11 @@ fdroid lint io.github.dermanu.oneaudiobook
 fdroid build -v -l io.github.dermanu.oneaudiobook
 ```
 
-## Draft recipe (`metadata/io.github.dermanu.oneaudiobook.yml` in fdroiddata)
+## Recipe (`metadata/io.github.dermanu.oneaudiobook.yml` in fdroiddata)
+
+Checked with `fdroid readmeta` and `fdroid lint` (fdroidserver 2.4.5) without findings. The lists of valid categories and
+anti-features come from the `config/` folder of fdroiddata, so the final check of the names `Multimedia` and
+`NonFreeNet` happens in the merge request.
 
 ```yaml
 Categories:
@@ -49,6 +53,11 @@ AutoName: 1Audiobook
 
 RepoType: git
 Repo: https://github.com/der-manu/1Audiobook.git
+
+AntiFeatures:
+  NonFreeNet:
+    en-US: The optional cover search sends the book title to DuckDuckGo. It is switched off by default.
+    de-DE: Die optionale Cover-Suche sendet den Buchtitel an DuckDuckGo. Sie ist standardmäßig ausgeschaltet.
 
 Builds:
   - versionName: 1.0.0-rc.1
@@ -64,12 +73,55 @@ CurrentVersion: 1.0.0-rc.1
 CurrentVersionCode: 1
 ```
 
-Add `AntiFeatures: NonFreeNet` if the cover search stays. This is a draft: the F-Droid maintainers review the final
-recipe in the merge request.
+The tag `v1.0.0-rc.1` must exist in the GitHub repository before the merge request is opened, because F-Droid builds
+exactly that commit (see `docs/RELEASE.md`).
 
-## Submitting
+## Submitting (step by step)
 
-1. Fork <https://gitlab.com/fdroid/fdroiddata>, add the recipe above, and open a merge request.
-2. Describe the app and its added value in the merge request, mention the `arm64-v8a` limitation and the optional
-   network use.
-3. Answer review comments. Store texts and images come from `fastlane/metadata/android/` in this repository.
+The recipe file does **not** go into this repository. It goes into *your fork of the F-Droid data repository*
+(`fdroiddata`) on GitLab, where F-Droid keeps one small file per app.
+
+### Before you start
+
+- The GitHub repository is public, **Issues are enabled**, and the default branch is `master`.
+- The *Release* workflow has run and the tag `v1.0.0-rc.1` exists with a published release (F-Droid builds that tag).
+- `fastlane/metadata/android/` is complete (title, descriptions, changelog `1.txt`, icon). Screenshots are optional but
+  recommended; use neutral, non-personal content.
+- `fdroid lint` reports nothing (see above).
+
+### Steps
+
+1. Create an account on <https://gitlab.com>.
+2. Open <https://gitlab.com/fdroid/fdroiddata> and click **Fork**. Keep the name `fdroiddata` and make the fork public.
+3. Clone your fork (a shallow clone is enough; the repository is large):
+   ```bash
+   git clone --depth 1 https://gitlab.com/<your-gitlab-name>/fdroiddata.git
+   cd fdroiddata
+   git checkout -b io.github.dermanu.oneaudiobook
+   ```
+4. Copy the recipe into the `metadata` folder of the clone:
+   ```bash
+   cp ~/Downloads/io.github.dermanu.oneaudiobook.yml metadata/
+   ```
+5. Optional local check (needs `pip install fdroidserver`):
+   ```bash
+   fdroid readmeta
+   fdroid lint io.github.dermanu.oneaudiobook
+   ```
+6. Commit and push:
+   ```bash
+   git add metadata/io.github.dermanu.oneaudiobook.yml
+   git commit -m "New App: 1Audiobook"
+   git push -u origin io.github.dermanu.oneaudiobook
+   ```
+7. GitLab prints a link to create a **merge request**. Open it. The target is `fdroid/fdroiddata`, branch `master`.
+   If GitLab offers a template, use it and tick the items honestly.
+8. In the description, say briefly what the app does and what it adds over apps already in F-Droid (library import with
+   an editable preview, `.m3u` support, "Magic" sort). Mention that only `arm64-v8a` is supported and that the optional
+   cover search (off by default) is declared as `NonFreeNet`.
+9. Watch the checks on the merge request and fix what they report by pushing to the same branch. Answer the reviewers'
+   questions; they may ask for small changes to the recipe.
+10. After the merge, F-Droid builds the app and publishes it. That can take several days.
+
+New versions need no further merge request: with `UpdateCheckMode: Tags` F-Droid notices new `v*` tags on its own, as
+long as `versionName` and `versionCode` in `gradle/libs.versions.toml` match the tag.
