@@ -140,7 +140,6 @@ class LibrarySessionCallback
     }
   }
 
-  @Deprecated("Deprecated in Java")
   override fun onPlaybackResumption(
     mediaSession: MediaSession,
     controller: ControllerInfo,
@@ -177,7 +176,7 @@ class LibrarySessionCallback
       }
     }
 
-    val connectionResult = ConnectionResult.AcceptedResultBuilder(session, controller).build()
+    val connectionResult = super.onConnect(session, controller)
     val sessionCommands = connectionResult.availableSessionCommands
       .buildUpon()
       .add(SessionCommand(CustomCommand.CUSTOM_COMMAND_ACTION, Bundle.EMPTY))
@@ -187,7 +186,7 @@ class LibrarySessionCallback
       .build()
     return ConnectionResult.accept(
       sessionCommands,
-      connectionResult.availablePlayerCommands,
+      session.player.availableCommands,
     )
   }
 
