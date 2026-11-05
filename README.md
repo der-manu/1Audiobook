@@ -14,7 +14,7 @@ library is ready.
 
 - **Import a whole library.** Choose a folder; books in folders, multi-CD books (`CD1`, `CD2`, `Disc 2`, `Teil 3` …),
   author and series folders are recognised automatically. Release-style folder names such as
-  `Karen.Rose.-.2011.-.Todesstoss.Germ.wOOt` become readable titles. **Nothing is added before you confirm** an
+  `Karen.TEST.-.2011.-.Todessrafe` become readable titles. **Nothing is added before you confirm** an
   editable preview (rename, deselect, change the order, see which books need a look).
 - **Playlists are respected.** A usable `.m3u` decides the order; a broken one is detected and replaced by sorting.
   The preview shows how well it matches and lets you replace it.
