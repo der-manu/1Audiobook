@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Rodyti skyrių numerius</string>
-  <string name="sleep_timer_note">Jei norite paleisti iš naujo, baigę pakratykite įrenginį per 30 sekundžių</string>
+  <string name="sleep_timer_note">Jei norite paleisti iš naujo, baigę pakratykite įrenginį per 1 minutę</string>
   <string name="repeat">Pakartokite</string>
 
   <!--Knygos apžvalga-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Sveiki atvykę į \"1Audiobook\"!</string>
   <string name="auto_sleep_timer">Paleiskite snaudimo laikmatį pagal tvarkaraštį</string>
   <string name="auto_sleep_timer_start">Pradžios laikas</string>
+  <string name="reset_sleep_timer_on_playback_action">Iš naujo nustatyti miego laikmatį paleidus, pristabdžius ar keičiant poziciją</string>
 </resources>

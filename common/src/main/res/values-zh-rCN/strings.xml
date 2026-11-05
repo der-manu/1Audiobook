@@ -45,7 +45,7 @@
   <string name="hours_letter">小时</string>
   <string name="minutes_letter">分钟</string>
   <string name="show_chapter_numbers">显示章节编号</string>
-  <string name="sleep_timer_note">在定时结束后30秒内摇动设备以重新开始定时</string>
+  <string name="sleep_timer_note">在定时结束后1分钟内摇动设备以重新开始定时</string>
   <string name="repeat">重复</string>
 
   <!--图书概览-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">歡迎來到 1Audiobook！</string>
   <string name="auto_sleep_timer">按計劃啟動貪睡計時器</string>
   <string name="auto_sleep_timer_start">開始時間</string>
+  <string name="reset_sleep_timer_on_playback_action">在播放、暫停或搜尋時重設睡眠計時器</string>
 </resources>

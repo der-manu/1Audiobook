@@ -133,6 +133,7 @@ internal fun BookPlayContent(
           seekTimeRewind = viewState.seekTimeRewind,
           skipButtonStyle = viewState.skipButtonStyle,
           playButtonStyle = viewState.playButtonStyle,
+          sleepTimerFadingOut = viewState.sleepTimerFadingOut,
         )
         Spacer(modifier = Modifier.size(16.dp))
         if (viewState.showSliderVolume) {
@@ -244,6 +245,7 @@ internal fun BookPlayContent(
             seekTimeRewind = viewState.seekTimeRewind,
             skipButtonStyle = viewState.skipButtonStyle,
             playButtonStyle = viewState.playButtonStyle,
+            sleepTimerFadingOut = viewState.sleepTimerFadingOut,
           )
           Spacer(modifier = Modifier.size(16.dp))
           if (viewState.showSliderVolume) {
@@ -342,6 +344,7 @@ internal fun BookPlayContent(
           seekTimeRewind = viewState.seekTimeRewind,
           skipButtonStyle = viewState.skipButtonStyle,
           playButtonStyle = viewState.playButtonStyle,
+          sleepTimerFadingOut = viewState.sleepTimerFadingOut,
         )
         Spacer(modifier = Modifier.size(16.dp))
         if (viewState.showSliderVolume) {

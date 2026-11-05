@@ -13,6 +13,7 @@ interface SettingsListener {
   fun toggleAutoSleepTimer()
   fun setAutoSleepTimerStart(hour: Int, minute: Int)
   fun setAutoSleepTimerEnd(hour: Int, minute: Int)
+  fun toggleResetSleepTimerOnPlaybackAction()
   fun gridModeDialogChanged(item: Int)
   fun onGridModeDialogRowClick()
   fun toggleTransparentNavigation()

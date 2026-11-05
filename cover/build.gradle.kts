@@ -10,6 +10,7 @@ anvil {
 }
 
 dependencies {
+  implementation(projects.common)
   implementation(projects.data)
   implementation(projects.strings)
   implementation(libs.dagger.core)

@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Mostrar os números dos capítulos</string>
-  <string name="sleep_timer_note">Para reiniciar, agite o dispositivo dentro de 30 segundos após terminar</string>
+  <string name="sleep_timer_note">Para reiniciar, agite o dispositivo dentro de 1 minuto após terminar</string>
   <string name="repeat">Repetir</string>
 
   <!--Visão geral do livro-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Bem-vindo ao 1Audiobook!</string>
   <string name="auto_sleep_timer">Inicie o cronômetro de soneca de acordo com a programação</string>
   <string name="auto_sleep_timer_start">Hora de início</string>
+  <string name="reset_sleep_timer_on_playback_action">Redefinir o temporizador de soneca ao reproduzir, pausar ou buscar</string>
 </resources>

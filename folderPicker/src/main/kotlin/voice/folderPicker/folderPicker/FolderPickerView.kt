@@ -174,13 +174,13 @@ fun FolderOverviewPreview() {
           folderType = FolderType.Author,
         ),
         FolderPickerViewState.Item(
-          name = "Bobiverse 1-4",
-          id = Uri.parse("content://com.android.externalstorage.documents/document/SDCARD:Books/Bobiverse 1-4"),
+          name = "Sample Series 1-4",
+          id = Uri.parse("content://com.android.externalstorage.documents/document/SDCARD:Books/Sample Series 1-4"),
           folderType = FolderType.SingleFolder,
         ),
         FolderPickerViewState.Item(
-          name = "Harry Potter 1",
-          id = Uri.parse("content://com.android.externalstorage.documents/document/primary:Harry Potter 1.mp3"),
+          name = "Sample Book 1",
+          id = Uri.parse("content://com.android.externalstorage.documents/document/primary:Sample Book 1.mp3"),
           folderType = FolderType.SingleFile,
         ),
       ),

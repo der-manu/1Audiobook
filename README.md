@@ -36,7 +36,8 @@ folder reading from scratch: **no code and no assets of Mort were used, only the
   and survives rescans.
 - **Cover search that explains itself** (optional, off by default): shorter suggestions made from title and author,
   clear error messages, and fallbacks to search in your browser or paste an image link.
-- **Plays offline.** Resume where you stopped, sleep timer, bookmarks, playback speed, volume boost, chapters
+- **Plays offline.** Resume where you stopped, sleep timer (restarts when you interact, lets you continue during the
+  fade-out), bookmarks, playback speed, volume boost, chapters
   (for example m4b), media controls on the lock screen and with headsets, home-screen widget.
 - **Clean files only.** Hidden files and macOS leftovers (`._01.mp3`, `__MACOSX`) never end up in a playlist.
 - **Light and dark theme** with a quick switch at the top of *Settings → Appearance* (the *Theme* dialog still offers

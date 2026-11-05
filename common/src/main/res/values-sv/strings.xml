@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Visa kapitelnummer</string>
-  <string name="sleep_timer_note">För att starta om, skaka enheten inom 30 sekunder efter att den slutar spela</string>
+  <string name="sleep_timer_note">För att starta om, skaka enheten inom 1 minut efter att den slutar spela</string>
   <string name="repeat">Upprepa</string>
 
   <!--BookOverview-->
@@ -89,4 +89,5 @@
   <string name="remaining_time">Återstående tid</string>
   <string name="auto_sleep_timer">Starta snooze-timern enligt schemat</string>
   <string name="auto_sleep_timer_start">Starttid</string>
+  <string name="reset_sleep_timer_on_playback_action">Återställ insomningstimern vid uppspelning, paus eller sökning</string>
 </resources>

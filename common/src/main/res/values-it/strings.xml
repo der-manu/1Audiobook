@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Mostra i numeri dei capitoli</string>
-  <string name="sleep_timer_note">Per riavviare, scuoti il dispositivo entro 30 secondi dal termine</string>
+  <string name="sleep_timer_note">Per riavviare, scuoti il dispositivo entro 1 minuto dal termine</string>
   <string name="repeat">Ripeti</string>
 
   <!--Panoramica-->
@@ -89,4 +89,5 @@
   <string name="remaining_time">Tempo rimanente</string>
   <string name="auto_sleep_timer">Avvia il timer snooze in base alla pianificazione</string>
   <string name="auto_sleep_timer_start">Ora di inizio</string>
+  <string name="reset_sleep_timer_on_playback_action">Reimposta il timer di spegnimento alla riproduzione, pausa o ricerca</string>
 </resources>

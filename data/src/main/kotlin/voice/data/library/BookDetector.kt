@@ -102,7 +102,7 @@ object BookDetector {
   /**
    * Sind die Unterordner CDs/Teile eines Buchs? Entweder heissen alle wie eine CD ("CD1", "Disc 2", "Teil 3"),
    * oder sie unterscheiden sich nur durch Zahlen UND der gemeinsame Namensteil kommt auch im Namen des
-   * Elternordners vor ("Verrat in Paris" / "Paris1", "Paris2"). Letzteres trennt CDs von Folgen einer Reihe.
+   * Elternordners vor ("Reise nach Rom" / "Rom1", "Rom2"). Letzteres trennt CDs von Folgen einer Reihe.
    */
   private fun isPartSet(kids: List<LibraryDir>, parentName: String): Boolean {
     if (kids.size < 2) return false

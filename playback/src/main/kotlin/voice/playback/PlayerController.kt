@@ -26,6 +26,7 @@ import voice.playback.session.MediaItemProvider
 import voice.playback.session.PlaybackService
 import voice.playback.session.sendCustomCommand
 import voice.playback.session.toMediaIdOrNull
+import voice.sleepTimer.SleepTimerPlayerControl
 import javax.inject.Inject
 import kotlin.time.Duration
 
@@ -36,7 +37,7 @@ class PlayerController
   private val currentBookId: DataStore<BookId?>,
   private val bookRepository: BookRepository,
   private val mediaItemProvider: MediaItemProvider,
-) {
+) : SleepTimerPlayerControl {
 
   private var _controller: Deferred<MediaController> = newControllerAsync()
 
@@ -100,11 +101,11 @@ class PlayerController
     controller.sendCustomCommand(CustomCommand.ForceSeekToNext)
   }
 
-  fun play() = executeAfterPrepare { controller ->
+  override fun play() = executeAfterPrepare { controller ->
     controller.play()
   }
 
-  fun playPause() = executeAfterPrepare { controller ->
+  override fun playPause() = executeAfterPrepare { controller ->
     if (controller.isPlaying) {
       controller.pause()
     } else {
@@ -153,7 +154,7 @@ class PlayerController
     }
   }
 
-  fun pauseWithRewind(rewind: Duration) = executeAfterPrepare { controller ->
+  override fun pauseWithRewind(rewind: Duration) = executeAfterPrepare { controller ->
     controller.pause()
     controller.seekTo((controller.currentPosition - rewind.inWholeMilliseconds.coerceAtLeast(0)))
   }
@@ -166,7 +167,7 @@ class PlayerController
     controller.sendCustomCommand(CustomCommand.SetGain(gain))
   }
 
-  fun setVolume(volume: Float) = executeAfterPrepare {
+  override fun setVolume(volume: Float) = executeAfterPrepare {
     require(volume in 0F..1F)
     it.volume = volume
   }
@@ -190,7 +191,6 @@ class PlayerController
     }
   }
 
-  //PlayBook
   fun setRepeat(mode: Int) = executeAfterPrepare { controller ->
     controller.sendCustomCommand(CustomCommand.SetSetRepeat(mode))
     updateBook { it.copy(repeatMode = mode) }

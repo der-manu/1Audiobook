@@ -53,7 +53,7 @@
   <string name="hours_letter">jam</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Tampilkan nomor bab</string>
-  <string name="sleep_timer_note">Untuk memulai ulang, goyangkan perangkat dalam waktu 30 detik setelah selesai</string>
+  <string name="sleep_timer_note">Untuk memulai ulang, goyangkan perangkat dalam waktu 1 menit setelah selesai</string>
   <string name="repeat">Ulangi</string>
   <plurals name="chapters_count">
     <item quantity="other">%d bab</item>
@@ -101,4 +101,5 @@
   <string name="remaining_time">Waktu yang tersisa</string>
   <string name="auto_sleep_timer">Mulai pengatur waktu tunda sesuai jadwal</string>
   <string name="auto_sleep_timer_start">Waktu mulai</string>
+  <string name="reset_sleep_timer_on_playback_action">Atur ulang pengatur waktu tidur saat memutar, menjeda, atau mencari</string>
 </resources>

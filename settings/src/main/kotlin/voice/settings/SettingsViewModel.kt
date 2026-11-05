@@ -44,6 +44,8 @@ class SettingsViewModel
   private val autoSleepTimeStartPref: Pref<String>,
   @Named(PrefKeys.AUTO_SLEEP_TIMER_END)
   private val autoSleepTimeEndPref: Pref<String>,
+  @Named(PrefKeys.RESET_SLEEP_TIMER_ON_PLAYBACK_ACTION)
+  private val resetSleepTimerOnPlaybackActionPref: Pref<Boolean>,
   @Named(PrefKeys.PADDING)
   private val paddingPref: Pref<String>,
   @Named(PrefKeys.TRANSPARENT_NAVIGATION)
@@ -98,6 +100,7 @@ class SettingsViewModel
     val autoSleepTimer by remember { autoSleepTimerPref.flow }.collectAsState(initial = false)
     val autoSleepTimeStart by remember { autoSleepTimeStartPref.flow }.collectAsState(initial = "")
     val autoSleepTimeEnd by remember { autoSleepTimeEndPref.flow }.collectAsState(initial = "")
+    val resetSleepTimerOnPlaybackAction by remember { resetSleepTimerOnPlaybackActionPref.flow }.collectAsState(initial = true)
     val paddings by remember { paddingPref.flow }.collectAsState(initial = "0;0;0;0")
     val useTransparentNavigationPref by remember { useTransparentNavigationPref.flow }.collectAsState(initial = true)
     val playButtonStylePref by remember { playButtonStylePref.flow }.collectAsState(initial = 2)
@@ -129,6 +132,7 @@ class SettingsViewModel
       autoSleepTimer = autoSleepTimer,
       autoSleepTimeStart = autoSleepTimeStart,
       autoSleepTimeEnd = autoSleepTimeEnd,
+      resetSleepTimerOnPlaybackAction = resetSleepTimerOnPlaybackAction,
       gridMode = when (gridMode) {
         GridMode.LIST -> 0
         GridMode.GRID -> 1
@@ -282,6 +286,10 @@ class SettingsViewModel
   override fun setAutoSleepTimerEnd(hour: Int, minute: Int) {
     val time = LocalTime.of(hour, minute).toString()
     autoSleepTimeEndPref.value = time
+  }
+
+  override fun toggleResetSleepTimerOnPlaybackAction() {
+    resetSleepTimerOnPlaybackActionPref.value = !resetSleepTimerOnPlaybackActionPref.value
   }
 
   override fun onAboutClick() {

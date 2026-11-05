@@ -22,7 +22,7 @@ class ConvertersTest {
 
   @Test
   fun file() {
-    test(File("/sdcard/audiobooks/potter.mp3"), Converters::fromFile, Converters::toFile)
+    test(File("/sdcard/audiobooks/sample.mp3"), Converters::fromFile, Converters::toFile)
   }
 
   @Test

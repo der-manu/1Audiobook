@@ -44,7 +44,7 @@ Open `keystore.b64` in a text editor and copy its whole content (one long line).
 | `RELEASE_KEYSTORE_BASE64` | the content of `keystore.b64` |
 | `RELEASE_KEYSTORE_PASSWORD` | the keystore password |
 | `RELEASE_KEY_ALIAS` | `release` (the alias from step 1a) |
-| `RELEASE_KEY_PASSWORD` | the key password (the same as the keystore password if you pressed Enter) |
+| `RELEASE_KEY_PASSWORD` | the **same value as the keystore password**. With the default keystore type (PKCS12) the key password is always identical to the keystore password, whatever you typed at the prompt |
 
 Names must match exactly, including upper case. Afterwards delete `keystore.b64` from your computer
 (`shred -u keystore.b64`), it is the key in readable form.
@@ -102,3 +102,14 @@ export RELEASE_KEY_PASSWORD=...
 ```
 
 Without these variables the release APK is **unsigned**. That is intended: F-Droid signs apps itself.
+
+## Troubleshooting
+
+**`Failed to read key … Get Key failed: Given final block not properly padded`** (task `:app:packageRelease`)
+The keystore could be opened, but the key password is wrong. With a PKCS12 keystore (the default of current JDKs) set
+`RELEASE_KEY_PASSWORD` to exactly the same value as `RELEASE_KEYSTORE_PASSWORD`. Check the type with
+`keytool -list -v -keystore 1audiobook-release.jks` (line *Keystore type*). Re-enter both secrets by pasting them in the
+GitHub web form and make sure there is no space or line break at the end; then use *Re-run all jobs*.
+
+**`keystore password was incorrect`** The secret `RELEASE_KEYSTORE_PASSWORD` is wrong, or `RELEASE_KEYSTORE_BASE64` was
+not copied completely.

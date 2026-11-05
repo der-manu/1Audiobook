@@ -4,6 +4,7 @@
     <string name="play_pause">Play / Pause</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
+    <string name="sleep_timer_fade_out_continue">Sleep timer ending. Tap to keep listening</string>
     <string name="action_sleep">Sleep-Timer</string>
     <string name="rewind">Rewind</string>
     <string name="fast_forward">Fast forward</string>

@@ -45,7 +45,7 @@
   <string name="hours_letter">ω</string>
   <string name="minutes_letter">μ</string>
   <string name="show_chapter_numbers">Εμφάνιση αριθμών κεφαλαίων</string>
-  <string name="sleep_timer_note">Για επανεκκίνηση, ανακινήστε τη συσκευή εντός 30 δευτερολέπτων μετά την ολοκλήρωση</string>
+  <string name="sleep_timer_note">Για επανεκκίνηση, ανακινήστε τη συσκευή εντός 1 λεπτού μετά την ολοκλήρωση</string>
   <string name="repeat">Επανάληψη</string>
 
   <!--BookOverview-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Καλώς ήρθατε στο 1Audiobook!</string>
   <string name="auto_sleep_timer">Ξεκινήστε το χρονόμετρο αναβολής σύμφωνα με το χρονοδιάγραμμα</string>
   <string name="auto_sleep_timer_start">Ώρα έναρξης</string>
+  <string name="reset_sleep_timer_on_playback_action">Επαναφορά χρονοδιακόπτη ύπνου κατά την αναπαραγωγή, παύση ή αναζήτηση</string>
 </resources>

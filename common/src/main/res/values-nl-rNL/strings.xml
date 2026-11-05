@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Hoofdstuknummers weergeven</string>
-  <string name="sleep_timer_note">Om opnieuw op te starten, schudt u het apparaat binnen 30 seconden nadat u klaar bent</string>
+  <string name="sleep_timer_note">Om opnieuw op te starten, schudt u het apparaat binnen 1 minuut nadat u klaar bent</string>
   <string name="repeat">Herhalen</string>
 
   <!--Boekenoverzicht-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Welkom bij 1Audiobook!</string>
   <string name="auto_sleep_timer">Start snooze-timer op schema</string>
   <string name="auto_sleep_timer_start">Starttijd</string>
+  <string name="reset_sleep_timer_on_playback_action">Slaaptimer resetten bij afspelen, pauzeren of zoeken</string>
 </resources>

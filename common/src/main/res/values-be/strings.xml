@@ -53,7 +53,7 @@
   <string name="hours_letter">ч</string>
   <string name="minutes_letter">м</string>
   <string name="show_chapter_numbers">Паказаць нумары кіраўнікоў</string>
-  <string name="sleep_timer_note">Для перазапуску падтрасіце прыладу на працягу 30 секунд пасля заканчэння таймера</string>
+  <string name="sleep_timer_note">Для перазапуску падтрасіце прыладу на працягу 1 хвіліны пасля заканчэння таймера</string>
   <string name="repeat">Паўтор</string>
   <plurals name="chapters_count">
     <item quantity="one">%d раздзел</item>
@@ -103,4 +103,5 @@
   <string name="remaining_time">Час, які застаўся</string>
   <string name="auto_sleep_timer">Запусціць таймер адкладання па раскладзе</string>
   <string name="auto_sleep_timer_start">Час пачатку</string>
+  <string name="reset_sleep_timer_on_playback_action">Скідаць таймер сну пры прайграванні, паўзе або пошуку</string>
 </resources>

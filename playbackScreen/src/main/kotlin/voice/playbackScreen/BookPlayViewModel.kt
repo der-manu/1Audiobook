@@ -162,6 +162,7 @@ class BookPlayViewModel
       sleepTime = sleepTime,
       customSleepTime = sleepTimePref,
       sleepEoc = sleepAtEoc,
+      sleepTimerFadingOut = sleepTime > Duration.ZERO && sleepTime < sleepTimer.fadeOutDuration,
       playing = playState == PlayStateManager.PlayState.Playing,
       title = book.content.name,
       showPreviousNextButtons = hasMoreThanOneChapter,
@@ -336,25 +337,7 @@ class BookPlayViewModel
         }
       }
     }
-    if (autoSleepTimerPref.value && !sleepTimer.sleepTimerActive()) {
-      val startTime = LocalTime.parse(autoSleepTimerStart.value)
-      val endTime = LocalTime.parse(autoSleepTimerEnd.value)
-      if (isCurrentTimeInRange(startTime, endTime)) {
-        sleepTimer.setActive()
-      }
-    }
     player.playPause()
-  }
-
-  private fun isCurrentTimeInRange(startTime: LocalTime, endTime: LocalTime): Boolean {
-    val currentTime = LocalTime.now()
-    return if (startTime <= endTime) {
-      // Standard case, start and end on the same day
-      currentTime.isAfter(startTime) && currentTime.isBefore(endTime)
-    } else {
-      // Range wraps around midnight
-      currentTime.isAfter(startTime) || currentTime.isBefore(endTime)
-    }
   }
 
   fun rewind() {

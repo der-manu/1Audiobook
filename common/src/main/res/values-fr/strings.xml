@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Afficher les numéros de chapitre</string>
-  <string name="sleep_timer_note">Pour redémarrer, secouez l\'appareil dans les 30 secondes suivant la fin</string>
+  <string name="sleep_timer_note">Pour redémarrer, secouez l\'appareil dans la minute suivant la fin</string>
   <string name="repeat">Répéter</string>
 
   <!--Vue d'ensemble du livre-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Bienvenue sur 1Audiobook !</string>
   <string name="auto_sleep_timer">Démarrez la minuterie de répétition à l’heure prévue</string>
   <string name="auto_sleep_timer_start">Heure de début</string>
+  <string name="reset_sleep_timer_on_playback_action">Réinitialiser la minuterie de sommeil lors de la lecture, la pause ou la recherche</string>
 </resources>

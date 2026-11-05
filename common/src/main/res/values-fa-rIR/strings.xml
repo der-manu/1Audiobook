@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">نمایش شماره فصل</string>
-  <string name="sleep_timer_note">برای راه اندازی مجدد، دستگاه را ظرف 30 ثانیه پس از اتمام تکان دهید</string>
+  <string name="sleep_timer_note">برای راه اندازی مجدد، دستگاه را ظرف 1 دقیقه پس از اتمام تکان دهید</string>
   <string name="repeat">تکرار</string>
 
   <!--BookOverview-->
@@ -86,6 +86,7 @@
   <string name="last_played_at">آخرین تست</string>
   <string name="remaining_time">زمان باقیمانده</string>
   <string name="auto_sleep_timer_end">زمان پایان</string>
+  <string name="reset_sleep_timer_on_playback_action">بازنشانی تایمر خواب هنگام پخش، مکث یا جست‌وجو</string>
   <string name="onboarding_welcome_title_g">به پلی بوک خوش آمدید!</string>
   <string name="auto_sleep_timer">تایمر تعویق را طبق برنامه شروع کنید</string>
   <string name="auto_sleep_timer_start">زمان شروع</string>

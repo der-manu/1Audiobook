@@ -2,6 +2,9 @@ package voice.cover
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -48,6 +51,12 @@ fun SelectCoverFromInternet(
     onQueryChange = {
       sink.tryEmit(SelectCoverFromInternetViewModel.Events.QueryChange(it))
     },
+    onOpenBrowser = {
+      sink.tryEmit(SelectCoverFromInternetViewModel.Events.OpenInBrowser)
+    },
+    onUseLink = {
+      sink.tryEmit(SelectCoverFromInternetViewModel.Events.UseLink(it))
+    },
   )
 }
 
@@ -59,6 +68,8 @@ private fun SelectCoverFromInternet(
   onCoverClick: (SearchResponse.ImageResult) -> Unit,
   onRetry: () -> Unit,
   onQueryChange: (String) -> Unit,
+  onOpenBrowser: () -> Unit,
+  onUseLink: (String) -> Unit,
 ) {
   val paddings = if (preview) "0;0;0;0"
   else {
@@ -68,23 +79,39 @@ private fun SelectCoverFromInternet(
   //val bottom = paddings.substringAfter(';').substringBefore(';').toInt()
   val start = paddings.substringBeforeLast(';').substringAfterLast(';').toInt()
   val end = paddings.substringAfterLast(';').toInt()
-  Box(
+  Column(
     modifier = Modifier
+      .fillMaxSize()
       .background(MaterialTheme.colorScheme.background)
       .padding(start.dp, 0.dp, end.dp, 0.dp),
-  )
-  {
+  ) {
     CoverSearchBar(
       topPadding = top.dp,
       onCloseClick = onCloseClick,
       onQueryChange = onQueryChange,
       viewState = viewState,
     )
-    CoverContents(
-      viewState = viewState,
-      onCoverClick = onCoverClick,
-      onRetry = onRetry,
+    CoverActions(
+      suggestions = viewState.suggestions,
+      onSuggestion = onQueryChange,
+      onOpenBrowser = onOpenBrowser,
+      onUseLink = onUseLink,
     )
+    Box(
+      modifier = Modifier
+        .weight(1f)
+        .fillMaxWidth(),
+    ) {
+      CoverContents(
+        viewState = viewState,
+        onCoverClick = onCoverClick,
+        onRetry = onRetry,
+        onOpenBrowser = onOpenBrowser,
+      )
+      if (viewState.downloading) {
+        DownloadingOverlay()
+      }
+    }
   }
 }
 
@@ -100,6 +127,8 @@ private fun ErrorPreview() {
         onCoverClick = {},
         onRetry = {},
         onQueryChange = {},
+        onOpenBrowser = {},
+        onUseLink = {},
       )
     }
   }
@@ -135,6 +164,8 @@ private fun ListPreview() {
         onCoverClick = {},
         onRetry = {},
         onQueryChange = {},
+        onOpenBrowser = {},
+        onUseLink = {},
       )
     }
   }

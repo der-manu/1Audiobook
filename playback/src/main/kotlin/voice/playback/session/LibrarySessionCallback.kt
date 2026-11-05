@@ -31,6 +31,7 @@ import voice.logging.core.Logger
 import voice.playback.player.VoicePlayer
 import voice.playback.session.search.BookSearchHandler
 import voice.playback.session.search.BookSearchParser
+import voice.sleepTimer.SleepTimerApi
 import javax.inject.Inject
 
 class LibrarySessionCallback
@@ -43,7 +44,7 @@ class LibrarySessionCallback
   @CurrentBook
   private val currentBookId: DataStore<BookId?>,
   private val sleepTimerCommandUpdater: SleepTimerCommandUpdater,
-  private val sleepTimer: SleepTimer,
+  private val sleepTimer: SleepTimerApi,
   private val bookRepository: BookRepository,
 ) : MediaLibrarySession.Callback {
 
@@ -139,6 +140,7 @@ class LibrarySessionCallback
     }
   }
 
+  @Deprecated("Deprecated in Java")
   override fun onPlaybackResumption(
     mediaSession: MediaSession,
     controller: ControllerInfo,
@@ -175,7 +177,7 @@ class LibrarySessionCallback
       }
     }
 
-    val connectionResult = super.onConnect(session, controller)
+    val connectionResult = ConnectionResult.AcceptedResultBuilder(session, controller).build()
     val sessionCommands = connectionResult.availableSessionCommands
       .buildUpon()
       .add(SessionCommand(CustomCommand.CUSTOM_COMMAND_ACTION, Bundle.EMPTY))

@@ -45,7 +45,7 @@
 <string name="hours_letter">h</string>
 <string name="minutes_letter">m</string>
 <string name="show_chapter_numbers">Wys hoofstuknommers</string>
-<string name="sleep_timer_note">Om te herbegin, skud die toestel binne 30 sekondes nadat dit klaar is</string>
+<string name="sleep_timer_note">Om te herbegin, skud die toestel binne 1 minuut nadat dit klaar is</string>
 <string name="repeat">Herhaal</string>
 
 <!-- BookOverview -->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Welkom by 1Audiobook!</string>
   <string name="auto_sleep_timer">Begin sluimertimer op skedule</string>
   <string name="auto_sleep_timer_start">Begin tyd</string>
+  <string name="reset_sleep_timer_on_playback_action">Herstel sluimertimer met speel, pouseer of soek</string>
 </resources>

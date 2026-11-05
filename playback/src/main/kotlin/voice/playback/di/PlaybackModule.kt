@@ -31,12 +31,13 @@ import voice.playback.playstate.PlayStateDelegatingListener
 import voice.playback.playstate.PositionUpdater
 import voice.playback.session.LibrarySessionCallback
 import voice.playback.session.PlaybackService
-import voice.playback.session.SleepTimer
 import voice.playback.session.SleepTimerCommandUpdater
+import voice.sleepTimer.SleepTimerApi
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
+@Suppress("unused")
 @Module
 @ContributesTo(PlaybackScope::class)
 object PlaybackModule {
@@ -111,7 +112,7 @@ object PlaybackModule {
     callback: LibrarySessionCallback,
     mainActivityIntentProvider: MainActivityIntentProvider,
     scope: CoroutineScope,
-    sleepTimer: SleepTimer,
+    sleepTimerApi: SleepTimerApi,
     sleepTimerCommandUpdater: SleepTimerCommandUpdater,
   ): MediaLibraryService.MediaLibrarySession {
     return MediaLibraryService.MediaLibrarySession.Builder(service, player, callback)
@@ -119,7 +120,7 @@ object PlaybackModule {
       .build()
       .also { session ->
         scope.launch {
-          sleepTimer.leftSleepTimeFlow
+          sleepTimerApi.leftSleepTimeFlow
             .map { it != Duration.ZERO }
             .distinctUntilChanged()
             .collect { sleepTimerActive ->

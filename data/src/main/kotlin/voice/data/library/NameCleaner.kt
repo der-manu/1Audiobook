@@ -1,7 +1,7 @@
 package voice.data.library
 
 /**
- * Macht aus Ordnernamen wie "Karen.Rose.-.2011.-.Todesstoss.Germ.wOOt" lesbare Buchtitel.
+ * Macht aus Ordnernamen wie "Karen.Test.-.2011.-.Todesstrafe.Germ.wOOt" lesbare Buchtitel.
  * Die Regeln sind bewusst vorsichtig: Es werden nur eindeutige Release-Anhaengsel am Ende entfernt,
  * und der Nutzer kann jeden Vorschlag in der Vorschau aendern.
  */
@@ -13,7 +13,7 @@ object NameCleaner {
     "lame", "cbr", "vbr",
   )
 
-  /** Kurze Reste, die nur direkt hinter anderen Anhaengseln als Anhaengsel gelten (z. B. "...Lustmolch.M.wOOt"). */
+  /** Kurze Reste, die nur direkt hinter anderen Anhaengseln als Anhaengsel gelten (z. B. "...Nachtwanderer.M.wOOt"). */
   private val WEAK_JUNK = setOf("m", "mp", "g", "ger", "bit", "ogg", "flac")
 
   /** Ordnernamen, die nichts ueber das Buch sagen. Dann zaehlt der Elternordner. */
@@ -40,7 +40,7 @@ object NameCleaner {
     val dots = s.count { it == '.' }
     val spaces = s.count { it == ' ' }
     if ((dots >= 1 && spaces == 0) || (dots >= 2 && dots > spaces)) {
-      // Initialen ("J.R.R.Tolkien") behalten ihren Punkt: "J. R. R. Tolkien".
+      // Initialen ("A.B.C.Muster") behalten ihren Punkt: "A. B. C. Muster".
       s = s.replace(INITIAL_WITH_DOT) { "${it.groupValues[1]}$INITIAL_MARK" }
       s = s.replace('.', ' ').replace("$INITIAL_MARK", ". ")
     }

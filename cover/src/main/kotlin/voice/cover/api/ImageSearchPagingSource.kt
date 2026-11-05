@@ -28,7 +28,7 @@ internal class ImageSearchPagingSource(
     }
     return try {
       val searchParams = params.key ?: freshSearchParams()
-        ?: return LoadResult.Error(IOException("No params"))
+        ?: return LoadResult.Error(NoTokenException())
 
       val response = api.search(
         query = query,

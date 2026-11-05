@@ -17,5 +17,13 @@ interface InternalCoverApi {
     query: String,
     @Query("vqd")
     auth: String,
+    @Query("l")
+    region: String?,
+    @Query("o")
+    output: String?,
+    @Query("f")
+    filters: String?,
+    @Query("p")
+    safeSearch: String?,
   ): SearchResponse
 }

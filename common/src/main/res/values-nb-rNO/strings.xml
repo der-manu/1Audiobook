@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Show chapter numbers</string>
-  <string name="sleep_timer_note">To restart, shake the device within 30 seconds after finishing</string>
+  <string name="sleep_timer_note">To restart, shake the device within 1 minute after finishing</string>
   <string name="repeat">Repeat</string>
 
   <!--BookOverview-->
@@ -91,4 +91,5 @@
   <string name="onboarding_welcome_title_g">Velkommen til 1Audiobook!</string>
   <string name="auto_sleep_timer">Start slumretidtakeren etter planen</string>
   <string name="auto_sleep_timer_start">Starttid</string>
+  <string name="reset_sleep_timer_on_playback_action">Nullstill sovetimeren ved avspilling, pause eller søk</string>
 </resources>

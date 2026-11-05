@@ -45,7 +45,7 @@
   <string name="hours_letter">std</string>
   <string name="minutes_letter">p</string>
   <string name="show_chapter_numbers">Kapitelnummern anzeigen</string>
-  <string name="sleep_timer_note">Um das Gerät neu zu starten, schütteln Sie es innerhalb von 30 Sekunden nach Beendigung</string>
+  <string name="sleep_timer_note">Um das Gerät neu zu starten, schütteln Sie es innerhalb einer Minute nach Beendigung</string>
   <string name="repeat">Wiederholen Sie</string>
 
   <!--BookOverview-->
@@ -86,6 +86,7 @@
   <string name="auto_sleep_timer">Starte Schlummerfunktion automatisch</string>
   <string name="auto_sleep_timer_start">Startzeit</string>
   <string name="auto_sleep_timer_end">Endzeit</string>
+  <string name="reset_sleep_timer_on_playback_action">Schlaf-Timer bei Wiedergabe, Pause oder Suchlauf zurücksetzen</string>
     <string name="pref_animated_marquee">Animierter Buchtitel, Kapitel- und Autoreneffekt</string>
   <string name="length">Dauer</string>
   <string name="last_played_at">Letztes Vorsprechen</string>
@@ -115,7 +116,7 @@
   <string name="about_credits_inspiration">Inspiration</string>
   <string name="about_credits_libraries">Bibliotheken und Dienste</string>
   <!--Library import-->
-  <string name="folder_mode_library">Bibliothek: Bücher automatisch erkennen</string>
+  <string name="folder_mode_library">Bibliothek: Bücher automatisch erkennen und erweiterte Playlist-Erstellung nutzen</string>
   <string name="library_import_hint">Im nächsten Schritt werden alle Bücher in diesem Ordner automatisch erkannt. Du kannst alles prüfen und ändern, bevor etwas hinzugefügt wird.</string>
   <string name="library_import_title">Bibliothek importieren</string>
   <string name="library_import_scanning">Ordner werden gelesen… bisher %1$d Dateien</string>
@@ -148,4 +149,17 @@
   <string name="library_order_magic">Zaubern (CD-Nummern)</string>
   <string name="pref_online_cover_search">Fehlende Cover per DuckDuckGo suchen</string>
   <string name="pref_subtitle_online_cover_search">Aus: Die App bleibt komplett offline. An: Das Buchmenü bietet „Titelbild aus dem Internet“; dabei wird der Buchtitel an DuckDuckGo gesendet.</string>
+  <!--Cover search-->
+  <string name="cover_error_blocked">DuckDuckGo hat die Anfrage abgelehnt (HTTP %1$d). Versuche es später erneut oder suche stattdessen im Browser.</string>
+  <string name="cover_error_offline">Keine Verbindung zu DuckDuckGo. Prüfe deine Internetverbindung und versuche es erneut.</string>
+  <string name="cover_error_unexpected">DuckDuckGo hat eine Antwort gesendet, die die App nicht versteht. Suche stattdessen im Browser.</string>
+  <string name="cover_empty_title">Keine Bilder gefunden</string>
+  <string name="cover_empty_message">Für „%1$s“ wurde nichts gefunden. Tippe oben auf einen Vorschlag oder ändere den Suchbegriff.</string>
+  <string name="cover_open_browser">Im Browser suchen</string>
+  <string name="cover_use_link">Bild-Link einfügen</string>
+  <string name="cover_link_title">Bild-Link</string>
+  <string name="cover_link_hint">Füge die Adresse eines Bildes ein. Im Browser: Bild gedrückt halten und „Bildadresse kopieren“ wählen.</string>
+  <string name="cover_link_use">Verwenden</string>
+  <string name="cover_downloading">Bild wird geladen…</string>
+  <string name="cover_download_failed">Das Bild konnte nicht geladen werden. Bitte probiere ein anderes.</string>
 </resources>

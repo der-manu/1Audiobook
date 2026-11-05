@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Hiển thị số chương</string>
-  <string name="sleep_timer_note">Để khởi động lại, hãy lắc thiết bị trong vòng 30 giây sau khi kết thúc</string>
+  <string name="sleep_timer_note">Để khởi động lại, hãy lắc thiết bị trong vòng 1 phút sau khi kết thúc</string>
   <string name="repeat">Lặp lại</string>
 
   <!--Tổng quan về sách-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Chào mừng bạn đến với 1Audiobook!</string>
   <string name="auto_sleep_timer">Bắt đầu hẹn giờ báo lại đúng lịch trình</string>
   <string name="auto_sleep_timer_start">Thời gian bắt đầu</string>
+  <string name="reset_sleep_timer_on_playback_action">Đặt lại hẹn giờ ngủ khi phát, tạm dừng hoặc tua</string>
 </resources>

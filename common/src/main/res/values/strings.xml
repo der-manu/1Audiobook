@@ -29,6 +29,8 @@
   <string name="pref_use_menu_icons">Use menu icons</string>
   <string name="pref_animated_marquee">Animated book title, chapter and author effect</string>
   <string name="pref_animated_marquee_summary">If it\'s too wide to fit in the available space</string>
+  <string name="reset_sleep_timer_on_playback_action">Reset sleep timer on play, pause, or seek</string>
+
 
   <!-- Themes -->
   <string name="theme">Theme</string>
@@ -54,7 +56,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Show chapter numbers</string>
-  <string name="sleep_timer_note">To restart, shake the device within 30 seconds after finishing</string>
+  <string name="sleep_timer_note">To restart, shake the device within 1 minute after finishing</string>
   <string name="repeat">Repeat</string>
   <plurals name="chapters_count">
     <item quantity="one">%d chapter</item>
@@ -130,7 +132,7 @@
   <string name="about_credits_inspiration">Inspiration</string>
   <string name="about_credits_libraries">Libraries and services</string>
   <!--Library import-->
-  <string name="folder_mode_library">Library: detect books automatically</string>
+  <string name="folder_mode_library">Library: detect books automatically and use advanced playlist creation</string>
   <string name="library_import_hint">In the next step all books in this folder are detected automatically. You can review and change everything before anything is added.</string>
   <string name="library_import_title">Import library</string>
   <string name="library_import_scanning">Reading folders… %1$d files so far</string>
@@ -163,4 +165,17 @@
   <string name="library_order_magic">Magic (CD numbers)</string>
   <string name="pref_online_cover_search">Search missing covers via DuckDuckGo</string>
   <string name="pref_subtitle_online_cover_search">Off: the app stays completely offline. On: the book menu offers “Cover from the Internet”, which sends the book title to DuckDuckGo.</string>
+  <!--Cover search-->
+  <string name="cover_error_blocked">DuckDuckGo refused the request (HTTP %1$d). Try again later, or search in your browser instead.</string>
+  <string name="cover_error_offline">No connection to DuckDuckGo. Check your internet connection and try again.</string>
+  <string name="cover_error_unexpected">DuckDuckGo sent an answer this app does not understand. Search in your browser instead.</string>
+  <string name="cover_empty_title">No images found</string>
+  <string name="cover_empty_message">Nothing was found for “%1$s”. Tap one of the suggestions above or change the search term.</string>
+  <string name="cover_open_browser">Search in browser</string>
+  <string name="cover_use_link">Use image link</string>
+  <string name="cover_link_title">Image link</string>
+  <string name="cover_link_hint">Paste the address of an image. In your browser: press and hold the image, then choose “Copy image address”.</string>
+  <string name="cover_link_use">Use</string>
+  <string name="cover_downloading">Loading image…</string>
+  <string name="cover_download_failed">The image could not be loaded. Please try another one.</string>
 </resources>

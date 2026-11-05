@@ -53,7 +53,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Mostra els números de capítol</string>
-  <string name="sleep_timer_note">Per reiniciar, sacseja el dispositiu en un termini de 30 segons després d\'haver acabat</string>
+  <string name="sleep_timer_note">Per reiniciar, sacseja el dispositiu en un termini d\'1 minut després d\'haver acabat</string>
   <string name="repeat">Repetiu</string>
   <plurals name="chapters_count">
     <item quantity="one">%d capítol</item>
@@ -103,4 +103,5 @@
   <string name="remaining_time">Temps restant</string>
   <string name="auto_sleep_timer">Inicieu el temporitzador de posposada segons la programació</string>
   <string name="auto_sleep_timer_start">Hora d\'inici</string>
+  <string name="reset_sleep_timer_on_playback_action">Reinicia el temporitzador de son en reproduir, pausar o cercar</string>
 </resources>

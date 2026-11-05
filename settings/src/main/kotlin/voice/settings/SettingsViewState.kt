@@ -10,6 +10,7 @@ data class SettingsViewState(
   val autoSleepTimer: Boolean,
   val autoSleepTimeStart: String,
   val autoSleepTimeEnd: String,
+  val resetSleepTimerOnPlaybackAction: Boolean,
   val gridMode: Int,
   val paddings: String,
   val useTransparentNavigation: Boolean,

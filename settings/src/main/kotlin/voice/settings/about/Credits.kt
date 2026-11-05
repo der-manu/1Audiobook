@@ -26,6 +26,11 @@ internal object Credits {
       url = "https://github.com/Goodwy/PlayBook",
     ),
     Credit(
+      name = "PlayBook pull request #159 (sleep timer improvements)",
+      detail = "Ciske \u00B7 GPL-3.0 \u00B7 not yet merged upstream; adapted for this app",
+      url = "https://github.com/Goodwy/PlayBook/pull/159",
+    ),
+    Credit(
       name = "Voice",
       detail = "Paul Woitaschek and contributors \u00B7 GPL-3.0 \u00B7 the project PlayBook is based on",
       url = "https://github.com/PaulWoitaschek/Voice",

@@ -52,7 +52,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Show chapter numbers</string>
-  <string name="sleep_timer_note">To restart, shake the device within 30 seconds after finishing</string>
+  <string name="sleep_timer_note">To restart, shake the device within 1 minute after finishing</string>
   <string name="repeat">Repeat</string>
   <plurals name="chapters_count">
     <item quantity="one">%d chapter</item>

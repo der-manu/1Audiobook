@@ -24,6 +24,7 @@ import voice.playback.session.MediaId
 import voice.playback.session.MediaItemProvider
 import voice.playback.session.toMediaIdOrNull
 import voice.pref.Pref
+import voice.sleepTimer.SleepTimerApi
 import java.time.Instant
 import javax.inject.Inject
 import javax.inject.Named
@@ -47,9 +48,11 @@ class VoicePlayer
   private val scope: CoroutineScope,
   private val chapterRepo: ChapterRepo,
   private val volumeGain: VolumeGain,
+  private val sleepTimer: SleepTimerApi,
 ) : ForwardingPlayer(player) {
 
   fun forceSeekToNext() {
+    sleepTimer.onPlaybackAction()
     scope.launch {
       val currentMediaItem = player.currentMediaItem ?: return@launch
       val marks = currentMediaItem.chapter()?.chapterMarks ?: return@launch
@@ -72,6 +75,7 @@ class VoicePlayer
   }
 
   fun forceSeekToPrevious() {
+    sleepTimer.onPlaybackAction()
     scope.launch {
       val currentMediaItem = player.currentMediaItem ?: return@launch
       val marks = currentMediaItem.chapter()?.chapterMarks ?: return@launch
@@ -140,6 +144,7 @@ class VoicePlayer
   }
 
   override fun seekBack() {
+    sleepTimer.onPlaybackAction()
     scope.launch {
       val skipAmount = seekTimeRewindPref.value.seconds
 
@@ -166,6 +171,7 @@ class VoicePlayer
   }
 
   override fun seekForward() {
+    sleepTimer.onPlaybackAction()
     val skipAmount = seekTimePref.value.seconds
 
     val currentPosition = player.currentPosition.takeUnless { it == C.TIME_UNSET }
@@ -195,10 +201,19 @@ class VoicePlayer
     Logger.d("setPlayWhenReady=$playWhenReady")
     if (playWhenReady) {
       updateLastPlayedAt()
+      sleepTimer.onPlaybackAction()
     } else {
+      if (sleepTimer.isFadingOut()) {
+        Logger.i("Pause requested during sleep timer fade-out. Rewinding and continuing playback instead of pausing.")
+        sleepTimer.onFadeOutInterrupted()
+        val currentPosition = player.currentPosition.takeUnless { it == C.TIME_UNSET }?.milliseconds ?: ZERO
+        super.seekTo((currentPosition - FADE_OUT_PAUSE_REWIND).coerceAtLeast(ZERO).inWholeMilliseconds)
+        return
+      }
+      sleepTimer.onPlaybackAction()
       val currentPosition = player.currentPosition.takeUnless { it == C.TIME_UNSET }?.milliseconds ?: ZERO
       if (currentPosition > ZERO) {
-        seekTo(
+        super.seekTo(
           (currentPosition - autoRewindAmountPref.value.seconds)
             .coerceAtLeast(ZERO)
             .inWholeMilliseconds,
@@ -210,6 +225,19 @@ class VoicePlayer
 
   override fun pause() {
     playWhenReady = false
+  }
+
+  override fun seekTo(positionMs: Long) {
+    sleepTimer.onPlaybackAction()
+    super.seekTo(positionMs)
+  }
+
+  override fun seekTo(
+    mediaItemIndex: Int,
+    positionMs: Long,
+  ) {
+    sleepTimer.onPlaybackAction()
+    super.seekTo(mediaItemIndex, positionMs)
   }
 
   private fun updateLastPlayedAt() {
@@ -327,3 +355,4 @@ class VoicePlayer
 }
 
 private const val THRESHOLD_FOR_BACK_SEEK_MS = 2000
+private val FADE_OUT_PAUSE_REWIND = 2.seconds

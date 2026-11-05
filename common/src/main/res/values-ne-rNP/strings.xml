@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">1Audiobook मा स्वागत छ!</string>
   <string name="auto_sleep_timer">समयतालिकामा स्नुज टाइमर सुरु गर्नुहोस्</string>
   <string name="auto_sleep_timer_start">सुरु समय</string>
+  <string name="reset_sleep_timer_on_playback_action">प्ले, पज वा सिक गर्दा स्लीप टाइमर रिसेट गर्नुहोस्</string>
 </resources>

@@ -22,7 +22,8 @@ internal fun PlaybackRow(
   seekTime: Int = 30,
   seekTimeRewind: Int = 20,
   skipButtonStyle: Int = SKIP_BUTTON_CLASSIC,
-  playButtonStyle: Int = PLAY_BUTTON_ROUND
+  playButtonStyle: Int = PLAY_BUTTON_ROUND,
+  sleepTimerFadingOut: Boolean = false,
 ) {
   Row(
     modifier = Modifier
@@ -34,6 +35,7 @@ internal fun PlaybackRow(
     Spacer(modifier = Modifier.size(36.dp))
     PlayButton(
       playing = playing,
+      fadingOut = sleepTimerFadingOut,
       style = playButtonStyle,
       onPlayClick = onPlayClick,
     )

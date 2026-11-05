@@ -101,6 +101,13 @@ object PrefsModule {
 
   @Provides
   @Singleton
+  @Named(PrefKeys.RESET_SLEEP_TIMER_ON_PLAYBACK_ACTION)
+  fun provideResetSleepTimerOnPlaybackActionPreference(prefs: AndroidPreferences): Pref<Boolean> {
+    return prefs.boolean(PrefKeys.RESET_SLEEP_TIMER_ON_PLAYBACK_ACTION, true)
+  }
+
+  @Provides
+  @Singleton
   @Named(PrefKeys.GRID_MODE)
   fun gridViewPref(prefs: AndroidPreferences): Pref<GridMode> {
     return prefs.enum(PrefKeys.GRID_MODE, GridMode.FOLLOW_DEVICE)

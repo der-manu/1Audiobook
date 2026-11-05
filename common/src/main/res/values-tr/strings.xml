@@ -45,7 +45,7 @@
   <string name="hours_letter">s</string>
   <string name="minutes_letter">d</string>
   <string name="show_chapter_numbers">Bölüm numaralarını göster</string>
-  <string name="sleep_timer_note">Yeniden başlatmak için, bitirdikten sonra 30 saniye içinde cihazı sallayın</string>
+  <string name="sleep_timer_note">Yeniden başlatmak için, bitirdikten sonra 1 dakika içinde cihazı sallayın</string>
   <string name="repeat">Tekrarla</string>
 
   <!--Kitaba Genel Bakış-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">1Audiobook\'a hoş geldiniz!</string>
   <string name="auto_sleep_timer">Erteleme zamanlayıcısını programa göre başlat</string>
   <string name="auto_sleep_timer_start">Başlama zamanı</string>
+  <string name="reset_sleep_timer_on_playback_action">Oynatma, duraklatma veya arama sırasında uyku zamanlayıcısını sıfırla</string>
 </resources>

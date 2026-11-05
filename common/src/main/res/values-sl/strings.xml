@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Prikaži številke poglavij</string>
-  <string name="sleep_timer_note">Za ponovni zagon pretresite napravo v 30 sekundah po koncu</string>
+  <string name="sleep_timer_note">Za ponovni zagon pretresite napravo v 1 minuti po koncu</string>
   <string name="repeat">Ponovi</string>
 
   <!--BookOverview-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Dobrodošli v 1Audiobooku!</string>
   <string name="auto_sleep_timer">Zaženite časovnik dremeža po urniku</string>
   <string name="auto_sleep_timer_start">Začetni čas</string>
+  <string name="reset_sleep_timer_on_playback_action">Ponastavi časovnik spanja ob predvajanju, premoru ali iskanju</string>
 </resources>

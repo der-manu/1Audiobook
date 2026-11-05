@@ -20,30 +20,30 @@ class MagicOrderTest {
     return ChapterSorter.sort(items, ChapterSortSettings()).map { it.item }
   }
 
-  private fun wickert(vararg tracksPerDisc: Int): List<String> =
+  private fun discBook(vararg tracksPerDisc: Int): List<String> =
     tracksPerDisc.flatMapIndexed { disc, tracks ->
-      (1..tracks).map { "%02d - Der Richter aus Paris (CD%d).mp3".format(it, disc + 1) }
+      (1..tracks).map { "%02d - Der Brief aus Rom (CD%d).mp3".format(it, disc + 1) }
     }
 
   @Test
   fun putsEachCdCompletelyBeforeTheNextWhenTrackNumbersRepeat() {
-    val names = wickert(20, 20, 16)
-    val expected = wickert(20, 20, 16)
+    val names = discBook(20, 20, 16)
+    val expected = discBook(20, 20, 16)
     order(names.shuffled(java.util.Random(5))) shouldBe expected
   }
 
   @Test
   fun aPlainNameComparisonGetsThisCaseWrongWhichIsTheReasonForMagic() {
-    val names = wickert(5, 5, 5)
+    val names = discBook(5, 5, 5)
     plain(names).take(3) shouldBe listOf(
-      "01 - Der Richter aus Paris (CD1).mp3",
-      "01 - Der Richter aus Paris (CD2).mp3",
-      "01 - Der Richter aus Paris (CD3).mp3",
+      "01 - Der Brief aus Rom (CD1).mp3",
+      "01 - Der Brief aus Rom (CD2).mp3",
+      "01 - Der Brief aus Rom (CD3).mp3",
     )
     order(names).take(3) shouldBe listOf(
-      "01 - Der Richter aus Paris (CD1).mp3",
-      "02 - Der Richter aus Paris (CD1).mp3",
-      "03 - Der Richter aus Paris (CD1).mp3",
+      "01 - Der Brief aus Rom (CD1).mp3",
+      "02 - Der Brief aus Rom (CD1).mp3",
+      "03 - Der Brief aus Rom (CD1).mp3",
     )
   }
 
@@ -70,8 +70,8 @@ class MagicOrderTest {
   @Test
   fun leavesPartWordsInsideStoriesAlone() {
     val names = listOf(
-      "01-Der Elsterverein -Teil 01.mp3", "02-Der Elsterverein -Teil 02.mp3", "03-Der Elsterverein -Teil 03.mp3",
-      "04-Der direkte Draht-Teil 01.mp3", "05-Der direkte Draht-Teil 02.mp3", "06-Tod eines Architekten -Teil 1.mp3",
+      "01-Der Fall Eins -Teil 01.mp3", "02-Der Fall Eins -Teil 02.mp3", "03-Der Fall Eins -Teil 03.mp3",
+      "04-Der Fall Zwei-Teil 01.mp3", "05-Der Fall Zwei-Teil 02.mp3", "06-Der Fall Drei -Teil 1.mp3",
     )
     MagicOrder.keys(names).all { it == null } shouldBe true
   }
@@ -91,18 +91,18 @@ class MagicOrderTest {
 
   @Test
   fun filesWithoutNumbersComeFirstInsteadOfLast() {
-    val names = wickert(6, 6) + "Intro.mp3"
+    val names = discBook(6, 6) + "Intro.mp3"
     order(names).first() shouldBe "Intro.mp3"
   }
 
   @Test
   fun eachFolderIsAnalysedOnItsOwnWhenGroupedByFolder() {
-    val mixed = wickert(5, 5, 5)
+    val mixed = discBook(5, 5, 5)
     val plainFolder = listOf("10 - Anfang.mp3", "02 - Mitte.mp3", "03 - Ende.mp3")
     val items = mixed.map { ChapterSortItem(it, listOf("A"), it, null, 0L) } +
       plainFolder.map { ChapterSortItem(it, listOf("B"), it, null, 0L) }
     val sorted = ChapterSorter.sort(items, magic).map { it.item }
-    sorted.take(5) shouldBe wickert(5, 5, 5).take(5)
+    sorted.take(5) shouldBe discBook(5, 5, 5).take(5)
     sorted.takeLast(3) shouldBe listOf("02 - Mitte.mp3", "03 - Ende.mp3", "10 - Anfang.mp3")
   }
 

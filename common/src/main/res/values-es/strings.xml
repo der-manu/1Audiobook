@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Mostrar números de capítulo</string>
-  <string name="sleep_timer_note">Para reiniciar, agite el dispositivo dentro de los 30 segundos después de terminar</string>
+  <string name="sleep_timer_note">Para reiniciar, agite el dispositivo dentro de 1 minuto después de terminar</string>
   <string name="repeat">Repetir</string>
 
   <!--Resumen del libro-->
@@ -89,4 +89,5 @@
   <string name="remaining_time">Tiempo restante</string>
   <string name="auto_sleep_timer">Inicie el temporizador de repetición según lo programado</string>
   <string name="auto_sleep_timer_start">Hora de comienzo</string>
+  <string name="reset_sleep_timer_on_playback_action">Reiniciar el temporizador de sueño al reproducir, pausar o buscar</string>
 </resources>

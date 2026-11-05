@@ -20,6 +20,9 @@ dependencies {
   implementation(projects.data)
   implementation(projects.pref)
 
+  // Changed implementation to api because classes in this module expose types from sleepTimer in their public API (interfaces/supertypes)
+  api(projects.sleepTimer)
+
   implementation(libs.androidxCore)
   implementation(libs.datastore)
   implementation(libs.coroutines.guava)

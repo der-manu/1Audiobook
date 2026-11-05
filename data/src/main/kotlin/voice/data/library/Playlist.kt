@@ -55,7 +55,7 @@ data class PlaylistMatch(
   val unmatchedEntries: List<String>,
 )
 
-/** Ordnet Playlist-Eintraege den echten Dateien zu: tolerant bei Pfaden, Gross-/Kleinschreibung und Umlauten. */
+/** Ordnet Playlist-Eintraege den vorhandenen Dateien zu: tolerant bei Pfaden, Gross-/Kleinschreibung und Umlauten. */
 object PlaylistMatcher {
 
   fun match(entries: List<String>, files: List<PlacedFile>): PlaylistMatch {

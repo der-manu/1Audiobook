@@ -17,6 +17,7 @@ data class BookPlayViewState(
   val sleepTime: Duration,
   val customSleepTime: Int,
   val sleepEoc: Boolean,
+  val sleepTimerFadingOut: Boolean,
   val playedTime: Duration,
   val duration: Duration,
   val playing: Boolean,

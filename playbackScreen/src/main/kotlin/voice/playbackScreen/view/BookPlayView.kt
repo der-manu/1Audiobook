@@ -535,6 +535,7 @@ private class BookPlayViewStatePreviewProvider : PreviewParameterProvider<BookPl
       sleepTime = 4.minutes,
       customSleepTime = 15,
       sleepEoc = true,
+      sleepTimerFadingOut = false,
       playedTimeInPer = 30,
       remainingTimeInMs = 7,
       bookDuration = 60,

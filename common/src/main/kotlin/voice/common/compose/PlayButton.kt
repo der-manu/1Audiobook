@@ -1,6 +1,12 @@
 package voice.common.compose
 
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.graphics.res.animatedVectorResource
 import androidx.compose.animation.graphics.res.rememberAnimatedVectorPainter
 import androidx.compose.animation.graphics.vector.AnimatedImageVector
@@ -10,6 +16,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Replay
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
@@ -20,6 +28,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
@@ -34,6 +43,7 @@ import voice.strings.R as StringsR
 fun PlayButton(
   modifier: Modifier = Modifier,
   playing: Boolean,
+  fadingOut: Boolean = false,
   fabSize: Dp = 68.dp,
   iconSize: Dp = 46.dp,
   onPlayClick: () -> Unit,
@@ -46,21 +56,10 @@ fun PlayButton(
       shape = if (style == PLAY_BUTTON_SQUARE) FloatingActionButtonDefaults.shape else MaterialTheme.shapes.small.copy(CornerSize(percent = 50)),
       onClick = onPlayClick
     ) {
-      Icon(
+      PlayPauseIcon(
         modifier = Modifier.size(iconSize),
-        painter = rememberAnimatedVectorPainter(
-          animatedImageVector = AnimatedImageVector.animatedVectorResource(
-            id = CommonR.drawable.avd_pause_to_play,
-          ),
-          atEnd = !playing,
-        ),
-        contentDescription = stringResource(
-          id = if (playing) {
-            StringsR.string.pause
-          } else {
-            StringsR.string.play
-          },
-        ),
+        playing = playing,
+        fadingOut = fadingOut,
       )
     }
     PLAY_BUTTON_ROUND_AND_SQUARE -> {
@@ -73,16 +72,10 @@ fun PlayButton(
         onClick = onPlayClick,
         shape = RoundedCornerShape(cornerSize),
       ) {
-        Icon(
+        PlayPauseIcon(
           modifier = Modifier.size(iconSize),
-          painter = rememberPlayIconPainter(playing = playing),
-          contentDescription = stringResource(
-            id = if (playing) {
-              StringsR.string.pause
-            } else {
-              StringsR.string.play
-            },
-          ),
+          playing = playing,
+          fadingOut = fadingOut,
         )
       }
     }
@@ -95,23 +88,49 @@ fun PlayButton(
           onClick = onPlayClick,
         ),
     ) {
-      Icon(
+      PlayPauseIcon(
         modifier = Modifier.size(82.dp),
-        painter = rememberAnimatedVectorPainter(
-          animatedImageVector = AnimatedImageVector.animatedVectorResource(
-            id = CommonR.drawable.avd_pause_to_play,
-          ),
-          atEnd = !playing,
-        ),
-        contentDescription = stringResource(
-          id = if (playing) {
-            StringsR.string.pause
-          } else {
-            StringsR.string.play
-          },
-        ),
+        playing = playing,
+        fadingOut = fadingOut,
       )
     }
+  }
+}
+
+@Composable
+private fun PlayPauseIcon(
+  modifier: Modifier = Modifier,
+  playing: Boolean,
+  fadingOut: Boolean,
+) {
+  if (fadingOut) {
+    val infiniteTransition = rememberInfiniteTransition(label = "sleepTimerFadeOutPulse")
+    val alpha by infiniteTransition.animateFloat(
+      initialValue = 1f,
+      targetValue = 0.35f,
+      animationSpec = infiniteRepeatable(
+        animation = tween(durationMillis = 900, easing = FastOutSlowInEasing),
+        repeatMode = RepeatMode.Reverse,
+      ),
+      label = "sleepTimerFadeOutPulseAlpha",
+    )
+    Icon(
+      modifier = modifier.alpha(alpha),
+      imageVector = Icons.Rounded.Replay,
+      contentDescription = stringResource(id = StringsR.string.sleep_timer_fade_out_continue),
+    )
+  } else {
+    Icon(
+      modifier = modifier,
+      painter = rememberPlayIconPainter(playing = playing),
+      contentDescription = stringResource(
+        id = if (playing) {
+          StringsR.string.pause
+        } else {
+          StringsR.string.play
+        },
+      ),
+    )
   }
 }
 

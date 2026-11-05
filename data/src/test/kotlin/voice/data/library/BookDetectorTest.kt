@@ -39,7 +39,7 @@ class BookDetectorTest {
   fun siblingsThatDifferOnlyByNumbersAreParts() {
     val root = dir(
       "Lib",
-      d(dir("Tess Gerritsen - Verrat in Paris", d(dir("Paris1", *numbered(3))), d(dir("Paris2", *numbered(3))))),
+      d(dir("Anna Muster - Reise nach Rom", d(dir("Rom1", *numbered(3))), d(dir("Rom2", *numbered(3))))),
     )
     BookDetector.detect(root).books.single().kind shouldBe BookKind.MULTI_PART
   }
@@ -71,14 +71,14 @@ class BookDetectorTest {
       "Lib",
       d(
         dir(
-          "Max.Landorff.-.Der.Regler",
-          d(dir("Landorff-1-Regler", d(dir("CD 1", *numbered(4))))),
-          d(dir("Landorff-2-Regler", d(dir("CD 2", *numbered(4))))),
+          "Max.Muster.-.Der.Zeuge",
+          d(dir("Muster-1-Zeuge", d(dir("CD 1", *numbered(4))))),
+          d(dir("Muster-2-Zeuge", d(dir("CD 2", *numbered(4))))),
         ),
       ),
     )
     val book = BookDetector.detect(root).books.single()
-    book.pathNames shouldBe listOf("Max.Landorff.-.Der.Regler")
+    book.pathNames shouldBe listOf("Max.Muster.-.Der.Zeuge")
     book.fileCount shouldBe 8
   }
 

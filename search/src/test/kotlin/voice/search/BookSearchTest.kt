@@ -21,54 +21,54 @@ import java.util.UUID
 class BookSearchTest {
 
   @Suppress("SpellCheckingInspection")
-  private val commendatore = book(
-    name = "Die Ermordung des Commendatore",
-    author = "Haruki Murakami",
+  private val leuchtturm = book(
+    name = "Die Ermordung des Leuchtturmwaerters",
+    author = "Haruka Musterfrau",
   )
 
-  private val watchtower = book(
-    name = "All Along the Watchtower",
-    author = "Jimi Hendrix",
+  private val lighthouse = book(
+    name = "All Along the Lighthouse",
+    author = "Max Mustermann",
   )
 
   private val unicorns = book(
     name = "All Along the Unicorns",
-    author = "Jimi Hendrix",
+    author = "Max Mustermann",
   )
 
   @Test
   fun `search complete name`() = test {
-    expectSearchResult("Die Ermordung des Commendatore", commendatore)
+    expectSearchResult("Die Ermordung des Leuchtturmwaerters", leuchtturm)
   }
 
   @Test
   fun `search single word in name`() = test {
-    expectSearchResult("Ermordung", commendatore)
+    expectSearchResult("Ermordung", leuchtturm)
   }
 
   @Test
   fun `search partial word in name from beginning with whitespace`() = test {
-    expectSearchResult("   Ermord  ", commendatore)
+    expectSearchResult("   Ermord  ", leuchtturm)
   }
 
   @Test
   fun `search single word in author`() = test {
-    expectSearchResult("Murakami", commendatore)
+    expectSearchResult("Musterfrau", leuchtturm)
   }
 
   @Test
   fun `search partial word in name from beginning`() = test {
-    expectSearchResult("Ermord", commendatore)
+    expectSearchResult("Ermord", leuchtturm)
   }
 
   @Test
   fun `multiple matches on author`() = test {
-    expectSearchResult("Jimi", watchtower, unicorns)
+    expectSearchResult("Max", lighthouse, unicorns)
   }
 
   @Test
   fun `multiple matches on title`() = test {
-    expectSearchResult("along", watchtower, unicorns)
+    expectSearchResult("along", lighthouse, unicorns)
   }
 
   @Test
@@ -102,13 +102,13 @@ class BookSearchTest {
     }
 
     runTest {
-      addBook(commendatore)
-      addBook(watchtower)
+      addBook(leuchtturm)
+      addBook(lighthouse)
       addBook(unicorns)
 
       // this ensures that inactive books are never accounted for
-      addBook(commendatore.withNewIdAndInactive())
-      addBook(watchtower.withNewIdAndInactive())
+      addBook(leuchtturm.withNewIdAndInactive())
+      addBook(lighthouse.withNewIdAndInactive())
       addBook(unicorns.withNewIdAndInactive())
 
       testBase.run()

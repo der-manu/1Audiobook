@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Zobraziť čísla kapitol</string>
-  <string name="sleep_timer_note">Ak chcete reštartovať, zatraste zariadením do 30 sekúnd po dokončení</string>
+  <string name="sleep_timer_note">Ak chcete reštartovať, zatraste zariadením do 1 minúty po dokončení</string>
   <string name="repeat">Opakovať</string>
 
   <!--Prehľad knihy-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">Vitajte v 1Audiobooku!</string>
   <string name="auto_sleep_timer">Spustenie časovača odloženia podľa plánu</string>
   <string name="auto_sleep_timer_start">Čas začiatku</string>
+  <string name="reset_sleep_timer_on_playback_action">Resetovať časovač spánku pri prehrávaní, pozastavení alebo posune</string>
 </resources>

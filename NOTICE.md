@@ -21,6 +21,9 @@ library import with an editable preview and `.m3u` support; playlist order dialo
 quick light/dark switch; hidden-file filtering; replacement of the retired FFmpegKit dependency; new name,
 application id and app icon.
 
+The sleep timer improvements are adapted from [PlayBook pull request #159](https://github.com/Goodwy/PlayBook/pull/159)
+by Ciske (GPL-3.0), which had not been merged upstream when this app was released.
+
 Translations of the texts that come from Voice and PlayBook were contributed by their communities under the same
 license. New texts added by this project exist in English and German.
 

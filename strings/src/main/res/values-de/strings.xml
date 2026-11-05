@@ -112,4 +112,5 @@
         <item quantity="one">%d Minute</item>
         <item quantity="other">%d Minuten</item>
     </plurals>
+    <string name="sleep_timer_fade_out_continue">Schlaf-Timer endet. Tippen, um weiterzuhören</string>
 </resources>

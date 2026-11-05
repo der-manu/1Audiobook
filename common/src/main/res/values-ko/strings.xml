@@ -45,7 +45,7 @@
   <string name="hours_letter">시간</string>
   <string name="minutes_letter">분</string>
   <string name="show_chapter_numbers">챕터 번호 보기</string>
-  <string name="sleep_timer_note">다시 시작하려면 종료 후 30초 이내에 기기를 흔들어 주세요</string>
+  <string name="sleep_timer_note">다시 시작하려면 종료 후 1분 이내에 기기를 흔들어 주세요</string>
   <string name="repeat">반복</string>
 
   <!--도서개요-->
@@ -89,4 +89,5 @@
   <string name="onboarding_welcome_title_g">1Audiobook에 오신 것을 환영합니다!</string>
   <string name="auto_sleep_timer">일정에 따라 스누즈 타이머 시작</string>
   <string name="auto_sleep_timer_start">시작 시간</string>
+  <string name="reset_sleep_timer_on_playback_action">재생, 일시정지 또는 탐색 시 수면 타이머 재설정</string>
 </resources>

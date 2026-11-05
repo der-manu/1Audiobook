@@ -44,14 +44,16 @@ android {
   signingConfigs {
     // Debug-Builds nutzen einen festen, oeffentlichen Schluessel (signing/debug), damit sich neue Debug-Versionen
     // ueber alte installieren lassen. Er schuetzt nichts und ist ausdruecklich KEIN Release-Schluessel.
-    getByName("debug") {
-      val properties = Properties()
-      val propertiesFile = rootProject.file("signing/debug/signing.properties")
-      propertiesFile.inputStream().use { properties.load(it) }
-      storeFile = File(propertiesFile.parentFile, "signing.keystore")
-      storePassword = properties["STORE_PASSWORD"] as String
-      keyAlias = properties["KEY_ALIAS"] as String
-      keyPassword = properties["KEY_PASSWORD"] as String
+    val debugProperties = rootProject.file("signing/debug/signing.properties")
+    if (debugProperties.exists()) {
+      getByName("debug") {
+        val properties = Properties()
+        debugProperties.inputStream().use { properties.load(it) }
+        storeFile = File(debugProperties.parentFile, "signing.keystore")
+        storePassword = properties["STORE_PASSWORD"] as String
+        keyAlias = properties["KEY_ALIAS"] as String
+        keyPassword = properties["KEY_PASSWORD"] as String
+      }
     }
 
     // Release-Signierung nur, wenn die Umgebung sie bereitstellt (GitHub-Secrets, siehe docs/RELEASE.md).

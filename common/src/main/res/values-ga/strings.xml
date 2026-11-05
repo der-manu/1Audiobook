@@ -45,7 +45,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Taispeáin uimhreacha na gcaibidlí</string>
-  <string name="sleep_timer_note">Chun atosú, croith an gléas laistigh de 30 soicind tar éis críochnú</string>
+  <string name="sleep_timer_note">Chun atosú, croith an gléas laistigh de nóiméad amháin tar éis críochnú</string>
   <string name="repeat">Athdhéan</string>
 
   <!--BookOverview-->
@@ -86,6 +86,7 @@
   <string name="last_played_at">Éisteacht dheireanach</string>
   <string name="remaining_time">An t -am atá fágtha</string>
   <string name="auto_sleep_timer_end">Am deiridh</string>
+  <string name="reset_sleep_timer_on_playback_action">Athshocraigh an t-amadóir codlata ar sheinm, sos, nó cuardach</string>
   <string name="onboarding_welcome_title_g">Fáilte go Playbook!</string>
   <string name="auto_sleep_timer">Tosaigh an t-amadóir snooze de réir an sceidil</string>
   <string name="auto_sleep_timer_start">Am tosaithe</string>

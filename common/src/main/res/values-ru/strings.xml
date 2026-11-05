@@ -55,7 +55,7 @@
   <string name="hours_letter">ч</string>
   <string name="minutes_letter">м</string>
   <string name="show_chapter_numbers">Показать номера глав</string>
-  <string name="sleep_timer_note">Для перезапуска встряхните устройство в течение 30 секунд после окончания таймера</string>
+  <string name="sleep_timer_note">Для перезапуска встряхните устройство в течение 1 минуты после окончания таймера</string>
   <string name="repeat">Повтор</string>
   <plurals name="chapters_count">
     <item quantity="one">%d глава</item>
@@ -107,4 +107,5 @@
   <string name="auto_sleep_timer">Запускать таймер по расписанию</string>
   <string name="auto_sleep_timer_start">Время начала</string>
   <string name="auto_sleep_timer_end">Время окончания</string>
+  <string name="reset_sleep_timer_on_playback_action">Сбрасывать таймер сна при воспроизведении, паузе или перемотке</string>
 </resources>

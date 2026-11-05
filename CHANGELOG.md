@@ -13,6 +13,9 @@
 - Quick light/dark switch in the settings.
 - New name, application id (`io.github.dermanu.oneaudiobook`) and app icon.
 - Hidden files and macOS leftovers (`._*`, `__MACOSX`) never end up in a playlist.
+- Sleep timer: restarts on play/pause/seek (optional), lets you continue listening during the fade-out, shake-to-restart
+  for one minute, and no longer triggers by mistake when playback starts from the notification or a headset button.
+  Adapted from PlayBook pull request #159 by Ciske.
 - Cover search is clearer and more robust: it explains *why* a search failed, shows shorter search suggestions made
   from title and author, and offers *Search in browser* and *Use image link* as fallbacks. A blocked original image now
   falls back to DuckDuckGo's thumbnail instead of ending with no cover.

@@ -53,7 +53,7 @@
   <string name="hours_letter">h</string>
   <string name="minutes_letter">m</string>
   <string name="show_chapter_numbers">Afișează numerele capitolelor</string>
-  <string name="sleep_timer_note">Pentru a reporni, scuturați dispozitivul în termen de 30 de secunde de la expirarea temporizatorului</string>
+  <string name="sleep_timer_note">Pentru a reporni, scuturați dispozitivul în termen de 1 minut de la expirarea temporizatorului</string>
   <string name="repeat">Repetă</string>
   <plurals name="chapters_count">
     <item quantity="one">%d chapter</item>
@@ -100,4 +100,5 @@
   <string name="remaining_time">Timp rămas</string>
   <string name="auto_sleep_timer">Porniți cronometrul de amânare conform programului</string>
   <string name="auto_sleep_timer_start">Ora de începere</string>
+  <string name="reset_sleep_timer_on_playback_action">Resetează cronometrul de somn la redare, pauză sau derulare</string>
 </resources>

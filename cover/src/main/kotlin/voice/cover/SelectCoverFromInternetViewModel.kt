@@ -1,6 +1,8 @@
 package voice.cover
 
 import android.content.Context
+import android.net.Uri
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -23,9 +25,11 @@ import voice.common.BookId
 import voice.common.navigation.Destination
 import voice.common.navigation.Navigator
 import voice.cover.api.CoverApi
+import voice.cover.api.CoverFailure
 import voice.cover.api.ImageSearchPagingSource
 import voice.cover.api.SearchResponse
 import voice.data.repo.BookRepository
+import voice.common.R as CommonR
 import voice.strings.R as StringsR
 
 class SelectCoverFromInternetViewModel
@@ -48,21 +52,26 @@ class SelectCoverFromInternetViewModel
         author = content?.author ?: "",
       )
     }
-    bookNameWithAuthor ?: return ViewState.Loading("")
+    val nameWithAuthor = bookNameWithAuthor ?: return ViewState.Loading("")
 
-    var query: String by remember(bookNameWithAuthor) {
-      val query = bookNameWithAuthor?.let { bookNameWithAuthor ->
-        if (bookNameWithAuthor.author == null) {
-          context.getString(StringsR.string.cover_search_template_no_author, bookNameWithAuthor.bookName)
-        } else {
-          context.getString(
-            StringsR.string.cover_search_template_with_author,
-            bookNameWithAuthor.bookName,
-            bookNameWithAuthor.author,
-          )
-        }
+    var query: String by remember(nameWithAuthor) {
+      val initial = if (nameWithAuthor.author == null) {
+        context.getString(StringsR.string.cover_search_template_no_author, nameWithAuthor.bookName)
+      } else {
+        context.getString(
+          StringsR.string.cover_search_template_with_author,
+          nameWithAuthor.bookName,
+          nameWithAuthor.author,
+        )
       }
-      mutableStateOf(query ?: "")
+      mutableStateOf(initial)
+    }
+    var downloading by remember { mutableStateOf(false) }
+
+    // Kuerzere Suchbegriffe als Auswahl: ein langer Titel samt Zusaetzen findet oft nichts, der reine Titel schon.
+    val suggestions = remember(nameWithAuthor, query) {
+      QuerySuggestions.build(nameWithAuthor.bookName, nameWithAuthor.author)
+        .filterNot { it.equals(query, ignoreCase = true) }
     }
 
     val items = remember(query) {
@@ -79,44 +88,104 @@ class SelectCoverFromInternetViewModel
         when (event) {
           is Events.Retry -> items.retry()
           is Events.CoverClick -> {
-            val downloaded = coverDownloader.download(event.cover.image)
-              ?: coverDownloader.download(event.cover.thumbnail)
-            if (downloaded != null) {
-              navigator.goBack()
-              navigator.goTo(Destination.EditCover(bookId, downloaded.toUri()))
-            }
+            // Das Original ist oft gesperrt (HTTP 403); dann zaehlt das kleinere Vorschaubild.
+            downloadAndEdit(listOf(event.cover.image, event.cover.thumbnail)) { downloading = it }
+          }
+          is Events.UseLink -> {
+            downloadAndEdit(listOf(event.url)) { downloading = it }
           }
           is Events.QueryChange -> {
             query = event.query
+          }
+          is Events.OpenInBrowser -> {
+            navigator.goTo(Destination.Website(browserSearchUrl(query)))
           }
         }
       }
     }
 
-    items.loadState.source.forEach { _, loadState ->
-      if (loadState is LoadState.Error) {
-        return ViewState.Error(query)
-      }
+    val refresh = items.loadState.refresh
+    if (refresh is LoadState.Error) {
+      return ViewState.Error(
+        query = query,
+        failure = CoverFailure.from(refresh.error),
+        suggestions = suggestions,
+        downloading = downloading,
+      )
     }
+    if (refresh is LoadState.Loading && items.itemCount == 0) {
+      return ViewState.Loading(query = query, suggestions = suggestions, downloading = downloading)
+    }
+    if (refresh is LoadState.NotLoading && items.itemCount == 0 && query.isNotBlank()) {
+      return ViewState.Empty(query = query, suggestions = suggestions, downloading = downloading)
+    }
+    return ViewState.Content(items = items, query = query, suggestions = suggestions, downloading = downloading)
+  }
 
-    return ViewState.Content(items, query)
+  private fun browserSearchUrl(query: String): String {
+    return "https://duckduckgo.com/?q=${Uri.encode(query)}&iax=images&ia=images"
+  }
+
+  /** Probiert die Adressen der Reihe nach. Erst wenn eine ein echtes Bild liefert, geht es zum Bearbeiten weiter. */
+  private suspend fun downloadAndEdit(
+    urls: List<String>,
+    setDownloading: (Boolean) -> Unit,
+  ) {
+    setDownloading(true)
+    val downloaded = try {
+      urls.firstNotNullOfOrNull { coverDownloader.download(it) }
+    } finally {
+      setDownloading(false)
+    }
+    if (downloaded != null) {
+      navigator.goBack()
+      navigator.goTo(Destination.EditCover(bookId, downloaded.toUri()))
+    } else {
+      Toast.makeText(context, CommonR.string.cover_download_failed, Toast.LENGTH_LONG).show()
+    }
   }
 
   internal sealed interface ViewState {
 
     val query: String
+    val suggestions: List<String>
 
-    data class Loading(override val query: String) : ViewState
-    data class Error(override val query: String) : ViewState
+    /** Wird gerade ein gewaehltes Bild geladen? Dann liegt ein Fortschritt ueber dem Inhalt. */
+    val downloading: Boolean
+
+    data class Loading(
+      override val query: String,
+      override val suggestions: List<String> = emptyList(),
+      override val downloading: Boolean = false,
+    ) : ViewState
+
+    data class Error(
+      override val query: String,
+      val failure: CoverFailure = CoverFailure(CoverFailure.Kind.UNEXPECTED),
+      override val suggestions: List<String> = emptyList(),
+      override val downloading: Boolean = false,
+    ) : ViewState
+
+    /** Die Suche lief fehlerfrei, fand aber keine Bilder. */
+    data class Empty(
+      override val query: String,
+      override val suggestions: List<String> = emptyList(),
+      override val downloading: Boolean = false,
+    ) : ViewState
+
     data class Content(
       val items: LazyPagingItems<SearchResponse.ImageResult>,
       override val query: String,
+      override val suggestions: List<String> = emptyList(),
+      override val downloading: Boolean = false,
     ) : ViewState
   }
 
   internal sealed interface Events {
     data object Retry : Events
+    data object OpenInBrowser : Events
     data class CoverClick(val cover: SearchResponse.ImageResult) : Events
+    data class UseLink(val url: String) : Events
     data class QueryChange(val query: String) : Events
   }
 

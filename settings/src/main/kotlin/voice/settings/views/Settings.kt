@@ -94,6 +94,7 @@ private fun SettingsPreview() {
     autoSleepTimer = false,
     autoSleepTimeEnd = "",
     autoSleepTimeStart = "",
+    resetSleepTimerOnPlaybackAction = true,
     gridMode = 2,
     paddings = "0;0;0;0",
     useTransparentNavigation = true,
@@ -129,6 +130,7 @@ private fun SettingsPreview() {
         override fun toggleAutoSleepTimer() {}
         override fun setAutoSleepTimerStart(hour: Int, minute: Int) {}
         override fun setAutoSleepTimerEnd(hour: Int, minute: Int) {}
+        override fun toggleResetSleepTimerOnPlaybackAction() {}
         override fun gridModeDialogChanged(item: Int) {}
         override fun onGridModeDialogRowClick() {}
         override fun toggleTransparentNavigation() {}
@@ -371,6 +373,13 @@ private fun Settings(
                 )
               }
             }
+            DividerRow()
+            SettingsSwitchRow(
+              title = stringResource(CommonR.string.reset_sleep_timer_on_playback_action),
+              initSwitch = viewState.resetSleepTimerOnPlaybackAction,
+              toggle = listener::toggleResetSleepTimerOnPlaybackAction,
+              paddingBottom = 5.dp,
+            )
           }
         }
         Spacer(modifier = Modifier.size(16.dp))

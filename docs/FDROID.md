@@ -16,6 +16,7 @@ Goal: list 1Audiobook in the main F-Droid repository. This file records what the
 | Donation links must be verified | none present |
 | Unique value compared with apps already in the repository | library import with preview, `.m3u` support, "Magic" sort (to be stated in the merge request) |
 | Maintained | maintainer commits to updates |
+| Actively developed for at least 3 months (Quality point 6) | **not yet met**: the project started in November 2026 and has no users besides the author yet. Options: wait, or open the merge request as a *Draft* to let the build checks run (see below) |
 
 ## Still open
 
@@ -45,6 +46,9 @@ anti-features come from the `config/` folder of fdroiddata, so the final check o
 Categories:
   - Multimedia
 License: GPL-3.0-only
+AuthorName: der-manu
+AuthorWebSite: https://github.com/der-manu
+WebSite: https://github.com/der-manu/1Audiobook
 SourceCode: https://github.com/der-manu/1Audiobook
 IssueTracker: https://github.com/der-manu/1Audiobook/issues
 Changelog: https://github.com/der-manu/1Audiobook/blob/HEAD/CHANGELOG.md
@@ -62,7 +66,7 @@ AntiFeatures:
 Builds:
   - versionName: 1.0.0-rc.1
     versionCode: 1
-    commit: v1.0.0-rc.1
+    commit: REPLACE_WITH_FULL_40_CHAR_HASH
     subdir: app
     gradle:
       - yes
@@ -73,8 +77,18 @@ CurrentVersion: 1.0.0-rc.1
 CurrentVersionCode: 1
 ```
 
-The tag `v1.0.0-rc.1` must exist in the GitHub repository before the merge request is opened, because F-Droid builds
-exactly that commit (see `docs/RELEASE.md`).
+`commit` must be the **full 40-character hash**, not the tag name. After the tag exists on GitHub, get the hash with
+
+```bash
+git ls-remote https://github.com/der-manu/1Audiobook.git 'refs/tags/v1.0.0-rc.1*'
+```
+
+If two lines appear, use the one that ends in `^{}` (that is the commit the annotated tag points to). The store texts and
+screenshots are read from that commit, so add screenshots **before** tagging.
+
+Reproducible builds are **not** enabled: the release build has not been verified bit-for-bit yet, and the choice cannot be
+changed later (F-Droid then signs with its own key). GitHub and F-Droid APKs therefore have different signatures and
+cannot update each other.
 
 ## Submitting (step by step)
 
