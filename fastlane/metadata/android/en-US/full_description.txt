@@ -1,0 +1,34 @@
+Local first. Import folders containing audiobooks. Play offline.
+
+1Audiobook is a free audiobook player for the audio files that are already on your phone. Point it at a folder, check the preview, and your library is ready. No account, no cloud, no app store connection.
+
+Inspired by PlayBook and Mort Player Audiobooks. Vibe coded.
+
+LIBRARY IMPORT
+• Choose a folder and let the app find your books: single folders, multi-CD books (CD1, CD2, Disc 2, Teil 3 …), author and series folders
+• Release-style folder names like "Karen.Rose.-.2011.-.Todesstoss.Germ.wOOt" become readable titles
+• Nothing is added before you confirm an editable preview: rename books, deselect them, change the order, see which ones need a look
+• Hidden files and macOS leftovers never end up in a playlist
+
+ORDER YOU WANT
+• Existing .m3u playlists decide the order when they are usable; broken ones are detected and replaced by sorting
+• Playlist order dialog with live preview: group by folder or sort all files together, by file name, tag title or date, optionally reversed
+• "Magic" recognises CD numbers inside file names (01 - Title (CD1).mp3) and puts CD 1 completely before CD 2
+• Long file names can be read by swiping the list sideways
+
+LISTENING
+• Plays offline and remembers where you stopped
+• Sleep timer, bookmarks, playback speed, volume boost, chapters (for example m4b)
+• Lock screen, headset and Bluetooth controls, home-screen widget
+• Light and dark theme with a quick switch
+
+PRIVACY
+• No ads, no tracking, no accounts, no in-app purchases
+• All features are free
+• Offline by default. The only network feature is the cover search via DuckDuckGo, which you have to switch on yourself in the settings
+
+GOOD TO KNOW
+• Android 8.0 or newer on a 64-bit ARM device
+• This is a release candidate: please report problems on GitHub
+
+Derived from PlayBook by Goodwy and Voice by Paul Woitaschek (GPL-3.0). Vibe coded: developed together with an AI assistant and tested by the maintainer. All components and sources are listed in the app's About screen.

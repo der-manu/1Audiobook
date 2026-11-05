@@ -1,0 +1,34 @@
+Local first. Ordner mit Hörbüchern importieren. Offline hören.
+
+1Audiobook ist ein freier Hörbuchplayer für die Audiodateien, die schon auf deinem Handy liegen. Ordner wählen, Vorschau prüfen, fertig ist die Bibliothek. Kein Konto, keine Cloud, keine Store-Anbindung.
+
+Inspiriert von PlayBook und Mort Player Audiobooks. Vibe coded.
+
+BIBLIOTHEK IMPORTIEREN
+• Ordner wählen, die App findet deine Bücher: einzelne Ordner, Mehr-CD-Bücher (CD1, CD2, Disc 2, Teil 3 …), Autoren- und Reihen-Ordner
+• Release-Ordnernamen wie "Karen.Rose.-.2011.-.Todesstoss.Germ.wOOt" werden zu lesbaren Titeln
+• Erst nach deiner Bestätigung einer bearbeitbaren Vorschau wird etwas hinzugefügt: Bücher umbenennen, abwählen, Reihenfolge ändern, sehen, welche einen Blick brauchen
+• Versteckte Dateien und macOS-Reste landen nie in einer Playlist
+
+REIHENFOLGE, WIE DU SIE WILLST
+• Vorhandene .m3u-Playlists bestimmen die Reihenfolge, wenn sie brauchbar sind; defekte werden erkannt und durch Sortierung ersetzt
+• Dialog für die Reihenfolge mit Live-Vorschau: nach Ordnern gruppieren oder alle Dateien gemeinsam sortieren, nach Dateiname, Titel (Tag) oder Datum, auch umgekehrt
+• „Zaubern" erkennt CD-Nummern in Dateinamen (01 - Titel (CD1).mp3) und stellt CD 1 komplett vor CD 2
+• Lange Dateinamen lassen sich durch seitliches Wischen lesen
+
+HÖREN
+• Spielt offline und merkt sich, wo du aufgehört hast
+• Schlaf-Timer, Lesezeichen, Geschwindigkeit, Lautstärke-Boost, Kapitel (z. B. m4b)
+• Steuerung über Sperrbildschirm, Headset und Bluetooth, Widget
+• Helles und dunkles Design mit Schnellschalter
+
+DATENSCHUTZ
+• Keine Werbung, kein Tracking, keine Konten, keine Käufe
+• Alle Funktionen sind kostenlos
+• Standardmäßig offline. Einzige Netzwerkfunktion ist die Cover-Suche über DuckDuckGo, die du in den Einstellungen selbst einschalten musst
+
+GUT ZU WISSEN
+• Android 8.0 oder neuer auf einem 64-Bit-ARM-Gerät
+• Dies ist ein Release Candidate: bitte Probleme auf GitHub melden
+
+Abgeleitet von PlayBook von Goodwy und Voice von Paul Woitaschek (GPL-3.0). Vibe coded: gemeinsam mit einem KI-Assistenten entwickelt und vom Maintainer getestet. Alle Komponenten und Quellen stehen im „Über"-Bildschirm der App.

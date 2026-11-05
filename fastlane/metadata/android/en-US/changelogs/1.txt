@@ -1,0 +1,6 @@
+First release candidate.
+
+- Import whole folders of audiobooks with an editable preview
+- .m3u playlists, order dialog with live preview and "Magic" sorting
+- Light/dark switch, new icon
+- No store connections, no tracking
