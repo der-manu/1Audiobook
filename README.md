@@ -10,6 +10,16 @@ your library is ready.
 > **Status:** release candidate. Expect rough edges and please
 > [report problems](https://github.com/der-manu/1Audiobook/issues).
 
+## Download
+
+**The first release candidate is out: [1Audiobook v1.0.0-rc.1](https://github.com/der-manu/1Audiobook/releases/tag/v1.0.0-rc.1)**
+
+- **[Download the APK](https://github.com/der-manu/1Audiobook/releases/download/v1.0.0-rc.1/1Audiobook-v1.0.0-rc.1.apk)** (Android 8.0+, 64-bit ARM, about 27 MB)
+- [SHA-256 checksum](https://github.com/der-manu/1Audiobook/releases/download/v1.0.0-rc.1/1Audiobook-v1.0.0-rc.1.apk.sha256) to verify the download
+- [All releases and release notes](https://github.com/der-manu/1Audiobook/releases)
+
+Open the APK on your phone and allow installation when asked. No account, no store, no sign-up.
+
 ## Why this app exists
 
 The **Mort Audiobook Player** by Mirko Schenk gave the first spark. Mort read folders the way an audiobook listener
@@ -61,10 +71,12 @@ The full list is in [CHANGELOG.md](CHANGELOG.md).
 
 ## Install
 
-Download the APK of the latest release from [Releases](https://github.com/der-manu/1Audiobook/releases) and allow
-installation from your browser or file manager. An F-Droid listing is planned (see [docs/FDROID.md](docs/FDROID.md)).
+1. Download the APK from the [Download](#download) section above (or from [Releases](https://github.com/der-manu/1Audiobook/releases)).
+2. Open it and allow the installation from your browser or file manager when Android asks.
+3. Optional, to check the download: `sha256sum -c 1Audiobook-v1.0.0-rc.1.apk.sha256` (both files in the same folder).
 
-Requirements: Android 8.0 (API 26) or newer on a **64-bit ARM** device.
+Requirements: Android 8.0 (API 26) or newer on a **64-bit ARM** device. An F-Droid listing is planned (see
+[docs/FDROID.md](docs/FDROID.md)).
 
 ## Privacy
 
@@ -128,7 +140,9 @@ closed source, wird nicht mehr weiterentwickelt und läuft auf aktuellen Android
 - **Standardmäßig offline.** Keine Werbung, kein Tracking, keine Konten, keine Käufe. Die Online-Cover-Suche
   (DuckDuckGo) musst du in den Einstellungen selbst einschalten.
 
-Installation: APK aus den [Releases](https://github.com/der-manu/1Audiobook/releases) laden (Android 8.0+, 64-Bit-ARM).
+**Download:** Der erste Release Candidate ist da: **[1Audiobook v1.0.0-rc.1](https://github.com/der-manu/1Audiobook/releases/tag/v1.0.0-rc.1)** –
+[APK laden](https://github.com/der-manu/1Audiobook/releases/download/v1.0.0-rc.1/1Audiobook-v1.0.0-rc.1.apk) (Android 8.0+, 64-Bit-ARM, ca. 27 MB) · [Prüfsumme](https://github.com/der-manu/1Audiobook/releases/download/v1.0.0-rc.1/1Audiobook-v1.0.0-rc.1.apk.sha256) · [Alle Releases](https://github.com/der-manu/1Audiobook/releases).
+APK öffnen und die Installation erlauben, wenn Android danach fragt.
 Ein F-Droid-Eintrag ist geplant. Quellen und Lizenzen stehen in [NOTICE.md](NOTICE.md) und im „Über"-Bildschirm.
 
 **KI-gestützt entwickelt („vibe coded"):** Der Großteil der Änderungen seit dem Fork entstand gemeinsam mit einem
