@@ -11,6 +11,7 @@ import voice.bookOverview.di.BookOverviewScope
 import voice.common.BookId
 import voice.common.compose.ImmutableFile
 import voice.common.pref.PrefKeys
+import voice.data.displayCover
 import voice.data.Book
 import voice.data.repo.BookRepository
 import voice.pref.Pref
@@ -80,7 +81,7 @@ constructor(
 
   internal suspend fun selectBookCover(bookId: BookId): ImmutableFile? {
     val book = repo.get(bookId) ?: return null
-    return if (book.content.useChapterCover && scanCoverChapter.value) book.currentChapter.cover?.let(::ImmutableFile) else book.content.cover?.let(::ImmutableFile)
+    return book.displayCover(scanCoverChapter.value)?.let(::ImmutableFile)
   }
 
   internal suspend fun selectBookDuration(bookId: BookId): Long {

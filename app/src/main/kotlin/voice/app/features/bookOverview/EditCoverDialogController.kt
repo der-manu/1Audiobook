@@ -26,6 +26,7 @@ import kotlinx.parcelize.Parcelize
 import voice.app.databinding.DialogCoverEditBinding
 import voice.app.injection.appComponent
 import voice.app.misc.conductor.context
+import voice.app.scanner.CoverFolderWriter
 import voice.app.scanner.CoverSaver
 import voice.common.BookId
 import voice.common.conductor.DialogController
@@ -52,6 +53,9 @@ class EditCoverDialogController(bundle: Bundle) : DialogController(bundle) {
 
   @Inject
   lateinit var coverSaver: CoverSaver
+
+  @Inject
+  lateinit var coverFolderWriter: CoverFolderWriter
 
   @SuppressLint("InflateParams")
   override fun onCreateDialog(savedViewState: Bundle?): Dialog {
@@ -135,6 +139,10 @@ class EditCoverDialogController(bundle: Bundle) : DialogController(bundle) {
 
     val cropped = Bitmap.createBitmap(full, left, top, right - left, bottom - top)
     coverSaver.save(arguments.bookId, cropped)
+    // Das Cover ist gesetzt. Schlaegt nur das zusaetzliche Speichern im Buchordner fehl, sagen wir es, ohne abzubrechen.
+    if (coverFolderWriter.writeIfEnabled(arguments.bookId, cropped) == CoverFolderWriter.WriteResult.FAILED) {
+      Toast.makeText(context, CommonR.string.cover_folder_write_failed, Toast.LENGTH_LONG).show()
+    }
     return true
   }
 

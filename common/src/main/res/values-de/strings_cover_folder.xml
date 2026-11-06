@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="pref_save_cover_to_folder">Gewählte Cover auch im Buchordner speichern</string>
+  <string name="pref_subtitle_save_cover_to_folder">Aus: Cover bleiben in der App. An: Ein gewähltes Cover wird zusätzlich als „cover.png“ im Ordner des Buchs gespeichert. So übersteht es eine Neuinstallation und erscheint auch in anderen Playern. Andere Dateien werden nie angefasst.</string>
+  <string name="cover_folder_write_failed">Das Cover wurde gesetzt, konnte aber nicht im Buchordner gespeichert werden.</string>
+</resources>

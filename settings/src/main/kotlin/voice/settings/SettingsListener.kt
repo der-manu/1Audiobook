@@ -39,6 +39,7 @@ interface SettingsListener {
   fun onClearCoversDirectoryRowClick()
   fun toggleScanCoverChapter()
   fun toggleOnlineCoverSearch()
+  fun toggleSaveCoverToFolder()
   fun onScanCoverChapterRowClick()
   fun toggleUseMenuIcons()
   fun toggleUseAnimatedMarquee()

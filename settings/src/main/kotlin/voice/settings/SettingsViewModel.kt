@@ -74,6 +74,8 @@ class SettingsViewModel
   private val scanCoverChapter: Pref<Boolean>,
   @Named(PrefKeys.USE_ONLINE_COVER_SEARCH)
   private val useOnlineCoverSearch: Pref<Boolean>,
+  @Named(PrefKeys.SAVE_COVER_TO_FOLDER)
+  private val saveCoverToFolder: Pref<Boolean>,
   @Named(PrefKeys.USE_MENU_ICONS)
   private val useMenuIconsPref: Pref<Boolean>,
   @Named(PrefKeys.USE_ANIMATED_MARQUEE)
@@ -116,6 +118,7 @@ class SettingsViewModel
     val sizeCoversDirectory by remember { coverSaver.sizeCoversDirectory }.collectAsState(initial = "0")
     val scanCoverChapter by remember { scanCoverChapter.flow }.collectAsState(initial = false)
     val useOnlineCoverSearch by remember { useOnlineCoverSearch.flow }.collectAsState(initial = false)
+    val saveCoverToFolder by remember { saveCoverToFolder.flow }.collectAsState(initial = false)
     val useMenuIconsPref by remember { useMenuIconsPref.flow }.collectAsState(initial = false)
     val useAnimatedMarquee by remember { useAnimatedMarqueePref.flow }.collectAsState(initial = true)
     return SettingsViewState(
@@ -153,6 +156,7 @@ class SettingsViewModel
       sizeCoversDirectory = sizeCoversDirectory,
       scanCoverChapter = scanCoverChapter,
       useOnlineCoverSearch = useOnlineCoverSearch,
+      saveCoverToFolder = saveCoverToFolder,
       useMenuIconsPref = useMenuIconsPref,
       useAnimatedMarquee = useAnimatedMarquee,
     )
@@ -320,6 +324,10 @@ class SettingsViewModel
 
   override fun toggleOnlineCoverSearch() {
     useOnlineCoverSearch.value = !useOnlineCoverSearch.value
+  }
+
+  override fun toggleSaveCoverToFolder() {
+    saveCoverToFolder.value = !saveCoverToFolder.value
   }
 
   override fun toggleScanCoverChapter() {

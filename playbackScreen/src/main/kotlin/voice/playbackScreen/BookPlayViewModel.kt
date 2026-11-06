@@ -30,6 +30,7 @@ import voice.common.navigation.Destination
 import voice.common.navigation.Navigator
 import voice.common.pref.CurrentBook
 import voice.common.pref.PrefKeys
+import voice.data.displayCover
 import voice.data.ChapterSortSettings
 import voice.data.durationMs
 import voice.data.markForPosition
@@ -169,7 +170,7 @@ class BookPlayViewModel
       chapterName = currentMark.name.takeIf { hasMoreThanOneChapter },
       duration = currentMark.durationMs.milliseconds,
       playedTime = (book.content.positionInChapter - currentMark.startMs).milliseconds,
-      cover = if (book.content.useChapterCover && scanCoverChapter) book.currentChapter.cover?.let(::ImmutableFile) else book.content.cover?.let(::ImmutableFile),
+      cover = book.displayCover(scanCoverChapter)?.let(::ImmutableFile),
       skipSilence = book.content.skipSilence,
       showChapterNumbers = book.content.showChapterNumbers,
       useChapterCover = book.content.useChapterCover,

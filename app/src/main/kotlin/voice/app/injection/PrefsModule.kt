@@ -316,6 +316,14 @@ object PrefsModule {
 
   @Provides
   @Singleton
+  @Named(PrefKeys.SAVE_COVER_TO_FOLDER)
+  fun saveCoverToFolder(prefs: AndroidPreferences): Pref<Boolean> {
+    // Standard: aus. Die App schreibt nur nach ausdruecklicher Zustimmung in die Ordner des Nutzers.
+    return prefs.boolean(PrefKeys.SAVE_COVER_TO_FOLDER, false)
+  }
+
+  @Provides
+  @Singleton
   @Named(PrefKeys.USE_ONLINE_COVER_SEARCH)
   fun useOnlineCoverSearch(prefs: AndroidPreferences): Pref<Boolean> {
     // Standard: aus. Ohne ausdrueckliche Zustimmung nutzt die App das Internet nicht.

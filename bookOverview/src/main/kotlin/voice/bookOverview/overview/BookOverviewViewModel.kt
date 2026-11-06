@@ -37,6 +37,7 @@ import voice.common.navigation.Destination
 import voice.common.navigation.Navigator
 import voice.common.pref.CurrentBook
 import voice.common.pref.PrefKeys
+import voice.data.displayCover
 import voice.data.Book
 import voice.data.repo.BookContentRepo
 import voice.data.markForPosition
@@ -122,7 +123,6 @@ constructor(
       ?: return BookOverviewViewState.Loading
 
     val currentBook = books.firstOrNull { it.id.value == currentBookId?.value }
-    val useChapterCover = currentBook?.content?.useChapterCover ?: false
     val chapterName = currentBook?.currentChapter?.markForPosition(currentBook.content.positionInChapter)?.name.takeIf { true }
     val paddings = paddingPref.flow.collectAsState(initial = null).value ?: return BookOverviewViewState.Loading
     val miniPlayerStyle = miniPlayerStylePref.flow.collectAsState(initial = MINI_PLAYER_PLAYER).value
@@ -191,7 +191,7 @@ constructor(
       paddings = paddings,
       title = currentBook?.content?.name ?: "",
       chapterName = chapterName ?: currentBook?.content?.author ?: "",
-      cover = if (useChapterCover && scanCoverChapter) currentBook?.currentChapter?.cover?.let(::ImmutableFile) else currentBook?.content?.cover?.let(::ImmutableFile),
+      cover = currentBook?.displayCover(scanCoverChapter)?.let(::ImmutableFile),
       currentBook = currentBookId,
       miniPlayerStyle = miniPlayerStyle,
       useGestures = useGestures,

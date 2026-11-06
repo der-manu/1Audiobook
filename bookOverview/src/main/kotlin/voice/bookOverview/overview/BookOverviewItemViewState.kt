@@ -4,6 +4,7 @@ import android.text.format.DateUtils
 import androidx.compose.runtime.Immutable
 import voice.common.BookId
 import voice.common.compose.ImmutableFile
+import voice.data.displayCover
 import voice.data.Book
 import voice.logging.core.Logger
 
@@ -20,7 +21,7 @@ data class BookOverviewItemViewState(
 internal fun Book.toItemViewState(scanCoverChapter: Boolean) = BookOverviewItemViewState(
   name = content.name,
   author = content.author,
-  cover = if (content.useChapterCover && scanCoverChapter) currentChapter.cover?.let(::ImmutableFile) else content.cover?.let(::ImmutableFile),
+  cover = displayCover(scanCoverChapter)?.let(::ImmutableFile),
   id = id,
   progress = progress(),
   remainingTime = DateUtils.formatElapsedTime((duration - position) / 1000),

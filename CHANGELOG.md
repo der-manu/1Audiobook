@@ -19,6 +19,8 @@
 - Cover search is clearer and more robust: it explains *why* a search failed, shows shorter search suggestions made
   from title and author, and offers *Search in browser* and *Use image link* as fallbacks. A blocked original image now
   falls back to DuckDuckGo's thumbnail instead of ending with no cover.
+- Setting *Also save chosen covers in the book folder* (**off by default**): a cover you choose is also written as
+  `cover.png` into the book's folder, so it survives a reinstall and shows up in other players.
 - Online cover search is **off by default**. A switch in *Settings → Cover* ("Search missing covers via
   DuckDuckGo") turns it on; only then does the book menu offer *Cover from the Internet*.
 
@@ -29,6 +31,10 @@
 - Dead code, unused settings and 64 unused texts (removed from all translations).
 
 ### Fixed
+- Cover search: tapping a result now works (the image download is no longer cancelled), and *Set* in the cover dialog
+  crops reliably and shows a message if something goes wrong.
+- A cover you chose is no longer hidden when *Use chapter cover* is on and the chapter has no cover of its own. The book
+  cover is shown instead.
 - The debug build no longer shows "[Debug]" in the app name.
 - The library mode in the *Add folder* dialog now says it also uses advanced playlist creation.
 

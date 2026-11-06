@@ -111,6 +111,7 @@ private fun SettingsPreview() {
     sizeCoversDirectory = "0MB",
     scanCoverChapter = false,
     useOnlineCoverSearch = false,
+    saveCoverToFolder = false,
     useMenuIconsPref = false,
     useAnimatedMarquee = false,
   )
@@ -156,6 +157,7 @@ private fun SettingsPreview() {
         override fun onClearCoversDirectoryRowClick() {}
         override fun toggleScanCoverChapter() {}
         override fun toggleOnlineCoverSearch() {}
+        override fun toggleSaveCoverToFolder() {}
         override fun onScanCoverChapterRowClick() {}
         override fun toggleUseMenuIcons() {}
         override fun toggleUseAnimatedMarquee() {}
@@ -396,6 +398,15 @@ private fun Settings(
               subtitle = stringResource(CommonR.string.pref_subtitle_online_cover_search),
               initSwitch = viewState.useOnlineCoverSearch,
               toggle = listener::toggleOnlineCoverSearch,
+              paddingTop = 7.dp,
+              paddingBottom = 6.dp,
+            )
+            DividerRow()
+            SettingsSwitchRow(
+              title = stringResource(CommonR.string.pref_save_cover_to_folder),
+              subtitle = stringResource(CommonR.string.pref_subtitle_save_cover_to_folder),
+              initSwitch = viewState.saveCoverToFolder,
+              toggle = listener::toggleSaveCoverToFolder,
               paddingTop = 7.dp,
               paddingBottom = 6.dp,
             )

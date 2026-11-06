@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="pref_save_cover_to_folder">Also save chosen covers in the book folder</string>
+  <string name="pref_subtitle_save_cover_to_folder">Off: covers stay inside the app. On: a cover you choose is also saved as “cover.png” in the book’s folder, so it survives a reinstall and shows up in other players. Other files are never touched.</string>
+  <string name="cover_folder_write_failed">The cover was set, but could not be saved in the book folder.</string>
+</resources>

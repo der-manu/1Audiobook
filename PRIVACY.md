@@ -13,8 +13,13 @@
 
 Your library, listening positions, bookmarks, settings, chosen book titles and the playlist order you pick for each
 book are stored only on your device. The app reads the folders you explicitly grant access to through Android's
-folder picker. It does not change your audio files. The only exception is the *Delete Book* action: if you choose it
-and explicitly confirm *Delete my files*, the files of that book are deleted from your device.
+folder picker. It does not change your audio files. There are two exceptions, and you control both:
+
+* the *Delete Book* action: if you choose it and explicitly confirm *Delete my files*, the files of that book are
+  deleted from your device;
+* the setting *Also save chosen covers in the book folder* (**off by default**): only if you switch it on, the app
+  writes one image file, `cover.png`, into the folder of a book when you choose a cover for it. It replaces only its own
+  `cover.png` and never touches other files.
 
 ## Network use
 
