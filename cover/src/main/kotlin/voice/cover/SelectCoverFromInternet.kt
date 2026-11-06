@@ -38,7 +38,9 @@ fun SelectCoverFromInternet(
       .create(bookId)
   }
 
-  val sink = MutableSharedFlow<SelectCoverFromInternetViewModel.Events>(extraBufferCapacity = 1)
+  // Der Kanal muss ueber Neuzeichnungen hinweg derselbe bleiben. Sonst startet der Collector im ViewModel neu und
+  // bricht einen laufenden Bild-Download ab, sobald sich der Bildschirm waehrend des Ladens aendert.
+  val sink = remember { MutableSharedFlow<SelectCoverFromInternetViewModel.Events>(extraBufferCapacity = 8) }
   SelectCoverFromInternet(
     viewState = viewModel.viewState(sink),
     onCloseClick = onCloseClick,
