@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="cover_save_failed">Das Cover konnte nicht gespeichert werden. Bitte probiere ein anderes Bild.</string>
+</resources>
