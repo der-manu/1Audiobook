@@ -34,7 +34,7 @@ folder reading from scratch: **no code and no assets of Mort were used, only the
 
 - **Import a whole library.** Choose a folder; books in folders, multi-CD books (`CD1`, `CD2`, `Disc 2`, `Teil 3` …),
   author and series folders are recognised automatically. Release-style folder names such as
-  `Karen.Test.-.2011.-.Todesstrafe.Germ.wOOt` become readable titles (*Karen Test - 2011 - Todesstrafe*).
+  `Karen.Test.-.2011.-.Todesstrafe.Germ.` become readable titles (*Karen Test - 2011 - Todesstrafe*).
   **Nothing is added before you confirm** an editable preview (rename, deselect, change the order, see which books
   need a look).
 - **Playlists are respected.** A usable `.m3u` decides the order; a broken one is detected and replaced by sorting.
